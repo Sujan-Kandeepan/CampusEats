@@ -1,0 +1,7 @@
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.review-image { width: 400px; height: 300px;}
