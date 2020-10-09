@@ -5,3 +5,7 @@ a, a:hover, a:focus, a:active {
 }
 
 .review-image { width: 400px; height: 300px;}
+
+.container-form {
+    width: 950px;
+}
