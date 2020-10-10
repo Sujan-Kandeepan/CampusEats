@@ -1,0 +1,323 @@
+<!-- 
+There are a lot of templated code from Bulma. An example is: https://bulma.io/documentation/overview/start/
+A lot of the code from Bulma cards and Bulma footer look very similar to what is here.
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Account Setup Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/account-setup.css">
+</head>
+
+<body>
+  <nav class="navbar is-light" role="navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="img/logo.png" width="90" height="70" />
+      </a>
+      <a role="button" class="navbar-burger burger" data-target="simpleNav">
+      </a>
+    </div>
+
+    <div id="simpleNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Discover
+        </a>
+        <a class="navbar-item">
+          Nearby
+        </a>
+        <a class="navbar-item">
+          Review
+        </a>
+        <a class="navbar-item">
+          Share
+        </a>
+      </div>
+      <div class="navbar-item field">
+        <p class="control has-icons-right">
+          <input class="input" type="search" placeholder="Search...">
+          <span class="icon is-small is-right">
+            <icon />
+          </span>
+        </p>
+      </div>
+      <div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-primary ">
+                Sign in/Log in
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </nav>
+  <section class="section">
+    <form action="submit">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title" id="title">New Account Questionnaire</h1>
+        </div>
+        <div class="column is-4 has-text-right">
+          <a class="prev-next" href="">
+            <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
+          </a>
+          <a class="prev-next" href="">
+            Next Page&nbsp;&nbsp;<i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+      <h2 class="subtitle">Personal and Demographic Information</h2>
+      <div class="columns">
+        <div class="column is-4">
+          <div class="field">
+            <label class="label">
+              Full Name
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="John Doe">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">Age</label>
+            <div class="control">
+              <input class="input" type="number" min="15" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="field">
+            <label class="label">Gender</label>
+            <div class="control">
+              <input class="input" type="text" list="gender"
+              placeholder="Type or select an option">
+              <datalist id="gender">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </datalist>
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="field">
+            <label class="label">Ethnicity</label>
+            <div class="control">
+              <input class="input" type="text" list="ethnicity"
+              placeholder="Type or select an option">
+              <datalist id="ethnicity">
+                <option>Aboriginal</option>
+                <option>Arab/West Asian</option>
+                <option>Black</option>
+                <option>Caucasian</option>
+                <option>East Asian</option>
+                <option>Hispanic/Latino</option>
+                <option>South Asian</option>
+                <option>Other</option>
+              </datalist>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="subtitle">Home and School Location</h2>
+      <div class="columns">
+        <div class="column is-4">
+          <div class="field">
+            <label class="label">Home Address</label>
+            <div class="control">
+              <input class="input" type="text"
+                placeholder="123 Somewhere Street">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">Home Postal Code</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="A1B 2C3">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">Home City</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">Home Province</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">Home Country</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-4">
+          <div class="field">
+            <label class="label">
+              School Address
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text"
+                placeholder="123 Somewhere Street">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">
+              School Postal Code
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="A1B 2C3">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">
+              School City
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">
+              School Province
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">
+              School Country
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" placeholder="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="subtitle">Preferences and Spending on Food</h2>
+      <div class="columns">
+        <div class="column is-3">
+          <div class="field">
+            <label class="label">
+              Preferences
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text"
+              placeholder="Chinese, savoury, mild, etc.">
+            </div>
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="field">
+            <label class="label">
+              Dietary Restrictions
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="text" list="dietary-restrictions"
+              placeholder="Type or select an option">
+              <datalist id="dietary-restrictions">
+                <option>Halal</option>
+                <option>Kosher</option>
+                <option>No beef</option>
+                <option>No pork</option>
+                <option>Vegan</option>
+                <option>Vegetarian</option>
+                <option>None</option>
+              </datalist>
+            </div>
+          </div>
+        </div>
+        <div class="column is-2">
+          <div class="field">
+            <label class="label">
+              Weekly Budget ($)
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <input class="input" type="number" min="0" placeholder="1.23">
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="field">
+            <label class="label">
+              Frequency of Spending on Food
+              <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+            </label>
+            <div class="control">
+              <div class="level is-mobile">
+                <div class="level-left">
+                  <input class="input" type="number" min="0" placeholder="">
+                </div>
+                &nbsp;time(s) per&nbsp;
+                <div class="level-right">
+                  <div class="select">
+                    <select>
+                      <option>day</option>
+                      <option selected>week</option>
+                      <option>month</option>
+                      <option>year</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <footer class="footer">
+    <div class="content">
+      <a href="">About</a>
+      <a href="">Privacy Policy</a>
+      <a href="">Help</a>
+      <a href="" class="is-pulled-right">Report a problem</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
