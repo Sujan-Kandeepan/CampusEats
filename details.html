@@ -18,49 +18,54 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
 </head>
 
 <body>
-  <nav class="navbar is-light" role="navigation">
+  <nav class="navbar is-transparent">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
-        <img src="img/logo.png" width="90" height="70" />
+        <img src="img/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
       </a>
-      <a role="button" class="navbar-burger burger" data-target="simpleNav">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="simpleNav" class="navbar-menu">
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Discover
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Nearby
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Review
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Share
         </a>
+
+
       </div>
-      <div class="navbar-item field">
-        <p class="control has-icons-right">
-          <input class="input" type="search" placeholder="Search...">
-          <span class="icon is-small is-right">
-            <icon />
-          </span>
-        </p>
-      </div>
-      <div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary ">
-                Sign in/Log in
-              </a>
-            </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search Restaurant">
+          </p>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary ">
+              Sign in/Log in
+            </a>
           </div>
         </div>
       </div>
+    </div>
   </nav>
   <section class="section">
     <div class="container">

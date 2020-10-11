@@ -18,49 +18,53 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
 </head>
 
 <body>
-  <nav class="navbar" role="navigation">
+  <nav class="navbar is-transparent">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
-        <img src="img/logo.png" width="90" height="70" />
+        <img src="img/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
       </a>
-      <a role="button" class="navbar-burger burger" data-target="simpleNav">
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="simpleNav" class="navbar-menu">
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Discover
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Nearby
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Review
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Share
         </a>
+
+
       </div>
-      <div class="navbar-item field">
-        <p class="control has-icons-right">
-          <input class="input" type="search" placeholder="Search...">
-          <span class="icon is-small is-right">
-            <icon />
-          </span>
-        </p>
-      </div>
-      <div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                Sign in/Log in
-              </a>
-            </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search Restaurant">
+          </p>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary ">
+              Sign in/Log in
+            </a>
           </div>
         </div>
       </div>
+    </div>
   </nav>
   <section class="section">
 
@@ -74,12 +78,12 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
             <hr>
             <div class="columns is-centered is-vcentered ">
               <div class="column is-narrow box container-form mt-5">
-                <h2 class="is-size-2 is-family-sans-serifslevel-left m-2">Write a review</h2>
+                <h2 class="is-size-2 is-family-sans-serifs level-left m-2">Write a review</h2>
                 <hr>
                 <div class="field level">
                   <label class="label is-size-4 level-left m-2">Username</label>
                   <div class="control">
-                    <input class="input is-medium" type="text" placeholder="Your Username">
+                    <input class="input is-normal level-right" type="text" placeholder="Your Username">
                   </div>
                 </div>
                 <div class="field level m-2">
@@ -264,7 +268,7 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
       <hr>
       <div>
         <div class="level">
-          <h2 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">Review Restaurants</h2>
+          <h2 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">Review More Restaurants</h2>
         </div>
         <div class="columns">
           <div class="column">
