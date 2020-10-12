@@ -1,6 +1,7 @@
-<!-- 
-There are a lot of templated code from Bulma. An example is: https://bulma.io/documentation/overview/start/
-A lot of the code from Bulma cards and Bulma footer look very similar to what is here.
+<!--
+There are a lot of templated code from Bulma. An example is:
+https://bulma.io/documentation/overview/start/ A lot of the code from Bulma
+cards and Bulma footer look very similar to what is here.
 
 -->
 
@@ -11,56 +12,70 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Account Setup Page</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous" />
   <link rel="stylesheet" href="css/account-setup.css">
 </head>
 
 <body>
-  <nav class="navbar is-light" role="navigation">
+  <nav class="navbar is-transparent">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
-        <img src="img/logo.png" width="90" height="70" />
+        <img src="img/logo.png" alt="Bulma: a modern CSS framework based on
+        Flexbox" width="112" height="28">
       </a>
-      <a role="button" class="navbar-burger burger" data-target="simpleNav">
+      <a role="button" class="navbar-burger burger" aria-label="menu"
+      aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="simpleNav" class="navbar-menu">
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Discover
         </a>
-        <a class="navbar-item">
+        <a class="navbar-item" href="">
           Nearby
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Review
         </a>
-        <a class="navbar-item">
+
+        <a class="navbar-item" href="">
           Share
         </a>
+
+
       </div>
-      <div class="navbar-item field">
-        <p class="control has-icons-right">
-          <input class="input" type="search" placeholder="Search...">
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search Restaurant">
+          </p>
+
           <span class="icon is-small is-right">
-            <icon />
+            <button class="button is-primary"><i class="fas
+            fa-search"></i></button>
           </span>
-        </p>
-      </div>
-      <div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary ">
-                Sign in/Log in
-              </a>
-            </div>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary ">
+              Sign in/Log in
+            </a>
           </div>
         </div>
       </div>
+    </div>
   </nav>
   <section class="section">
     <form action="submit">
@@ -102,8 +117,8 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
           <div class="field">
             <label class="label">Gender</label>
             <div class="control">
-              <input class="input" type="text" list="gender"
-              placeholder="Type or select an option">
+              <input class="input" type="text" list="gender" placeholder="Type
+              or select an option">
               <datalist id="gender">
                 <option>Male</option>
                 <option>Female</option>
@@ -138,8 +153,8 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
           <div class="field">
             <label class="label">Home Address</label>
             <div class="control">
-              <input class="input" type="text"
-                placeholder="123 Somewhere Street">
+              <input class="input" type="text" placeholder="123 Somewhere
+              Street">
             </div>
           </div>
         </div>
@@ -184,8 +199,8 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
               <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
             </label>
             <div class="control">
-              <input class="input" type="text"
-                placeholder="123 Somewhere Street">
+              <input class="input" type="text" placeholder="123 Somewhere
+              Street">
             </div>
           </div>
         </div>
@@ -243,8 +258,8 @@ A lot of the code from Bulma cards and Bulma footer look very similar to what is
               <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
             </label>
             <div class="control">
-              <input class="input" type="text"
-              placeholder="Chinese, savoury, mild, etc.">
+              <input class="input" type="text" placeholder="Chinese, savoury,
+              mild, etc.">
             </div>
           </div>
         </div>
