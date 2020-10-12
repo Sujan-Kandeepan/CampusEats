@@ -1,0 +1,19 @@
+footer {
+  padding: 1.5rem !important;
+}
+
+footer a {
+  padding: 0 1em;
+}
+
+section {
+  margin: -1.5em 0;
+}
+
+.fa-asterisk {
+  color: firebrick;
+}
+
+.prev-next {
+  padding-right: 3em;
+}

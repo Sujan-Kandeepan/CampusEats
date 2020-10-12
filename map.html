@@ -1,0 +1,196 @@
+<!-- 
+There are a lot of templated code from Bulma. An example is:
+https://bulma.io/documentation/overview/start/ A lot of the code from Bulma
+cards and Bulma footer look very similar to what is here.
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Map View Page</title>
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet"
+  href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+  crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="img/logo.png" alt="Bulma: a modern CSS framework based on
+        Flexbox" width="112" height="28">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu"
+      aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="">
+          Discover
+        </a>
+        <a class="navbar-item" href="">
+          Nearby
+        </a>
+
+        <a class="navbar-item" href="">
+          Review
+        </a>
+
+        <a class="navbar-item" href="">
+          Share
+        </a>
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search Restaurant">
+          </p>
+
+          <span class="icon is-small is-right">
+            <button class="button is-primary"><i class="fas
+            fa-search"></i></button>
+          </span>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary ">
+              Sign in/Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+    <a href="" class="" id="go-to-details">
+      <i class="fas fa-info-circle"></i>
+      &nbsp;Go to details page
+    </a>
+    <div class="columns">
+      <div class="column is-one-third">
+        <h1 class="title" id="other-restaurants-nearby">Other Restaurants
+        Nearby</h1>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              First Restaurant
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p class="subtext">
+                Brief description of first restaurant. <br>
+              <div class="level">
+                <div class="level-left">
+                  <small>123 visits &middot; 45 reviews</small>
+                </div>
+                <div class="level-right">
+                  <span class="ratings">
+                    <span class="star-text">4.5</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-dollar-sign  ml-3"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                  </span>
+                </div>
+              </div>
+              </p>
+              <span class="tag is-light is-info">Keyword</span>
+              <span class="tag is-light is-success">Keyword</span>
+              <span class="tag is-light is-danger">Keyword</span>
+              <span class="tag is-light is-warning">Keyword</span>
+              <span class="tag is-light is-primary">Keyword</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title">
+              Second Restaurant
+            </p>
+            <a href="#" class="card-header-icon" aria-label="more options">
+              <span class="icon">
+                <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+              </span>
+            </a>
+          </header>
+          <div class="card-content">
+            <div class="content">
+              <p class="subtext">
+                Brief description of second restaurant. <br>
+              <div class="level">
+                <div class="level-left">
+                  <small>123 visits &middot; 45 reviews</small>
+                </div>
+                <div class="level-right">
+                  <span class="ratings">
+                    <span class="star-text">4.4</span>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-dollar-sign  ml-3"></i>
+                    <i class="fas fa-dollar-sign"></i>
+                  </span>
+                </div>
+              </div>
+              </p>
+              <span class="tag is-light is-primary">Keyword</span>
+              <span class="tag is-light is-warning">Keyword</span>
+              <span class="tag is-light is-info">Keyword</span>
+              <span class="tag is-light is-danger">Keyword</span>
+              <span class="tag is-light is-success">Keyword</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="column">
+        <div class="container">
+          <div class="box" id="map-box">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d992.7393558422643!2d-79.92431916974783!3d43.25743203077101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xa5a78872cb279ee5!2sTally%20Ho%20Restaurant!5e0!3m2!1sen!2sca!4v1602284781071!5m2!1sen!2sca"
+            width="600" height="450" frameborder="0" style="border:0;"
+            allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content">
+      <a href="">About</a>
+      <a href="">Privacy Policy</a>
+      <a href="">Help</a>
+      <a href="" class="is-pulled-right">Report a problem</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
