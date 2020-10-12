@@ -1,0 +1,369 @@
+<!-- 
+There are a lot of templated code from Bulma. An example is: https://bulma.io/documentation/overview/start/
+A lot of the code from Bulma cards and Bulma footer look very similar to what is here.
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review/Rating Page</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/details.css">
+</head>
+
+<body>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img src="img/logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
+      </a>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="">
+          Discover
+        </a>
+        <a class="navbar-item" href="">
+          Nearby
+        </a>
+
+        <a class="navbar-item" href="">
+          Review
+        </a>
+
+        <a class="navbar-item" href="">
+          Share
+        </a>
+
+
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <p class="control has-icons-right">
+            <input class="input" type="search" placeholder="Search Restaurant">
+          </p>
+        </div>
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-primary ">
+              Sign in/Log in
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <section class="section">
+
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <div class="level">
+              <h1 class="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">Creation X</h1>
+            </div>
+            <hr>
+            <div class="columns is-centered is-vcentered ">
+              <div class="column is-narrow box container-form mt-5">
+                <h2 class="is-size-2 is-family-sans-serifs level-left m-2">Write a review</h2>
+                <hr>
+                <div class="field level">
+                  <label class="label is-size-4 level-left m-2">Username</label>
+                  <div class="control">
+                    <input class="input is-normal level-right" type="text" placeholder="Your Username">
+                  </div>
+                </div>
+                <div class="field level m-2">
+                  <label class="label is-size-4">Price Range</label>
+                  <span style="color: silver;">
+                    <i class="fas fa-dollar-sign is-size-3"></i>
+
+                    <i class="fas fa-dollar-sign is-size-3 ml-3"></i><i class="fas fa-dollar-sign is-size-3"></i>
+
+                    <i class="fas fa-dollar-sign is-size-3  ml-3"></i><i class="fas fa-dollar-sign is-size-3 "></i><i
+                      class="fas fa-dollar-sign is-size-3"></i>
+                  </span>
+                </div>
+                <div class="field level m-2">
+                  <label class="label is-size-4">Experience</label>
+                  <span style="color: Tomato;" class="mx-2">
+
+                    <i class="fas fa-star fa-2x"></i><i class="fas fa-star fa-2x"></i><i
+                      class="fas fa-star fa-2x"></i><i class="fas fa-star fa-2x"></i><i
+                      class="fas fa-star-half-alt fa-2x"></i>
+                  </span>
+                </div>
+                <div class="field level m-2">
+                  <label class="label is-size-4">Upload Photo</label>
+                  <div class="file has-name is-right">
+                    <label class="file-label">
+                      <input class="file-input is-large" type="file" name="resume">
+                      <span class="file-cta">
+                        <span class="file-icon">
+                          <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="file-label ">
+                          Choose a file (Optional)
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <div class="field m-2">
+                  <label class="label is-size-4">Comment</label>
+                  <div class="control">
+                    <textarea class="textarea" placeholder="Optional"></textarea>
+                  </div>
+                </div>
+
+                <div class=" has-text-centered">
+                  <div class="field">
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox">
+                        I agree to the <a href="#">terms and conditions</a>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="button is-link is-danger is-large has-text-centered box-shadow">Post Review</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div>
+        <div class="level">
+          <h2 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2 mt-6">More Reviews</h2>
+        </div>
+        <article class="media">
+          <div class="columns is-multiline">
+            <div class="column">
+              <div class="box mx-5">
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>John Doe</strong> <small>@johndoe</small>
+                      <span style="color: Tomato;" class="mx-2">
+
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                      </span>
+                      <small class="level-right">Oct
+                        9, 2020</small>
+
+                    </p>
+                    <figure class="image review-image">
+                      <img src="img/restaruant_logo.png">
+                    </figure>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                    pellentesque
+                    tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis.
+                    <p class="level-right mt-4">
+                      <i class="fas fa-share mr-3"></i>
+                      <i class="far fa-flag mr-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box mx-5">
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Lee Smith</strong> <small>@leeSmith</small><span style="color: Tomato;" class="mx-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                      </span>
+                      <small class="level-right">Oct 9, 2020</small>
+                    </p>
+                    <figure class="image review-image">
+                      <img src="img/review-img.jpg">
+                    </figure>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                    pellentesque
+                    tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis.
+                    <p class="level-right mt-4">
+                      <i class="fas fa-share mr-3"></i>
+                      <i class="far fa-flag mr-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box mx-5">
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Lee Smith</strong> <small>@leeSmith</small><span style="color: Tomato;" class="mx-2">
+
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                      </span>
+                      <small class="level-right">Oct 9, 2020</small>
+                    </p>
+                    <figure class="image review-image">
+                      <img src="img/review-img.jpg">
+                    </figure>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                    pellentesque
+                    tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis.
+                    <p class="level-right mt-4">
+                      <i class="fas fa-share mr-3"></i>
+                      <i class="far fa-flag mr-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box mx-5">
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>Lee Smith</strong> <small>@leeSmith</small><span style="color: Tomato;" class="mx-2">
+
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                          class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                      </span>
+                      <small class="level-right">Oct 9, 2020</small>
+                    </p>
+                    <figure class="image review-image">
+                      <img src="img/review-img.jpg">
+                    </figure>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu
+                    pellentesque
+                    tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat
+                    facilisis.
+                    <p class="level-right mt-4">
+                      <i class="fas fa-share mr-3"></i>
+                      <i class="far fa-flag mr-3"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </article>
+      </div>
+      <hr>
+      <div>
+        <div class="level">
+          <h2 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">Review More Restaurants</h2>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="box">
+              <div class="level level mt-5 mb-5">
+                <h1 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">Teriyaki Express
+                  <span style="color: silver;">
+                    <i class="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i><i
+                      class="fas fa-dollar-sign is-size-5 mt-2"></i><i class="fas fa-dollar-sign is-size-5 mt-2"></i>
+                  </span>
+                </h1>
+                <div class="level-right mr-2">
+                  <span style="color: Tomato;" class="mx-2">
+                    <span class="is-size-5" class="mx-2">4.5</span>
+                    <i class="fas fa-star fa-sm"></i><i class="fas fa-star fa-sm"></i><i
+                      class="fas fa-star fa-sm"></i><i class="fas fa-star fa-sm"></i><i
+                      class="fas fa-star-half-alt fa-sm"></i>
+                  </span>
+                  <h3 class="is-clickable">(14)</h3>
+                </div>
+              </div>
+              <div class="level mt-6 mb-4">
+                <div class="level-left">
+                  <span class="tag is-primary is-light mx-1 is-medium ">Vegetarian</span>
+                  <span class="tag is-danger is-light mx-1 is-medium">Burger</span>
+                  <span class="tag is-info is-light mx-1 is-medium">Sandwiches</span>
+                  <span class="tag is-warning is-light mx-1 is-medium">All Day Breakfast</span>
+                </div>
+              </div>
+              <figure class="image review-image">
+                <img src="img/restaruant_logo.png">
+              </figure>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <div class="level level mt-5 mb-5">
+                <h1 class="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">Teriyaki Express
+                  <span style="color: silver;">
+                    <i class="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i><i
+                      class="fas fa-dollar-sign is-size-5 mt-2"></i><i class="fas fa-dollar-sign is-size-5 mt-2"></i>
+                  </span>
+                </h1>
+                <div class="level-right mr-2">
+                  <span style="color: Tomato;" class="mx-2">
+                    <span class="is-size-5" class="mx-2">4.5</span>
+                    <i class="fas fa-star fa-sm"></i><i class="fas fa-star fa-sm"></i><i
+                      class="fas fa-star fa-sm"></i><i class="fas fa-star fa-sm"></i><i
+                      class="fas fa-star-half-alt fa-sm"></i>
+                  </span>
+                  <h3 class="is-clickable">(14)</h3>
+                </div>
+                
+              </div>
+              <div class="level">
+                <div class="level-left">
+                  <span class="tag is-primary is-light mx-1 is-medium ">Vegetarian</span>
+                  <span class="tag is-danger is-light mx-1 is-medium">Burger</span>
+                  <span class="tag is-info is-light mx-1 is-medium">Sandwiches</span>
+                  <span class="tag is-warning is-light mx-1 is-medium">All Day Breakfast</span>
+                </div>
+              </div>
+              <figure class="image review-image">
+                <img src="img/restaruant_logo.png">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="content">
+      <div class="columns">
+        <div class="column is-1">
+          <a href="">About</a>
+        </div>
+        <div class="column is-2">
+          <a href="">Privacy Policy</a>
+        </div>
+        <div class="column is-1">
+          <a href="">Help</a>
+        </div>
+        <div class="column is-6">
+        </div>
+        <div class="column is-2">
+          <a href="">Report a problem</a>
+        </div>
+      </div>
+      <p>
+
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
