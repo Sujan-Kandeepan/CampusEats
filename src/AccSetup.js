@@ -1,5 +1,9 @@
 /*
-This is the default react class given by the react documentation
+
+There are a lot of templated code from Bulma. An example is:
+https://bulma.io/documentation/overview/start/ A lot of the code from Bulma
+cards and Bulma footer look very similar to what is here.
+
 */
 
 import React from "react";
