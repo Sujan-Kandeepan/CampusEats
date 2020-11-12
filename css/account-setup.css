@@ -17,3 +17,17 @@ section {
 .prev-next {
   padding-right: 3em;
 }
+
+#required {
+  margin: -10px 5px 10px 5px;
+}
+
+.questions {
+  margin: 25px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  #bottom-page-nav {
+    display: none;
+  }
+}
