@@ -1,0 +1,59 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Creation X",
+      "description": "grilled items and build your own burger station located in Student Center",
+      "location": [23.1, 37.1],
+      "rating": 4,
+      "number_of_reviews": 2,
+      "tags": ["Vegetarian", "Burger", "Sandwiches", "All day Breakfast"],
+      "price_range": 1,
+      "menu": "./img/menu.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Williams Cafe",
+      "description": "Food and beverages for take-out located in Health Sciences Library",
+      "location": [24.5, 32.3],
+      "rating": 3,
+      "number_of_reviews": 3,
+      "tags": ["Vegetarian", "Beverages", "Sandwiches", "All-day Breakfast"],
+      "price_range": 2,
+      "menu": "./img/menu2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Willy Dog McMaster",
+      "description": "Hot dogs served quickly and with a smile outside Student Centre",
+      "location": [22.7, 34.6],
+      "rating": 4,
+      "number_of_reviews": 1,
+      "tags": ["Vegetarian", "Non-vegetarian", "Burger", "Hot dog"],
+      "price_range": 1,
+      "menu": "./img/menu3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Pinks Burgers",
+      "description": "Burgers, gyros, and more with comfortable eating just off McMaster campus",
+      "location": [27.0, 32.2],
+      "rating": 4,
+      "number_of_reviews": 5,
+      "tags": ["Vegetarian", "Non-vegetarian", "Burger", "Gyro", "Sandwiches"],
+      "price_range": 3,
+      "menu": "./img/menu4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mr. Gao",
+      "description": "Traditional Chinese dishes located near McMaster Campus",
+      "location": [20.9, 32.8],
+      "rating": 4,
+      "number_of_reviews": 2,
+      "tags": ["Vegetarian", "Chinese", "Noodles", "Appetizer"],
+      "price_range": 2,
+      "menu": "./img/menu5.jpg"
+    }
+  ]
+}
