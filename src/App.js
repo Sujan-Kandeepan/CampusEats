@@ -15,6 +15,7 @@ import Map from "./Map.js";
 import Main from "./Main.js";
 import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
+import ContactSupport from "./ContactSupport.js";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           </Route>
           <Route path="/accSetup">
             <AccSetup />
+          </Route>
+          <Route path="/contactSupport">
+            <ContactSupport />
           </Route>
           {/* Route path of "/" must be last as it matches all routes */}
           <Route path="/">
