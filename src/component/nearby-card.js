@@ -36,8 +36,10 @@ export default class NearbyCard extends React.Component {
                     <div className="card-content">
                         <div className="content">
                             <div className="subtext">
-                                {this.props.description} <br />
-                                <div className="level">
+                                <p className="description">
+                                    {this.props.description}
+                                </p>
+                                <div className="level ratings-reviews">
                                     <div className="level-left">
                                         <small>{this.props.visits} visits &middot; {this.props.reviews} reviews</small>
                                     </div>
@@ -49,7 +51,9 @@ export default class NearbyCard extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            {keywords}
+                            <div className="keywords">
+                                {keywords}
+                            </div>
                         </div>
                     </div>
                 </div>
