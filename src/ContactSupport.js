@@ -47,23 +47,39 @@ export default class ContactSupport extends React.Component {
                 }
                 
                 <div className="container">
-                <br/>
-                <h2 className="title is-2">Support</h2>
-                <h4 className="title is-4">Support message</h4>
-                <b>Submit a support ticket</b>
-                <br/><br/>
-                <textarea className="textarea" placeholder="What you need support with."></textarea>
-                <div className="column is-4 is-offset-4"><button className="button is-primary is-fullwidth" onClick={() => this.setState({ modalOpen: true })}>Submit</button></div>
-              
-                
-                <div className="is-divider" data-content="OR"></div>
+                    {/* <div className="columns"> */}
+                        <br/>
+                        <div className="column is-4 is-offset-4">
+                        
+                        
+                        </div>
+                        
+                        
+                        <div className="column is-8 is-offset-2">
+                        <h2 className="title is-2">Support</h2>
+                        <br/>
+                        <h4 className="title is-4">Support message</h4>
+                       
+                        <b>Submit a support ticket</b>
+                        <br/><br/>
+                        
+                        <textarea className="textarea" placeholder="What you need support with."></textarea>
+                        <br/>
+                        <button className="button is-primary is-fullwidth" onClick={() => this.setState({ modalOpen: true })}>Submit</button>
+                        </div>
+                        <div className="column is-4 is-offset-4">
+                        <div className="is-divider" data-content="OR"></div>
+                        </div>
                 </div>
                 <div className="container">
-                <h4 className="title is-4">Phone</h4>
-                <b>Call Number:</b> 
-                <br/><br/>
-                 1 - 647 - FAK - NUMB
-                <br/>
+                <div className="column is-8 is-offset-2">
+                        <h4 className="title is-4">Phone</h4>
+                        
+                        <b>Submit a support ticket</b>
+                        <br/><br/>
+                        1-905-555-0110
+                        <br/>
+                    </div>
                 </div>
 
                 <br/><br/>
