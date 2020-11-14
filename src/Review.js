@@ -13,14 +13,35 @@ export default class Review extends React.Component {
     super(props);
 
     this.state = {
+      restaurant_id: 0,
+      restaurant_name: "",
       username: "",
       price_range: 0,
       rating: 0,
       comment: "",
     };
   }
+  componentDidMount() {
+    const query = parseInt(window.location.search.substring(1));
+
+    var restaurant = restaurantData.restaurants.find(
+      (restaurant) => restaurant.id === query
+    );
+    console.log(restaurant);
+
+    this.setState({
+      restaurant_id: query,
+      restaurant_name: restaurant.name
+    });
+  }
   render() {
-    const { username, price_range, rating, comment } = this.state;
+    const {
+      restaurant_name,
+      username,
+      price_range,
+      rating,
+      comment,
+    } = this.state;
     return (
       <React.Fragment>
         <Header></Header>
@@ -30,11 +51,8 @@ export default class Review extends React.Component {
               <div className="column">
                 <div className="box">
                   <div className="level">
-                    {/* <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
-                      Creation X
-                    </h1> */}
-                    <h1 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">
-                      {this.props.restaurant_name}
+                    <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
+                      {restaurant_name}
                     </h1>
                   </div>
                   <hr />

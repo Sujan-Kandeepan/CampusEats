@@ -37,7 +37,9 @@ export default class Details extends React.Component {
   }
   setRestaurantDetails() {
     // var restaurant = restaurantData.restaurants.find(restaurant => restaurant.name === this.props.restaurant_name)
-
+    // var reviews = reviewData.reviews.filter(
+    //   (review) => review.restaurant === this.props.restaurant_name
+    // );
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.name === "Mr. Gao"
     );
@@ -95,7 +97,7 @@ export default class Details extends React.Component {
       <React.Fragment>
         <Route
           exact
-          path={"/review/:id"}
+          path={"/review/?:restaurant_id"}
           component={Review}
         />
         )<Header></Header>
@@ -143,10 +145,7 @@ export default class Details extends React.Component {
                     </div>
                     <div className="level-right">
                       <Link
-                        to={{
-                          pathname: `/review/${restaurant_name}`,
-                          state: { restaurant_name: restaurant_name },
-                        }}
+                        to= {`/review/?${restaurant_id}`}
                       >
                         <button
                           className="button is-danger is-large box-shadow"
