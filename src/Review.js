@@ -3,6 +3,8 @@ This is the default react class given by the react documentation
 */
 
 import React from "react";
+import ReactStars from "react-rating-stars-component";
+
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import DetailsCard from "./component/details-card.js";
@@ -20,6 +22,8 @@ export default class Review extends React.Component {
       rating: 0,
       comment: "",
     };
+
+    this.changeRating = this.changeRating.bind(this);
   }
   componentDidMount() {
     const query = parseInt(window.location.search.substring(1));
@@ -31,9 +35,16 @@ export default class Review extends React.Component {
 
     this.setState({
       restaurant_id: query,
-      restaurant_name: restaurant.name
+      restaurant_name: restaurant.name,
     });
   }
+
+  changeRating( newRating, name ) {
+    this.setState({
+      rating: newRating
+    });
+  }
+
   render() {
     const {
       restaurant_name,
@@ -42,6 +53,10 @@ export default class Review extends React.Component {
       rating,
       comment,
     } = this.state;
+
+    const ratingChanged = (newRating) => {
+      console.log(newRating);
+    };
     return (
       <React.Fragment>
         <Header></Header>
@@ -90,6 +105,13 @@ export default class Review extends React.Component {
                           <i className="fas fa-star fa-2x"></i>
                           <i className="fas fa-star-half-alt fa-2x"></i>
                         </span>
+                        <ReactStars
+                          count={5}
+                          onChange={ratingChanged}
+                          size={24}
+                          activeColor="#ffd700"
+                        />
+                        ,
                       </div>
                       {/* <div className="field level m-2">
                         <label className="label is-size-4">Upload Photo</label>
