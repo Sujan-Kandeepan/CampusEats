@@ -16,6 +16,7 @@ import Main from "./Main.js";
 import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
 import Login from "./Login.js";
+import Settings from "./Settings.js";
 
 export default class App extends React.Component {
 
@@ -57,6 +58,9 @@ export default class App extends React.Component {
             </Route>
             <Route path="/accSetup">
               <AccSetup />
+            </Route>
+            <Route path="/settings">
+              <Settings />
             </Route>
             <Route path="/login">
               <Login username={this.state.user.username} password={this.state.user.password} changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
