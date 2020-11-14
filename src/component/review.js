@@ -30,7 +30,7 @@ export default class Review extends React.Component {
 
   // source: https://coderrocketfuel.com/article/how-to-copy-text-to-the-clipboard-in-react-js
   copyCodeToClipboard() {
-    const textarea = '@' + this.props.username + this.textArea;
+    const textarea = this.textArea;
     textarea.select();
     document.execCommand("copy");
     this.setState({
@@ -80,7 +80,7 @@ export default class Review extends React.Component {
     return (
       <React.Fragment>
         <div
-          className={`column is-half ${isReportClicked ? "is-invisible" : ""}`}
+          className="column is-half"
         >
           <div className="box mr-2">
             <div className="media-content">
