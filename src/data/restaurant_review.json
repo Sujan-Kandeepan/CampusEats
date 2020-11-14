@@ -11,10 +11,10 @@
     },
     {
       "id": 2,
-      "username": "nannycho",
-      "name": "Nanny Cho",
+      "username": "tobyf1",
+      "name": "Tobby Fang",
       "restaurant_id": 1,
-      "comment": "Affordable menu",
+      "comment": "Annoying staff",
       "rating": 3,
       "time": 40
     },
