@@ -7,10 +7,8 @@ import { Link, Route } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
-import CardRefactored from "./component/cardRefactor.js";
+import DetailsCard from "./component/details-card.js";
 import "./Details.css";
-// import restaruant_logo from "./img/restaruant_logo.png";
-// import review_img from "./img/review-img.jpg";
 let restaurantData = require("./data/restaurant_data.json");
 let reviewData = require("./data/restaurant_review.json");
 
@@ -96,8 +94,7 @@ export default class Details extends React.Component {
     return (
       <React.Fragment>
         <Route
-          exact
-          path={"/review/?:restaurant_id"}
+          path={"/review/:restaurant_id"}
           component={Review}
         />
         )<Header></Header>
@@ -230,24 +227,24 @@ export default class Details extends React.Component {
                 <button className="button is-text level-right">See More</button>
               </div>
               <div className="columns">
-                <CardRefactored
+                <DetailsCard
                   restaurant_name={"Restaurant"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
-                <CardRefactored
+                ></DetailsCard>
+                <DetailsCard
                   restaurant_name={"Restaurant2"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
-                <CardRefactored
+                ></DetailsCard>
+                <DetailsCard
                   restaurant_name={"Restaurant3"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
+                ></DetailsCard>
               </div>
             </div>
           </div>

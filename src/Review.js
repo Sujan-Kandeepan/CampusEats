@@ -5,7 +5,7 @@ This is the default react class given by the react documentation
 import React from "react";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
-import CardRefactored from "./component/cardRefactor.js";
+import DetailsCard from "./component/details-card.js";
 let restaurantData = require("./data/restaurant_data.json");
 
 export default class Review extends React.Component {
@@ -148,24 +148,24 @@ export default class Review extends React.Component {
                 </h2>
               </div>
               <div className="columns">
-                <CardRefactored
+                <DetailsCard
                   restaurant_name={"Restaurant"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
-                <CardRefactored
+                ></DetailsCard>
+                <DetailsCard
                   restaurant_name={"Restaurant2"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
-                <CardRefactored
+                ></DetailsCard>
+                <DetailsCard
                   restaurant_name={"Restaurant3"}
                   restaurant_tags={["fast food", "burger"]}
                   restaurant_rating={3}
                   restaurant_description={"Test Restaurant"}
-                ></CardRefactored>
+                ></DetailsCard>
               </div>
             </div>
           </div>

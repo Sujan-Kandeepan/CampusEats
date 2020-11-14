@@ -5,7 +5,7 @@ This is the default react class given by the react documentation
 import React from "react";
 import brickWall from "./../img/brick-wall.jpg";
 
-export default class CardRefactored extends React.Component {
+export default class DetailsCard extends React.Component {
   constructor(props) {
     super(props);
   }
