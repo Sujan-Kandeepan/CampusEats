@@ -26,10 +26,10 @@ export default class Settings extends React.Component {
                             Account Settings and History
                         </h1>
                         <p id="required">
-                            <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i> - Required option
+                            <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i> - Required option
                         </p>
-                        <div class="columns is-mobile">
-                            <div class="column is-7" id="settings">
+                        <div className="columns is-mobile">
+                            <div className="column is-7" id="settings">
                                 <UserSettings />
                             </div>
                         </div>

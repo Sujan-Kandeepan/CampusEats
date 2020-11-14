@@ -9,33 +9,33 @@ export default class UserSettings extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h2 class="subtitle">Personal Information</h2>
-                <div class="columns is-mobile">
-                    <div class="column is-8">
-                        <div class="field">
-                            <label class="label">
-                                Full Name <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+                <h2 className="subtitle">Personal Information</h2>
+                <div className="columns is-mobile">
+                    <div className="column is-8">
+                        <div className="field">
+                            <label className="label">
+                                Full Name <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i>
                             </label>
-                            <div class="control">
-                                <input class="input" type="text" placeholder="John Doe" />
+                            <div className="control">
+                                <input className="input" type="text" placeholder="John Doe" />
                             </div>
                         </div>
                     </div>
-                    <div class="column is-4">
-                        <div class="field">
-                            <label class="label">Age</label>
-                            <div class="control">
-                                <input class="input" type="number" min="0" placeholder="" />
+                    <div className="column is-4">
+                        <div className="field">
+                            <label className="label">Age</label>
+                            <div className="control">
+                                <input className="input" type="number" min="0" placeholder="" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="field">
-                            <label class="label">Gender</label>
-                            <div class="control">
-                                <input class="input" type="text" list="gender"
+                <div className="columns">
+                    <div className="column is-6">
+                        <div className="field">
+                            <label className="label">Gender</label>
+                            <div className="control">
+                                <input className="input" type="text" list="gender"
                                     placeholder="Type or select an option" />
                                 <datalist id="gender">
                                     <option>Male</option>
@@ -45,11 +45,11 @@ export default class UserSettings extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div class="column is-6">
-                        <div class="field">
-                            <label class="label">Ethnicity</label>
-                            <div class="control">
-                                <input class="input" type="text" list="ethnicity"
+                    <div className="column is-6">
+                        <div className="field">
+                            <label className="label">Ethnicity</label>
+                            <div className="control">
+                                <input className="input" type="text" list="ethnicity"
                                     placeholder="Type or select an option" />
                                 <datalist id="ethnicity">
                                     <option>Aboriginal</option>
@@ -65,14 +65,14 @@ export default class UserSettings extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div class="columns">
-                    <div class="column is-12">
-                        <div class="field">
-                            <label class="label">
-                                Campus Name <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+                <div className="columns">
+                    <div className="column is-12">
+                        <div className="field">
+                            <label className="label">
+                                Campus Name <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i>
                             </label>
-                            <div class="control">
-                                <input class="input" type="text" list="university"
+                            <div className="control">
+                                <input className="input" type="text" list="university"
                                     placeholder="Type or select an option" />
                                 <datalist id="university">
                                     <option>McMaster University</option>
@@ -81,26 +81,26 @@ export default class UserSettings extends React.Component {
                         </div>
                     </div>
                 </div>
-                <h2 class="subtitle">Preferences and Spending on Food</h2>
-                <div class="columns">
-                    <div class="column is-6">
-                        <div class="field">
-                            <label class="label">
+                <h2 className="subtitle">Preferences and Spending on Food</h2>
+                <div className="columns">
+                    <div className="column is-6">
+                        <div className="field">
+                            <label className="label">
                                 Preferences
                                             </label>
-                            <div class="control">
-                                <input class="input" type="text"
+                            <div className="control">
+                                <input className="input" type="text"
                                     placeholder="Chinese, savoury, mild, etc." />
                             </div>
                         </div>
                     </div>
-                    <div class="column is-6">
-                        <div class="field">
-                            <label class="label">
+                    <div className="column is-6">
+                        <div className="field">
+                            <label className="label">
                                 Dietary Restrictions
                                             </label>
-                            <div class="control">
-                                <input class="input" type="text" list="dietary-restrictions"
+                            <div className="control">
+                                <input className="input" type="text" list="dietary-restrictions"
                                     placeholder="Type or select an option" />
                                 <datalist id="dietary-restrictions">
                                     <option>Halal</option>
@@ -116,30 +116,30 @@ export default class UserSettings extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div class="columns">
-                    <div class="column is-4">
-                        <div class="field">
-                            <label class="label">
+                <div className="columns">
+                    <div className="column is-4">
+                        <div className="field">
+                            <label className="label">
                                 Weekly Budget ($)
                                             </label>
-                            <div class="control">
-                                <input class="input" type="number" min="0" placeholder="1.23" />
+                            <div className="control">
+                                <input className="input" type="number" min="0" placeholder="1.23" />
                             </div>
                         </div>
                     </div>
-                    <div class="column is-8 level">
-                        <div class="field">
-                            <label class="label">
+                    <div className="column is-8 level">
+                        <div className="field">
+                            <label className="label">
                                 Frequency of Spending on Food
                                             </label>
-                            <div class="control">
-                                <div class="level is-mobile">
-                                    <div class="level-left">
-                                        <input class="input" type="number" min="0" placeholder="" />
+                            <div className="control">
+                                <div className="level is-mobile">
+                                    <div className="level-left">
+                                        <input className="input" type="number" min="0" placeholder="" />
                                     </div>
                                                     &ensp;time(s) per&ensp;
-                                                    <div class="level-right">
-                                        <div class="select">
+                                                    <div className="level-right">
+                                        <div className="select">
                                             <select>
                                                 <option>day</option>
                                                 <option selected>week</option>

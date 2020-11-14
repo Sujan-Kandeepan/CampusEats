@@ -19,33 +19,33 @@ export default class AccSetup extends React.Component {
                 <Header></Header>
                 <div id="acc-setup-page">
                     <form action="submit">
-                        <div class="columns level">
-                            <div class="column is-8 level-left">
-                                <h1 class="title" id="title">New Account Questionnaire</h1>
+                        <div className="columns level">
+                            <div className="column is-8 level-left">
+                                <h1 className="title" id="title">New Account Questionnaire</h1>
                             </div>
-                            <div class="column is-4 level-right has-text-right">
-                                <a class="prev-next" href="">
-                                    <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
+                            <div className="column is-4 level-right has-text-right">
+                                <a className="prev-next" href="">
+                                    <i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
                                 </a>
-                                <a class="prev-next" href="">
-                                    Next Page&nbsp;&nbsp;<i class="fas fa-arrow-right"></i>
+                                <a className="prev-next" href="">
+                                    Next Page&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
                                 </a>
                             </div>
                         </div>
                         <p id="required">
-                            <i class="fa fa-sm fa-asterisk" aria-hidden="true"></i> - Required option
+                            <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i> - Required option
                         </p>
-                        <div class="columns is-mobile">
-                            <div class="questions">
+                        <div className="columns is-mobile">
+                            <div className="questions">
                                 <UserSettings />
                             </div>
                         </div>
-                        <div class="has-text-right" id="bottom-page-nav">
-                            <a class="prev-next" href="">
-                                <i class="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
+                        <div className="has-text-right" id="bottom-page-nav">
+                            <a className="prev-next" href="">
+                                <i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
                             </a>
-                            <a class="prev-next" href="">
-                                Next Page&nbsp;&nbsp;<i class="fas fa-arrow-right"></i>
+                            <a className="prev-next" href="">
+                                Next Page&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
                             </a>
                         </div>
                     </form>
