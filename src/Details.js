@@ -48,7 +48,7 @@ export default class Details extends React.Component {
       restaurant_review_number: restaurant.number_of_reviews,
       restaurant_tags: restaurant.tags,
       restaurant_price_range: restaurant.price_range,
-      restaurant_menu: 'menu',
+      restaurant_menu: restaurant.menu,
     });
   }
 
@@ -185,66 +185,6 @@ export default class Details extends React.Component {
                 <hr />
               </div>
             </div>
-            {/* <div>
-              <div className="level">
-                <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
-                  Photos
-                </h2>
-                <a className="level-right text-decoration-none">
-                  See More Photos
-                </a>
-              </div>
-              <article className="media">
-                <div className="columns">
-                  <div className="column">
-                    <div className="box mx-5">
-                      <div className="media-content">
-                        <div className="content">
-                          <p>
-                            <strong>John Doe</strong> <small>@johndoe</small>{" "}
-                            <small className="level-right">Oct 9, 2020</small>
-                          </p>
-                          <figure className="image review-image">
-                            <img src={} />
-                          </figure>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Proin ornare magna eros, eu pellentesque tortor
-                          vestibulum ut. Maecenas non massa sem. Etiam finibus
-                          odio quis feugiat facilisis.
-                          <p className="level-right mt-4">
-                            <i className="fas fa-share mr-3"></i>
-                            <i className="far fa-flag mr-3"></i>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="column">
-                    <div className="box mx-5">
-                      <div className="media-content">
-                        <div className="content">
-                          <p>
-                            <strong>Lee Smith</strong> <small>@leeSmith</small>
-                            <small className="level-right">Oct 9, 2020</small>
-                          </p>
-                          <figure className="image review-image">
-                            <img src={} />
-                          </figure>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Proin ornare magna eros, eu pellentesque tortor
-                          vestibulum ut. Maecenas non massa sem. Etiam finibus
-                          odio quis feugiat facilisis.
-                          <p className="level-right mt-4">
-                            <i className="fas fa-share mr-3"></i>
-                            <i className="far fa-flag mr-3"></i>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </div> */}
             <div className="level">
               <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                 Reviews
@@ -267,87 +207,6 @@ export default class Details extends React.Component {
                   rating={reviewData.reviews[1].rating}
                   review={reviewData.reviews[1].review}
                 ></Review>
-                {/* <div className="column">
-                  <div className="box  mr-2">
-                    <div className="media-content">
-                      <div>
-                        <strong>John Doe</strong> <small>@johndoe</small>{" "}
-                        <small>31m</small>
-                        <div className="level-right mr-2">
-                          <span style={{ color: "Tomato" }} className="mx-2">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star-half-alt"></i>
-                          </span>
-                        </div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Proin ornare magna eros, eu pellentesque tortor
-                        vestibulum ut. Maecenas non massa sem. Etiam finibus
-                        odio quis feugiat facilisis.
-                      </div>
-                      <p className="level-right">
-                        <i className="fas fa-share mr-3"></i>
-                        <i className="far fa-flag mr-3"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="column">
-                  <div className="box  mr-2">
-                    <div className="media-content">
-                      <div>
-                        <strong>John Doe</strong> <small>@johndoe</small>{" "}
-                        <small>31m</small>
-                        <div className="level-right mr-2">
-                          <span style={{ color: "Tomato" }} className="mx-2">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star-half-alt"></i>
-                          </span>
-                        </div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Proin ornare magna eros, eu pellentesque tortor
-                        vestibulum ut. Maecenas non massa sem. Etiam finibus
-                        odio quis feugiat facilisis.
-                      </div>
-                      <p className="level-right">
-                        <i className="fas fa-share mr-3"></i>
-                        <i className="far fa-flag mr-3"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div> */}
-                {/* <div className="column">
-                  <div className="box">
-                    <div className="media-content">
-                      <div>
-                        <strong>John Doe</strong> <small>@johndoe</small>{" "}
-                        <small>31m</small>
-                        <div className="level-right mr-2">
-                          <span style={{ color: "Tomato" }} className="mx-2">
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star"></i>
-                            <i className="fas fa-star-half-alt"></i>
-                          </span>
-                        </div>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Proin ornare magna eros, eu pellentesque tortor
-                        vestibulum ut. Maecenas non massa sem. Etiam finibus
-                        odio quis feugiat facilisis.
-                      </div>
-                      <p className="level-right">
-                        <i className="fas fa-share mr-3"></i>
-                        <i className="far fa-flag mr-3"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div> */}
               </article>
             </div>
             <hr />
@@ -359,52 +218,6 @@ export default class Details extends React.Component {
                 <a className="level-right text-decoration-none">See More</a>
               </div>
               <div className="columns">
-                {/* <div className="column">
-                  <div className="box">
-                    <div className="level level mt-5 mb-5">
-                      <h1 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">
-                        Teriyaki Express
-                        <span style={{ color: "silver" }}>
-                          <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                        </span>
-                      </h1>
-                      <div className="level-right mr-2">
-                        <span style={{ color: "Tomato" }} className="mx-2">
-                          <span className="is-size-5" className="mx-2">
-                            4.5
-                          </span>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star-half-alt fa-sm"></i>
-                        </span>
-                        <h3 className="is-clickable">(14)</h3>
-                      </div>
-                    </div>
-                    <div className="level mt-6 mb-4">
-                      <div className="level-left">
-                        <span className="tag is-primary is-light mx-1 is-medium ">
-                          Vegetarian
-                        </span>
-                        <span className="tag is-danger is-light mx-1 is-medium">
-                          Burger
-                        </span>
-                        <span className="tag is-info is-light mx-1 is-medium">
-                          Sandwiches
-                        </span>
-                        <span className="tag is-warning is-light mx-1 is-medium">
-                          All Day Breakfast
-                        </span>
-                      </div>
-                    </div>
-                    <figure className="image review-image">
-                      <img />
-                    </figure>
-                  </div>
-                </div> */}
                 <CardRefactored
                   restaurant_name={"Restaurant"}
                   restaurant_tags={["fast food", "burger"]}
