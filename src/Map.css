@@ -1,0 +1,70 @@
+footer {
+  padding: 1.5rem !important;
+}
+
+footer a {
+  padding: 0 1em;
+}
+
+iframe {
+  padding: 0 15px;
+  width: 100%;
+  /* height: 100%; */
+}
+
+section {
+  margin: -1.5em 0;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.description {
+  margin: -10px 0;
+}
+
+.fa-star,
+.fa-star-half-alt,
+.fa-star-alt,
+.star-text {
+  color: tomato;
+}
+
+.keywords {
+  line-height: 200%;
+}
+
+.muted {
+  color: silver;
+}
+
+.ratings-reviews {
+  margin: -10px 0 10px 0;
+}
+
+.tag {
+  margin-right: 5px;
+}
+
+#go-to-details {
+  margin-top: -2em;
+}
+
+#map {
+  padding: 15px 0;
+}
+
+#map-page {
+  margin: 10px 25px;
+}
+
+#nearby-cards {
+  height: 400px;
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+
+#other-restaurants-nearby {
+  margin-top: 0.5em;
+}
