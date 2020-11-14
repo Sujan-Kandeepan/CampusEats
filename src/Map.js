@@ -106,7 +106,7 @@ export default class Map extends React.Component {
             <React.Fragment>
                 <Header></Header>
                 <div id="map-page">
-                    <a href="/" className="" id="go-to-details">
+                    <a href={"/details?id=" + id} id="go-to-details">
                         <i className="fas fa-info-circle"></i>
                         &nbsp;Go to details page
                     </a>
