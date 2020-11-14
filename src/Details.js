@@ -37,7 +37,7 @@ export default class Details extends React.Component {
     // var restaurant = restaurantData.restaurants.find(restaurant => restaurant.name === this.props.restaurant_name)
 
     var restaurant = restaurantData.restaurants.find(
-      (restaurant) => restaurant.name === "Williams Cafe"
+      (restaurant) => restaurant.name === "Creation X"
     );
     this.setState({
       restaurant_id: restaurant.id,
@@ -48,7 +48,7 @@ export default class Details extends React.Component {
       restaurant_review_number: restaurant.number_of_reviews,
       restaurant_tags: restaurant.tags,
       restaurant_price_range: restaurant.price_range,
-      restaurant_menu: restaurant.menu,
+      restaurant_menu: 'menu',
     });
   }
 
@@ -156,7 +156,7 @@ export default class Details extends React.Component {
                 Menu
               </h2>
               <figure className="image is-500x500">
-                <img src={window.location.origin + "/img/menu.jpg"} />
+                <img src={process.env.PUBLIC_URL + '/img/logo.png'} />
               </figure>
             </div>
 

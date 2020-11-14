@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Creation X",
-      "description": "grilled items and build your own burger station located in Student Center",
+      "description": "Grilled items and build your own burger station located in Student Center",
       "location": [23.1, 37.1],
       "rating": 4,
       "number_of_reviews": 2,

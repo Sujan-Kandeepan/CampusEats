@@ -30,7 +30,7 @@ export default class Review extends React.Component {
 
   // source: https://coderrocketfuel.com/article/how-to-copy-text-to-the-clipboard-in-react-js
   copyCodeToClipboard() {
-    const textarea = this.textArea;
+    const textarea = '@' + this.props.username + this.textArea;
     textarea.select();
     document.execCommand("copy");
     this.setState({
@@ -79,13 +79,15 @@ export default class Review extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="column is-half">
+        <div
+          className={`column is-half ${isReportClicked ? "is-invisible" : ""}`}
+        >
           <div className="box mr-2">
             <div className="media-content">
               <div className="level">
                 <div className="level-right">
-                  <strong>{this.props.name}</strong> {" "}
-                   <small>@{this.props.username}</small> <small> 31m</small>
+                  <strong>{this.props.name}</strong>{" "}
+                  <small>@{this.props.username}</small> <small> 31m</small>
                 </div>
                 <div className="level-right mr-2">
                   <span style={{ color: "Tomato" }} className="mx-2">
@@ -112,7 +114,7 @@ export default class Review extends React.Component {
                   </header>
                   <section className="modal-card-body">
                     <textarea
-                      class="textarea disabled"
+                      className="textarea disabled"
                       ref={(textarea) => (this.textArea = textarea)}
                       value={this.props.review}
                     />
@@ -150,7 +152,7 @@ export default class Review extends React.Component {
                   <section className="modal-card-body">
                     <div className="control">
                       <textarea
-                        class="textarea"
+                        className="textarea"
                         value={this.props.review}
                         disabled
                       />
