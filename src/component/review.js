@@ -79,15 +79,14 @@ export default class Review extends React.Component {
     }
     return (
       <React.Fragment>
-        <div
-          className="column is-half"
-        >
+        <div className="column is-half">
           <div className="box mr-2">
             <div className="media-content">
               <div className="level">
                 <div className="level-right">
                   <strong>{this.props.name}</strong>{" "}
-                  <small>@{this.props.username}</small> <small> 31m</small>
+                  <small className="ml-2">@{this.props.username}</small>{" "}
+                  <small className="ml-2"> 31m</small>
                 </div>
                 <div className="level-right mr-2">
                   <span style={{ color: "Tomato" }} className="mx-2">
@@ -114,7 +113,8 @@ export default class Review extends React.Component {
                   </header>
                   <section className="modal-card-body">
                     <textarea
-                      className="textarea disabled"
+                      readOnly
+                      className="textarea disabled "
                       ref={(textarea) => (this.textArea = textarea)}
                       value={this.props.review}
                     />
@@ -152,6 +152,7 @@ export default class Review extends React.Component {
                   <section className="modal-card-body">
                     <div className="control">
                       <textarea
+                        readOnly
                         className="textarea"
                         value={this.props.review}
                         disabled

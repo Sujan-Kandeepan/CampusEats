@@ -28,7 +28,7 @@ export default class CardRefactored extends React.Component {
               <h1 className="is-size-3 is-clickable is-family-sans-serifs has-text-weight-bold level-left">
                 {this.props.restaurant_name}
                 <span style={{ color: "grey" }}>
-                  <i class="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
+                  <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
                   <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
                   <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
                 </span>

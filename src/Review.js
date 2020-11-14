@@ -5,32 +5,22 @@ This is the default react class given by the react documentation
 import React from "react";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
-import { useHistory } from "react-router-dom";
+import CardRefactored from "./component/cardRefactor.js";
+let restaurantData = require("./data/restaurant_data.json");
 
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      // username: "random name",
       username: "",
       price_range: 0,
       rating: 0,
       comment: "",
     };
   }
-  useEffect() {
-    const { history } = this.props;
-    if (history.location.state.restaurant_name) {
-      // setProfile(history.location.state.profile)
-      console.log("profile: ", history.location.state.restaurant_name)
-    }
-  }
   render() {
-    const {
-      username, price_range, rating, comment
-    } = this.state;
-    console.log(this.props.restaurant_name)
+    const { username, price_range, rating, comment } = this.state;
     return (
       <React.Fragment>
         <Header></Header>
@@ -58,9 +48,7 @@ export default class Review extends React.Component {
                         <label className="label is-size-4 level-left m-2">
                           Username
                         </label>
-                        <span className="is-size-4">
-                          @{username}
-                        </span>
+                        <span className="is-size-4">@{username}</span>
                       </div>
                       <div className="field level m-2">
                         <label className="label is-size-4">Price Range</label>
@@ -119,7 +107,7 @@ export default class Review extends React.Component {
                         <div className="field">
                           <div className="control">
                             <label className="checkbox">
-                              <input type="checkbox" />{" "}I agree to the{" "}
+                              <input type="checkbox" /> I agree to the{" "}
                               <a href="#">terms and conditions</a>
                             </label>
                           </div>
@@ -142,98 +130,24 @@ export default class Review extends React.Component {
                 </h2>
               </div>
               <div className="columns">
-                <div className="column">
-                  <div className="box">
-                    <div className="level level mt-5 mb-5">
-                      <h1 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">
-                        Teriyaki Express
-                        <span style={{ color: "silver" }}>
-                          <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                        </span>
-                      </h1>
-                      <div className="level-right mr-2">
-                        <span style={{ color: "Tomato" }} className="mx-2">
-                          <span className="is-size-5" className="mx-2">
-                            4.5
-                          </span>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star-half-alt fa-sm"></i>
-                        </span>
-                        <h3 className="is-clickable">(14)</h3>
-                      </div>
-                    </div>
-                    <div className="level mt-6 mb-4">
-                      <div className="level-left">
-                        <span className="tag is-primary is-light mx-1 is-medium ">
-                          Vegetarian
-                        </span>
-                        <span className="tag is-danger is-light mx-1 is-medium">
-                          Burger
-                        </span>
-                        <span className="tag is-info is-light mx-1 is-medium">
-                          Sandwiches
-                        </span>
-                        <span className="tag is-warning is-light mx-1 is-medium">
-                          All Day Breakfast
-                        </span>
-                      </div>
-                    </div>
-                    <figure className="image review-image">
-                      <img src="img/restaruant_logo.png" />
-                    </figure>
-                  </div>
-                </div>
-                <div className="column">
-                  <div className="box">
-                    <div className="level level mt-5 mb-5">
-                      <h1 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">
-                        Teriyaki Express
-                        <span style={{ color: "silver" }}>
-                          <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                          <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                        </span>
-                      </h1>
-                      <div className="level-right mr-2">
-                        <span style={{ color: "Tomato" }} className="mx-2">
-                          <span className="is-size-5" className="mx-2">
-                            4.5
-                          </span>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star fa-sm"></i>
-                          <i className="fas fa-star-half-alt fa-sm"></i>
-                        </span>
-                        <h3 className="is-clickable">(14)</h3>
-                      </div>
-                    </div>
-                    <div className="level">
-                      <div className="level-left">
-                        <span className="tag is-primary is-light mx-1 is-medium ">
-                          Vegetarian
-                        </span>
-                        <span className="tag is-danger is-light mx-1 is-medium">
-                          Burger
-                        </span>
-                        <span className="tag is-info is-light mx-1 is-medium">
-                          Sandwiches
-                        </span>
-                        <span className="tag is-warning is-light mx-1 is-medium">
-                          All Day Breakfast
-                        </span>
-                      </div>
-                    </div>
-                    <figure className="image review-image">
-                      <img src="img/restaruant_logo.png" />
-                    </figure>
-                  </div>
-                </div>
+                <CardRefactored
+                  restaurant_name={"Restaurant"}
+                  restaurant_tags={["fast food", "burger"]}
+                  restaurant_rating={3}
+                  restaurant_description={"Test Restaurant"}
+                ></CardRefactored>
+                <CardRefactored
+                  restaurant_name={"Restaurant2"}
+                  restaurant_tags={["fast food", "burger"]}
+                  restaurant_rating={3}
+                  restaurant_description={"Test Restaurant"}
+                ></CardRefactored>
+                <CardRefactored
+                  restaurant_name={"Restaurant3"}
+                  restaurant_tags={["fast food", "burger"]}
+                  restaurant_rating={3}
+                  restaurant_description={"Test Restaurant"}
+                ></CardRefactored>
               </div>
             </div>
           </div>

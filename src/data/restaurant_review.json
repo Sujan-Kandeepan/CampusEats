@@ -4,15 +4,17 @@
         "id": 1,
         "username": "johndoe",
         "name": "John Doe",
-        "review": "Great and fast service",
-        "rating": 4,
+        "restaurant": "Creation X",
+        "comment": "Great and fast service",
+        "rating": 3,
         "minutes": 30
       },
       {
         "id": 2,
         "username": "nannycho",
         "name": "Nanny Cho",
-        "review": "Affordable menu",
+        "restaurant": "Creation X",
+        "comment": "Affordable menu",
         "rating": 3,
         "minutes": 40
       },
@@ -20,7 +22,8 @@
         "id": 3,
         "username": "caretteT",
         "name": "Carette T",
-        "review": "Friendly Service",
+        "restaurant": "Mr. Gao",
+        "comment": "Friendly Service",
         "rating": 5,
         "minutes": 50
       },
@@ -28,7 +31,8 @@
         "id": 4,
         "username": "alien",
         "name": "Alice Long",
-        "review": "Great Value",
+        "restaurant": "Pinks Burgers",
+        "comment": "Great Value",
         "rating": 3,
         "minutes": 55
       }

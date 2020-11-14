@@ -9,8 +9,8 @@ import Footer from "./component/footer.js";
 import Review from "./component/review.js";
 import CardRefactored from "./component/cardRefactor.js";
 import "./Details.css";
-import restaruant_logo from "./img/restaruant_logo.png";
-import review_img from "./img/review-img.jpg";
+// import restaruant_logo from "./img/restaruant_logo.png";
+// import review_img from "./img/review-img.jpg";
 let restaurantData = require("./data/restaurant_data.json");
 let reviewData = require("./data/restaurant_review.json");
 
@@ -24,9 +24,11 @@ export default class Details extends React.Component {
       restaruant_location: [0, 0],
       restaurant_rating: 0,
       restaurant_review_number: 0,
+      restaurant_reviews: [],
       restaurant_tags: [],
       restaurant_price_range: 0,
       restaurant_menu: "",
+      is_contact_clicked: false,
     };
     this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
   }
@@ -37,14 +39,20 @@ export default class Details extends React.Component {
     // var restaurant = restaurantData.restaurants.find(restaurant => restaurant.name === this.props.restaurant_name)
 
     var restaurant = restaurantData.restaurants.find(
-      (restaurant) => restaurant.name === "Creation X"
+      (restaurant) => restaurant.name === "Mr. Gao"
     );
+
+    var reviews = reviewData.reviews.filter(
+      (review) => review.restaurant === "Mr. Gao"
+    );
+
     this.setState({
       restaurant_id: restaurant.id,
       restaurant_name: restaurant.name,
       restaruant_description: restaurant.description,
       restaruant_location: restaurant.location,
       restaurant_rating: restaurant.rating,
+      restaurant_reviews: reviews,
       restaurant_review_number: restaurant.number_of_reviews,
       restaurant_tags: restaurant.tags,
       restaurant_price_range: restaurant.price_range,
@@ -59,6 +67,7 @@ export default class Details extends React.Component {
       restaruant_description,
       restaruant_location,
       restaurant_rating,
+      restaurant_reviews,
       restaurant_review_number,
       restaurant_tags,
       restaurant_price_range,
@@ -81,31 +90,40 @@ export default class Details extends React.Component {
         <i className="fas fa-dollar-sign is-size-3 mt-2" key={"price" + i}></i>
       );
     }
+
     return (
       <React.Fragment>
-        <Header></Header>
+        <Route
+          exact
+          path={"/review/:id"}
+          component={Review}
+        />
+        )<Header></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
               <div className="column">
                 <div className="box">
-                  <div className="level level mt-5 mb-5">
+                  <div className="level mt-5 mb-5">
                     <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
                       {restaurant_name}
-                      <span style={{ color: "silver" }} className="ml-5">
+                      <span
+                        style={{ color: "silver" }}
+                        className="ml-5 is-size-1 level-left"
+                      >
                         {priceRangeRating}
                       </span>
                     </h1>
                     <div className="level-right mr-2">
                       <span style={{ color: "Tomato" }} className="mx-2">
-                        <span className="is-size-2" className="mx-2">
+                        <span className="is-size-1" className="mx-2">
                           {restaurant_rating}
                         </span>
                         <span className="fa-2x">{starRating}</span>
                       </span>
-                      <h3 className="is-clickable">
+                      <button className="button is-text">
                         {restaurant_review_number} Reviews
-                      </h3>
+                      </button>
                     </div>
                   </div>
                   <div className="level mt-6 mb-4">
@@ -125,7 +143,10 @@ export default class Details extends React.Component {
                     </div>
                     <div className="level-right">
                       <Link
-                        to={{ pathname: "/review", state: restaurant_name }}
+                        to={{
+                          pathname: `/review/${restaurant_name}`,
+                          state: { restaurant_name: restaurant_name },
+                        }}
                       >
                         <button
                           className="button is-danger is-large box-shadow"
@@ -142,27 +163,26 @@ export default class Details extends React.Component {
             <hr />
             <div className="level">
               <h2 className="subtitle">{restaruant_description}</h2>
-              <div className="buttons mr-2">
+              {/* <div className="buttons mr-2">
                 <button className="button is-primary">
                   <i className="fas fa-phone"></i>
                 </button>
                 <button className="button is-link">
                   <i className="far fa-envelope"></i>
                 </button>
-              </div>
+              </div> */}
             </div>
-            <div>
+            {/* <div>
               <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                 Menu
               </h2>
               <figure className="image is-500x500">
                 <img src={process.env.PUBLIC_URL + '/img/logo.png'} />
               </figure>
-            </div>
+            </div> */}
 
             <div className="columns">
               <div className="column">
-                <hr />
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
                   Location
                 </h2>
@@ -189,25 +209,18 @@ export default class Details extends React.Component {
               <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                 Reviews
               </h2>
-              <a className="level-right text-decoration-none">
-                See More Reviews
-              </a>
+              <button className="button is-text level-right">See More</button>
             </div>
             <div className="columns">
-              <article className="media">
+              {restaurant_reviews.map((item) => (
                 <Review
-                  name={reviewData.reviews[0].name}
-                  username={reviewData.reviews[0].username}
-                  rating={reviewData.reviews[0].rating}
-                  review={reviewData.reviews[0].review}
+                  key={item.id}
+                  name={item.name}
+                  username={item.username}
+                  rating={item.rating}
+                  review={item.comment}
                 ></Review>
-                <Review
-                  name={reviewData.reviews[1].name}
-                  username={reviewData.reviews[1].username}
-                  rating={reviewData.reviews[1].rating}
-                  review={reviewData.reviews[1].review}
-                ></Review>
-              </article>
+              ))}
             </div>
             <hr />
             <div>
@@ -215,7 +228,7 @@ export default class Details extends React.Component {
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                   Nearby Restaurants
                 </h2>
-                <a className="level-right text-decoration-none">See More</a>
+                <button className="button is-text level-right">See More</button>
               </div>
               <div className="columns">
                 <CardRefactored
