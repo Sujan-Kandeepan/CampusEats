@@ -6,7 +6,8 @@ import React from "react";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import { useHistory } from "react-router-dom";
-
+import restaruant_logo from "./img/restaruant_logo.png";
+import restaruant_menu from "./img/menu.jpg";
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
@@ -26,10 +27,26 @@ export default class Review extends React.Component {
       console.log("profile: ", history.location.state.restaurant_name)
     }
   }
+
+  // componentDidUpdate(_, prevState) {
+  //   if (this.state.rating != prevState.rating) {
+  //     return true;
+  //   }
+  //   return false;
+  // }
+
   render() {
     const {
       username, price_range, rating, comment
     } = this.state;
+    let trying;
+    console.log("sdfsdf")
+    // trying = restaruant_menu;
+    if (this.state.rating == 0) {
+      trying = restaruant_menu;
+    } else {
+      trying = restaruant_logo;
+    }
     console.log(this.props.restaurant_name)
     return (
       <React.Fragment>
@@ -184,7 +201,7 @@ export default class Review extends React.Component {
                       </div>
                     </div>
                     <figure className="image review-image">
-                      <img src="img/restaruant_logo.png" />
+                      <img src={trying} />
                     </figure>
                   </div>
                 </div>
@@ -230,7 +247,7 @@ export default class Review extends React.Component {
                       </div>
                     </div>
                     <figure className="image review-image">
-                      <img src="img/restaruant_logo.png" />
+                      <img src={trying} />
                     </figure>
                   </div>
                 </div>
