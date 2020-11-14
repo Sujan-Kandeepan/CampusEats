@@ -6,6 +6,21 @@ import React from "react";
 import "./user-settings.css";
 
 export default class UserSettings extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fullName: "",
+            age: 0,
+            gender: "",
+            ethnicity: "",
+            campusName: "",
+            preferences: "",
+            dietaryRestrictions: "",
+            weeklyBudget: 0,
+            spendingAmount: 0,
+            spendingPer: ""
+        };
+    }
     render() {
         return (
             <React.Fragment>
@@ -17,7 +32,9 @@ export default class UserSettings extends React.Component {
                                 Full Name <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i>
                             </label>
                             <div className="control">
-                                <input className="input" type="text" placeholder="John Doe" />
+                                <input className="input" type="text"
+                                    placeholder="John Doe" value={this.state.fullName}
+                                    onChange={event => this.setState({ fullName: event.target.value })} />
                             </div>
                         </div>
                     </div>
@@ -25,7 +42,9 @@ export default class UserSettings extends React.Component {
                         <div className="field">
                             <label className="label">Age</label>
                             <div className="control">
-                                <input className="input" type="number" min="0" placeholder="" />
+                                <input className="input" type="number" min="0"
+                                    placeholder="" value={this.state.age}
+                                    onChange={event => this.setState({ age: parseInt(event.target.value) })} />
                             </div>
                         </div>
                     </div>
@@ -36,7 +55,8 @@ export default class UserSettings extends React.Component {
                             <label className="label">Gender</label>
                             <div className="control">
                                 <input className="input" type="text" list="gender"
-                                    placeholder="Type or select an option" />
+                                    placeholder="Type or select an option" value={this.state.gender}
+                                    onChange={event => this.setState({ gender: event.target.value })} />
                                 <datalist id="gender">
                                     <option>Male</option>
                                     <option>Female</option>
@@ -50,7 +70,8 @@ export default class UserSettings extends React.Component {
                             <label className="label">Ethnicity</label>
                             <div className="control">
                                 <input className="input" type="text" list="ethnicity"
-                                    placeholder="Type or select an option" />
+                                    placeholder="Type or select an option" value={this.state.ethnicity}
+                                    onChange={event => this.setState({ ethnicity: event.target.value })} />
                                 <datalist id="ethnicity">
                                     <option>Aboriginal</option>
                                     <option>Arab/West Asian</option>
@@ -73,7 +94,8 @@ export default class UserSettings extends React.Component {
                             </label>
                             <div className="control">
                                 <input className="input" type="text" list="university"
-                                    placeholder="Type or select an option" />
+                                    placeholder="Type or select an option" value={this.state.campusName}
+                                    onChange={event => this.setState({ campusName: event.target.value })} />
                                 <datalist id="university">
                                     <option>McMaster University</option>
                                 </datalist>
@@ -87,10 +109,11 @@ export default class UserSettings extends React.Component {
                         <div className="field">
                             <label className="label">
                                 Preferences
-                                            </label>
+                            </label>
                             <div className="control">
                                 <input className="input" type="text"
-                                    placeholder="Chinese, savoury, mild, etc." />
+                                    placeholder="Chinese, savoury, mild, etc." value={this.state.preferences}
+                                    onChange={event => this.setState({ preferences: event.target.value })} />
                             </div>
                         </div>
                     </div>
@@ -101,7 +124,8 @@ export default class UserSettings extends React.Component {
                                             </label>
                             <div className="control">
                                 <input className="input" type="text" list="dietary-restrictions"
-                                    placeholder="Type or select an option" />
+                                    placeholder="Type or select an option" value={this.state.dietaryRestrictions}
+                                    onChange={event => this.setState({ dietaryRestrictions: event.target.value })} />
                                 <datalist id="dietary-restrictions">
                                     <option>Halal</option>
                                     <option>Kosher</option>
@@ -123,7 +147,9 @@ export default class UserSettings extends React.Component {
                                 Weekly Budget ($)
                                             </label>
                             <div className="control">
-                                <input className="input" type="number" min="0" placeholder="1.23" />
+                                <input className="input" type="number" min="0"
+                                    placeholder="1.23" value={this.state.weeklyBudget}
+                                    onChange={event => this.setState({ weeklyBudget: parseInt(event.target.value) })} />
                             </div>
                         </div>
                     </div>
@@ -135,12 +161,15 @@ export default class UserSettings extends React.Component {
                             <div className="control">
                                 <div className="level is-mobile">
                                     <div className="level-left">
-                                        <input className="input" type="number" min="0" placeholder="" />
+                                        <input className="input" type="number" min="0"
+                                            placeholder="" value={this.state.spendingAmount}
+                                            onChange={event => this.setState({ spendingAmount: parseInt(event.target.value) })} />
                                     </div>
-                                                    &ensp;time(s) per&ensp;
-                                                    <div className="level-right">
+                                    &ensp;time(s) per&ensp;
+                                    <div className="level-right">
                                         <div className="select">
-                                            <select>
+                                            <select value={this.state.spendingPer}
+                                                onChange={event => this.setState({ spendingPer: event.target.value })}>
                                                 <option>day</option>
                                                 <option selected>week</option>
                                                 <option>month</option>
