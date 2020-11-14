@@ -19,7 +19,8 @@ export default class Map extends React.Component {
         };
 
         // Reference: https://stackoverflow.com/a/58611779
-        let mapSrc = paths[(new URLSearchParams(window.location.search)).get('id') || 1];
+        let id = (new URLSearchParams(window.location.search)).get('id');
+        let mapSrc = paths[id && 1 <= id && id <= 5 ? id : 1];
 
         return (
             <React.Fragment>
