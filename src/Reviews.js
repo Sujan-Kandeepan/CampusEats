@@ -4,59 +4,102 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import ReactStars from "react-rating-stars-component";
-
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
+import Review from "./component/review.js";
 import DetailsCard from "./component/details-card.js";
 let restaurantData = require("./data/restaurant_data.json");
+let reviewData = require("./data/restaurant_review.json");
 
-export default class Review extends React.Component {
+export default class Reviews extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       restaurant_id: 0,
       restaurant_name: "",
-      username: "",
+      restaurant_reviews: [],
+      name: "Test User",
+      username: "test_username",
       price_range: 0,
       rating: 0,
       comment: "",
     };
 
-    this.changeRating = this.changeRating.bind(this);
+    this.updateRating = this.updateRating.bind(this);
+    this.updatePriceRating = this.updatePriceRating.bind(this);
+    this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.addReview = this.addReview.bind(this);
   }
   componentDidMount() {
-    const query = parseInt(window.location.search.substring(1));
+    this.setRestaurantDetails();
+  }
 
+  handleChange(event) {
+    this.setState({ comment: event.target.value });
+  }
+
+  setRestaurantDetails() {
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const query = params.get("id");
     var restaurant = restaurantData.restaurants.find(
-      (restaurant) => restaurant.id === query
+      (restaurant) => restaurant.id === parseInt(query)
     );
-    console.log(restaurant);
-
+    var reviews = reviewData.reviews.filter(
+      (review) => review.restaurant_id === parseInt(query)
+    );
     this.setState({
       restaurant_id: query,
       restaurant_name: restaurant.name,
+      restaurant_reviews: reviews,
     });
   }
 
-  changeRating( newRating, name ) {
+  addReview() {
+    let newReview = {
+      username: this.state.username,
+      name: this.state.name,
+      price_range: this.state.price_range,
+      rating: this.state.rating,
+      comment: this.state.comment,
+      time: 0,
+    };
+
     this.setState({
-      rating: newRating
+      restaurant_reviews: [newReview, ...this.state.restaurant_reviews],
+      price_range: 0,
+      rating: 0,
+      comment: "",
+    });
+    console.log(this.state.restaurant_reviews);
+  }
+
+  updateRating(newRating, name) {
+    this.setState({
+      rating: newRating,
     });
   }
+
+  updatePriceRating(newRating, name) {
+    this.setState({
+      price_range: newRating,
+    });
+  }
+
+  submitReview() {}
 
   render() {
     const {
       restaurant_name,
       username,
+      restaurant_reviews,
       price_range,
       rating,
       comment,
     } = this.state;
 
-    const ratingChanged = (newRating) => {
-      console.log(newRating);
-    };
     return (
       <React.Fragment>
         <Header></Header>
@@ -86,32 +129,27 @@ export default class Review extends React.Component {
                       <div className="field level m-2">
                         <label className="label is-size-4">Price Range</label>
                         <span style={{ color: "silver" }}>
-                          <i className="fas fa-dollar-sign is-size-3"></i>
-
-                          <i className="fas fa-dollar-sign is-size-3 ml-3"></i>
-                          <i className="fas fa-dollar-sign is-size-3"></i>
-
-                          <i className="fas fa-dollar-sign is-size-3  ml-3"></i>
-                          <i className="fas fa-dollar-sign is-size-3 "></i>
-                          <i className="fas fa-dollar-sign is-size-3"></i>
+                          <ReactStars
+                            count={5}
+                            onChange={this.updatePriceRating}
+                            color="silver"
+                            size={32}
+                            activeColor="black"
+                            char={<i className="fas fa-dollar-sign"></i>}
+                          />
                         </span>
                       </div>
                       <div className="field level m-2">
                         <label className="label is-size-4">Experience</label>
                         <span style={{ color: "Tomato" }} className="mx-2">
-                          <i className="fas fa-star fa-2x"></i>
-                          <i className="fas fa-star fa-2x"></i>
-                          <i className="fas fa-star fa-2x"></i>
-                          <i className="fas fa-star fa-2x"></i>
-                          <i className="fas fa-star-half-alt fa-2x"></i>
+                          <ReactStars
+                            count={5}
+                            onChange={this.updateRating}
+                            size={40}
+                            color="silver"
+                            activeColor="Tomato"
+                          />
                         </span>
-                        <ReactStars
-                          count={5}
-                          onChange={ratingChanged}
-                          size={24}
-                          activeColor="#ffd700"
-                        />
-                        ,
                       </div>
                       {/* <div className="field level m-2">
                         <label className="label is-size-4">Upload Photo</label>
@@ -139,20 +177,17 @@ export default class Review extends React.Component {
                           <textarea
                             className="textarea"
                             placeholder="Optional"
+                            onChange={this.handleChange}
+                            value={comment}
                           ></textarea>
                         </div>
                       </div>
 
                       <div className=" has-text-centered">
-                        <div className="field">
-                          <div className="control">
-                            <label className="checkbox">
-                              <input type="checkbox" /> I agree to the{" "}
-                              <a href="#">terms and conditions</a>
-                            </label>
-                          </div>
-                        </div>
-                        <button className="button is-link is-danger is-large has-text-centered box-shadow">
+                        <button
+                          className="button is-link is-danger is-large has-text-centered box-shadow"
+                          onClick={this.addReview}
+                        >
                           Post Review
                         </button>
                       </div>
@@ -160,6 +195,27 @@ export default class Review extends React.Component {
                   </div>
                 </div>
               </div>
+            </div>
+
+            <hr />
+            <div>
+              <div className="level">
+                <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
+                  Reviews of {restaurant_name}
+                </h2>
+              </div>
+              {restaurant_reviews.map((item, idx) => (
+                <div class="column">
+                  <Review
+                    key={item.id}
+                    name={item.name}
+                    username={item.username}
+                    rating={item.rating}
+                    review={item.comment}
+                    time={item.time}
+                  ></Review>{" "}
+                </div>
+              ))}
             </div>
 
             <hr />

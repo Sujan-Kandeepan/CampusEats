@@ -79,14 +79,14 @@ export default class Review extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="column is-half">
+        <div className="column">
           <div className="box mr-2">
             <div className="media-content">
               <div className="level">
                 <div className="level-right">
                   <strong>{this.props.name}</strong>{" "}
                   <small className="ml-2">@{this.props.username}</small>{" "}
-                  <small className="ml-2"> 31m</small>
+                  <small className="ml-2"> {this.props.time} m</small>
                 </div>
                 <div className="level-right mr-2">
                   <span style={{ color: "Tomato" }} className="mx-2">

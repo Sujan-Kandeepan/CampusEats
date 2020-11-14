@@ -1,40 +1,40 @@
 {
-    "reviews": [
-      {
-        "id": 1,
-        "username": "johndoe",
-        "name": "John Doe",
-        "restaurant": "Creation X",
-        "comment": "Great and fast service",
-        "rating": 3,
-        "minutes": 30
-      },
-      {
-        "id": 2,
-        "username": "nannycho",
-        "name": "Nanny Cho",
-        "restaurant": "Creation X",
-        "comment": "Affordable menu",
-        "rating": 3,
-        "minutes": 40
-      },
-      {
-        "id": 3,
-        "username": "caretteT",
-        "name": "Carette T",
-        "restaurant": "Mr. Gao",
-        "comment": "Friendly Service",
-        "rating": 5,
-        "minutes": 50
-      },
-      {
-        "id": 4,
-        "username": "alien",
-        "name": "Alice Long",
-        "restaurant": "Pinks Burgers",
-        "comment": "Great Value",
-        "rating": 3,
-        "minutes": 55
-      }
-    ]
-  }
+  "reviews": [
+    {
+      "id": 1,
+      "username": "johndoe",
+      "name": "John Doe",
+      "restaurant_id": 1,
+      "comment": "Great and fast service",
+      "rating": 3,
+      "time": 30
+    },
+    {
+      "id": 2,
+      "username": "nannycho",
+      "name": "Nanny Cho",
+      "restaurant_id": 1,
+      "comment": "Affordable menu",
+      "rating": 3,
+      "time": 40
+    },
+    {
+      "id": 3,
+      "username": "caretteT",
+      "name": "Carette T",
+      "restaurant_id": 2,
+      "comment": "Friendly Service",
+      "rating": 5,
+      "time": 50
+    },
+    {
+      "id": 4,
+      "username": "alien",
+      "name": "Alice Long",
+      "restaurant_id": 3,
+      "comment": "Great Value",
+      "rating": 3,
+      "time": 55
+    }
+  ]
+}

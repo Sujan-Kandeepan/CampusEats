@@ -34,16 +34,17 @@ export default class Details extends React.Component {
     this.setRestaurantDetails();
   }
   setRestaurantDetails() {
-    // var restaurant = restaurantData.restaurants.find(restaurant => restaurant.name === this.props.restaurant_name)
-    // var reviews = reviewData.reviews.filter(
-    //   (review) => review.restaurant === this.props.restaurant_name
-    // );
+
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const query = params.get("id");
+
     var restaurant = restaurantData.restaurants.find(
-      (restaurant) => restaurant.name === "Mr. Gao"
+      (restaurant) => restaurant.id === parseInt(query)
     );
 
     var reviews = reviewData.reviews.filter(
-      (review) => review.restaurant === "Mr. Gao"
+      (review) => review.restaurant_id === parseInt(query)
     );
 
     this.setState({
@@ -58,6 +59,7 @@ export default class Details extends React.Component {
       restaurant_price_range: restaurant.price_range,
       restaurant_menu: restaurant.menu,
     });
+
   }
 
   render() {
@@ -95,7 +97,7 @@ export default class Details extends React.Component {
       <React.Fragment>
         <Route
           path={"/review/:restaurant_id"}
-          component={Review}
+          // component={Reviews}
         />
         )<Header></Header>
         <section className="section">
@@ -141,8 +143,7 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <Link
-                        to= {`/review/?${restaurant_id}`}
+                      <a href= {`/review/?id=${restaurant_id}`}
                       >
                         <button
                           className="button is-danger is-large box-shadow"
@@ -150,7 +151,7 @@ export default class Details extends React.Component {
                         >
                           Write a Review
                         </button>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -208,13 +209,14 @@ export default class Details extends React.Component {
               <button className="button is-text level-right">See More</button>
             </div>
             <div className="columns">
-              {restaurant_reviews.map((item) => (
+              {restaurant_reviews.map((r) => (
                 <Review
-                  key={item.id}
-                  name={item.name}
-                  username={item.username}
-                  rating={item.rating}
-                  review={item.comment}
+                  key={r.id}
+                  name={r.name}
+                  username={r.username}
+                  rating={r.rating}
+                  review={r.comment}
+                  time={r.time}
                 ></Review>
               ))}
             </div>
