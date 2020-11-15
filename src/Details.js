@@ -29,7 +29,7 @@ export default class Details extends React.Component {
       restaurant_menu: "",
       is_contact_clicked: false,
       nearby_restaurants: [],
-      restaurant_iframe: ""
+      restaurant_iframe: "",
     };
     this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
   }
@@ -48,7 +48,7 @@ export default class Details extends React.Component {
     var nearbyRestaurant = restaurantData.restaurants.filter(
       (restaurant) => restaurant.id !== parseInt(query)
     );
-    
+
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
@@ -65,8 +65,8 @@ export default class Details extends React.Component {
       restaurant_tags: restaurant.tags,
       restaurant_price_range: restaurant.price_range,
       restaurant_menu: restaurant.menu,
-      nearby_restaurants: nearbyRestaurant.slice(0,3),
-      restaurant_iframe: restaurant["iframe-src"]
+      nearby_restaurants: nearbyRestaurant.slice(0, 3),
+      restaurant_iframe: restaurant["iframe-src"],
     });
   }
 
@@ -82,7 +82,7 @@ export default class Details extends React.Component {
       restaurant_tags,
       restaurant_price_range,
       nearby_restaurants,
-      restaurant_iframe
+      restaurant_iframe,
     } = this.state;
 
     var starRating = [];
@@ -108,7 +108,7 @@ export default class Details extends React.Component {
           path={"/review/:restaurant_id"}
           // component={Reviews}
         />
-        )<Header></Header>
+        <Header></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -191,9 +191,7 @@ export default class Details extends React.Component {
                 </h2>
                 <div className="level">
                   <div>
-                    <p className="mb-4">
-                      {restaurant_address}
-                    </p>
+                    <p className="mb-4">{restaurant_address}</p>
                     <iframe
                       src={restaurant_iframe}
                       width="600"
@@ -211,7 +209,6 @@ export default class Details extends React.Component {
               <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                 Reviews
               </h2>
-              <button className="button is-text level-right">See More</button>
             </div>
             <div className="columns">
               {restaurant_reviews.map((r) => (
@@ -231,7 +228,6 @@ export default class Details extends React.Component {
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                   Nearby Restaurants
                 </h2>
-                {/* <button className="button is-text level-right">See More</button> */}
               </div>
               <div className="columns">
                 {nearby_restaurants.map((r) => (
