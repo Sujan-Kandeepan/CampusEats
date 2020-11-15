@@ -46,9 +46,9 @@ export default class Header extends React.Component {
                             <div className="navbar-end">
                             <div className="navbar-item">
                                 <div className="buttons">
-                                <a className="button is-primary">
+                                <Link className="button is-primary" to="/login">
                                     Sign in/Log in
-                                </a>
+                                </Link>
                                 </div>
                             </div>
                             </div>
