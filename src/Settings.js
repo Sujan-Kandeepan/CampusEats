@@ -41,7 +41,7 @@ export default class Settings extends React.Component {
             <React.Fragment>
                 <Header></Header>
                 <div id="acc-setup-page">
-                    <form>
+                    
                         <Link to="/" className="" id="go-to-main-page">
                             <i className="fas fa-arrow-left"></i>&ensp;Go to main page
                         </Link>
@@ -61,7 +61,7 @@ export default class Settings extends React.Component {
                                 {history}
                             </div>
                         </div>
-                    </form>
+                    
                 </div>
                 <Footer></Footer>
             </React.Fragment>
