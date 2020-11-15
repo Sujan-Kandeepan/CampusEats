@@ -185,9 +185,10 @@ export default class Details extends React.Component {
                     <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
                       Location
                   </h2>
-                  &emsp;
-                  <a className="button is-text" href={`/map/?id=${restaurant_id}`}>
-                      View Nearby Restaurants
+                  &emsp;&emsp;&emsp;
+                  <a className="button is-ghost" href={`/map/?id=${restaurant_id}`}>
+                    <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
+                    &ensp;Explore on expanded map
                   </a>
                   </div>
                 </div>
