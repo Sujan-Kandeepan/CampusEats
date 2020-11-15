@@ -14,6 +14,28 @@ import './Settings.css';
 
 export default class Settings extends React.Component {
     render() {
+        let restaurants = require("./data/restaurant_data.json").restaurants;
+        let reviews = require("./data/restaurant_review.json").reviews;
+        let history = reviews
+            .filter(r => r.username === this.props.existingUserInfo.username)
+            .sort((r1, r2) => r1.time - r2.time)
+            .map(r =>
+                <div>
+                    <p>
+                        {r.time} minutes ago - left a review on&nbsp;
+                        <strong>
+                            {restaurants.find(rs => r.id === rs.id).name}
+                        </strong>
+                    </p>
+                    <p>
+                        <small>
+                            {[...Array(r.rating).keys()].map(_ => <span>&#9733;</span>)}
+                            &nbsp;-&nbsp;&ldquo;{r.comment}&rdquo;
+                        </small>
+                    </p>
+                    <br />
+                </div>);
+
         return (
             <React.Fragment>
                 <Header></Header>
@@ -31,6 +53,11 @@ export default class Settings extends React.Component {
                         <div className="columns is-mobile">
                             <div className="column is-7" id="settings">
                                 <UserSettings existingUserInfo={this.props.existingUserInfo} updateUserInfo={this.props.updateUserInfo} />
+                            </div>
+                            <div className="column is-5">
+                                <h2 className="subtitle">Your History</h2>
+                                {history.length === 0 && <p>Your history will appear here.</p>}
+                                {history}
                             </div>
                         </div>
                     </form>
