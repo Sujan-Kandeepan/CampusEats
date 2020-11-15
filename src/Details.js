@@ -190,27 +190,27 @@ export default class Details extends React.Component {
                   <div className="level-left">
                     <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
                       Location
-                  </h2>
-                  &emsp;&emsp;&emsp;&nbsp;
-                  <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
-                    <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
-                    &ensp;Explore on expanded map
-                  </Link>
+                    </h2>
+                    &emsp;&emsp;&emsp;
+                    <Link
+                      className="button is-ghost"
+                      to={`/map/?id=${restaurant_id}`}
+                    >
+                      <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
+                      &ensp;Explore on expanded map
+                    </Link>
                   </div>
                 </div>
-                <div className="level">
-                  <div>
-                    <p className="mb-4">{restaurant_address}</p>
-                    <iframe
-                      src={restaurant_iframe}
-                      width="600"
-                      height="450"
-                      frameBorder="0"
-                      title="map"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+                <p className="mb-4">{restaurant_address}</p>
+                <div style={{ width: "50%" }}>
+                  <iframe
+                    src={restaurant_iframe}
+                    frameBorder="0"
+                    title="map"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 <hr />
               </div>
