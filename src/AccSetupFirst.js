@@ -8,7 +8,7 @@ import Header from "./component/header.js";
 import Footer from "./component/footer.js"; 
 import { Redirect } from 'react-router-dom';
 
-export default class AccSetupLogin extends React.Component {
+export default class AccSetupFirst extends React.Component {
     constructor(props) {
         super(props);
         
@@ -22,7 +22,6 @@ export default class AccSetupLogin extends React.Component {
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // existingUserInfo
     }
 
     onChangeUsername(evt) {
@@ -63,12 +62,11 @@ export default class AccSetupLogin extends React.Component {
 
 
     render() {
-        console.log("this.state.signupFirstPartSuccessful", this.state.signupFirstPartSuccessful)
         return(
             <React.Fragment>
-                <Header></Header>
+                <Header showMinimal={true}></Header>
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
-                { this.state.signupFirstPartSuccessful || this.props.loginState ? <Redirect to='/accSetup' /> : "" }
+                { this.state.signupFirstPartSuccessful ? <Redirect to='/accSetup' /> : "" }
                 <div className ="container">
                 {/* <div className="columns level">
                             

@@ -15,7 +15,7 @@ import Map from "./Map.js";
 import Main from "./Main.js";
 import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
-import AccSetupLogin from "./AccSetupLogin.js";
+import AccSetupFirst from "./AccSetupFirst.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
 import ContactSupport from "./ContactSupport.js";
@@ -105,11 +105,13 @@ export default class App extends React.Component {
               <Search />
             </Route>
             
-            <Route path="/accSetupLogin">
-              <AccSetupLogin username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+            <Route path="/accSetupFirst">
+              <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
             </Route>
             <Route path="/accSetup">
-              <AccSetup updateUserInfo={this.updateUserInfoFromApp} />
+              <AccSetup changeLoginState={this.changeLoginStateFromApp} 
+              updateUserInfo={this.updateUserInfoFromApp}  
+              existingUserInfo={this.state.user}/>
             </Route>
             
             <Route path="/settings">

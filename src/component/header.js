@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 export default class Header extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {};
+        
     }
 
     render() {
@@ -24,30 +26,38 @@ export default class Header extends React.Component {
                     <a role="button" className="navbar-burger burger" data-target="simpleNav">
                     </a>
                     </div>
-                 
-                    <div id="simpleNav" className="navbar-menu"/>
-                    <div className="navbar-start">
+               
+                    {
+                        this.props.showMinimal ? "" : (
+                            <React.Fragment>
+                        <div id="simpleNav" className="navbar-menu"/>
+                        <div className="navbar-start">
+                            
+                            <Link to="/accSetupFirst" className="navbar-item" >Discover</Link>
+                            
+                            <Link to="/accSetup" className="navbar-item">Nearby</Link>
                         
-                        <Link to="/accSetupLogin" className="navbar-item" >Discover</Link>
-                        
-                        <Link to="/" className="navbar-item">Nearby</Link>
-                    
-                        <Link to="/review" className="navbar-item">Review</Link>
-
-                        <Link to="/review" className="navbar-item">Share</Link>
-                     
-                    </div>
-                    <div>
-                        <div className="navbar-end">
-                        <div className="navbar-item">
-                            <div className="buttons">
-                            <a className="button is-primary">
-                                Sign in/Log in
-                            </a>
+                            <Link to="/settings" className="navbar-item">Review</Link>
+    
+                            <Link to="/review" className="navbar-item">Share</Link>
+                         
+                        </div>
+                        <div>
+                            <div className="navbar-end">
+                            <div className="navbar-item">
+                                <div className="buttons">
+                                <a className="button is-primary">
+                                    Sign in/Log in
+                                </a>
+                                </div>
                             </div>
-                        </div>
-                        </div>
-                    </div>
+                            </div>
+                        </div> 
+                        </React.Fragment>)
+                    }
+                    
+
+
                 </nav>
             </React.Fragment>
         )
