@@ -46,7 +46,7 @@ export default class App extends React.Component {
 
     this.updateUserInfoFromApp = this.updateUserInfoFromApp.bind(this);
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
-    this.updateUsernameAndPassword = this.updateUsernameAndPassword.bind(this);
+    // this.updateUsernameAndPassword = this.updateUsernameAndPassword.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
   }
@@ -57,12 +57,12 @@ export default class App extends React.Component {
     });
   }
 
-  updateUsernameAndPassword(username, password) {
-    this.setState({ 
-      username: username,
-      password: password
-    });
-  }
+  // updateUsernameAndPassword(username, password) {
+  //   this.setState({ 
+  //     username: username,
+  //     password: password
+  //   });
+  // }
 
   updateUsername(username) {
     this.setState({ 

@@ -47,7 +47,6 @@ export default class UserSettings extends React.Component {
     }
 
     render() {
-        console.log("accChangeSuccessful", this.state.accChangeSuccessful)
         return (
             <React.Fragment>
 
@@ -77,7 +76,8 @@ export default class UserSettings extends React.Component {
                     <div className="column is-8">
                         <div className="field">
                             <label className="label">
-                                Full Name <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+                                Full Name 
+                                {/* <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i> */}
                             </label>
                             <div className="control">
                                 <input required className="input" type="text"
@@ -138,7 +138,8 @@ export default class UserSettings extends React.Component {
                     <div className="column is-12">
                         <div className="field">
                             <label className="label">
-                                Campus Name <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i>
+                                Campus Name 
+                                {/* <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i> */}
                             </label>
                             <div className="control">
                                 <input required className="input" type="text" list="university"
