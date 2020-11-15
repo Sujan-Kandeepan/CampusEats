@@ -7,6 +7,7 @@ cards and Bulma footer look very similar to what is here.
 */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import UserSettings from './component/user-settings';
@@ -36,12 +37,12 @@ export default class AccSetup extends React.Component {
                             </div>
                         </div>
                         <div className="has-text-right" id="bottom-page-nav">
-                            <a className="prev-next" href="">
+                            <Link className="prev-next" to="/">
                                 <i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
-                            </a>
-                            <a className="prev-next" href="">
+                            </Link>
+                            <Link className="prev-next" to="/">
                                 Next Page&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
-                            </a>
+                            </Link>
                         </div>
                     {/* </form> */}
                 </div>

@@ -40,13 +40,14 @@ export default class UserSettings extends React.Component {
         delete temp.modalOpen;
         delete temp.accChangeSuccessful;
         this.props.updateUserInfo(temp);
-        this.props.changeLoginState(true);
+        if (this.props.changeLoginState) this.props.changeLoginState(true);
         this.setState({
             accChangeSuccessful: true,
         })
     }
 
     render() {
+        console.log("accChangeSuccessful", this.state.accChangeSuccessful)
         return (
             <React.Fragment>
 
@@ -230,8 +231,8 @@ export default class UserSettings extends React.Component {
                     </div>
                 </div>
                 <div className="columns">
-                    <div class="column is-12">
-                    <button class="button is-primary is-fullwidth" onClick={this.confirmButton}>Confirm</button>
+                    <div className="column is-12">
+                    <button className="button is-primary is-fullwidth" onClick={this.confirmButton}>Confirm</button>
                     </div>
                 </div>
             </React.Fragment>

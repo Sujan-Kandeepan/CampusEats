@@ -20,11 +20,11 @@ export default class Header extends React.Component {
             <React.Fragment>
                 <nav className="navbar" role="navigation">
                     <div className="navbar-brand">
-                    <a className="navbar-item" href="#">
-                        <img src={logo} width="90" height="70" />
-                    </a>
-                    <a role="button" className="navbar-burger burger" data-target="simpleNav">
-                    </a>
+                        <Link className="navbar-item" to="/">
+                            <img src={logo} alt="logo" width="90" height="70" />
+                        </Link>
+                        <Link to="/" role="button" className="navbar-burger burger" data-target="simpleNav">
+                        </Link>
                     </div>
                
                     {
@@ -56,7 +56,6 @@ export default class Header extends React.Component {
                         </React.Fragment>)
                     }
                     
-
 
                 </nav>
             </React.Fragment>

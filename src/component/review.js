@@ -68,11 +68,11 @@ export default class Review extends React.Component {
       reportButtonLabel,
     } = this.state;
 
-    var starRating = [];
-    for (var i = 0; i < this.props.rating; i++) {
+    let starRating = [];
+    for (let i = 0; i < this.props.rating; i++) {
       starRating.push(<i className="fas fa-star" key={i}></i>);
     }
-    for (var i = 5; i > this.props.rating; i--) {
+    for (let i = 5; i > this.props.rating; i--) {
       starRating.push(
         <i className="fas fa-star" style={{ color: "silver" }} key={i}></i>
       );
