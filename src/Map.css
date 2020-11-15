@@ -20,6 +20,10 @@ section {
   margin-bottom: 20px;
 }
 
+.description {
+  margin: -10px 0;
+}
+
 .fa-star,
 .fa-star-half-alt,
 .fa-star-alt,
@@ -27,13 +31,16 @@ section {
   color: tomato;
 }
 
+.keywords {
+  line-height: 200%;
+}
+
 .muted {
   color: silver;
 }
 
-.subtext {
-  line-height: 200%;
-  margin: 5px 0;
+.ratings-reviews {
+  margin: -10px 0 10px 0;
 }
 
 .tag {
