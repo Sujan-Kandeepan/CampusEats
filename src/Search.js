@@ -7,10 +7,6 @@ import Header from "./component/header.js";
 import Footer from "./component/footer.js"; 
 
 export default class Search extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <React.Fragment>
