@@ -24,6 +24,7 @@ export default class Reviews extends React.Component {
       price_range: 0,
       rating: 0,
       comment: "",
+      nearby_restaurants: [],
     };
 
     this.updateRating = this.updateRating.bind(this);
@@ -44,16 +45,23 @@ export default class Reviews extends React.Component {
     const search = window.location.search;
     const params = new URLSearchParams(search);
     const query = params.get("id");
+
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.id === parseInt(query)
     );
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
+
+    var nearbyRestaurant = restaurantData.restaurants.filter(
+      (restaurant) => restaurant.id !== parseInt(query)
+    );
+
     this.setState({
       restaurant_id: query,
       restaurant_name: restaurant.name,
       restaurant_reviews: reviews,
+      nearby_restaurants: nearbyRestaurant.slice(0, 3),
     });
   }
 
@@ -98,6 +106,7 @@ export default class Reviews extends React.Component {
       price_range,
       rating,
       comment,
+      nearby_restaurants,
     } = this.state;
 
     return (
@@ -226,24 +235,17 @@ export default class Reviews extends React.Component {
                 </h2>
               </div>
               <div className="columns">
-                <DetailsCard
-                  restaurant_name={"Restaurant"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
-                <DetailsCard
-                  restaurant_name={"Restaurant2"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
-                <DetailsCard
-                  restaurant_name={"Restaurant3"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
+                {nearby_restaurants.map((r) => (
+                  <DetailsCard
+                    restaurant_name={r.name}
+                    restaurant_tags={r.tags}
+                    restaurant_price_range={r.price_range}
+                    restaurant_rating={r.rating}
+                    restaurant_review_number={r.number_of_reviews}
+                    restaurant_description={r.description}
+                    restaurant_id={r.id}
+                  ></DetailsCard>
+                ))}
               </div>
             </div>
           </div>

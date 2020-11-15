@@ -11,6 +11,24 @@ export default class DetailsCard extends React.Component {
   }
 
   render() {
+    var starRating = [];
+    for (var i = 0; i < this.props.restaurant_rating; i++) {
+      starRating.push(
+        <i className="fas fa-star" style={{ color: "Tomato" }} key={i}></i>
+      );
+    }
+    for (var i = 5; i > this.props.restaurant_rating; i--) {
+      starRating.push(
+        <i className="fas fa-star" style={{ color: "silver" }} key={i}></i>
+      );
+    }
+
+    var priceRangeRating = [];
+    for (var i = 0; i < this.props.restaurant_price_range; i++) {
+      priceRangeRating.push(
+        <i className="fas fa-dollar-sign mt-2" key={"price" + i}></i>
+      );
+    }
     return (
       <React.Fragment>
         {/* Card template from Bulma: https://bulma.io/documentation/components/card/ */}
@@ -24,27 +42,20 @@ export default class DetailsCard extends React.Component {
                 </figure>
               </div>
             </a>
-            <div className="card-content ">
-              <h1 className="is-size-3 is-clickable is-family-sans-serifs has-text-weight-bold level-left">
-                {this.props.restaurant_name}
-                <span style={{ color: "grey" }}>
-                  <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i>
-                  <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                  <i className="fas fa-dollar-sign is-size-5 mt-2"></i>
-                </span>
+            <div className="card-content">
+              <h1 className="is-size-4 is-clickable is-family-sans-serifs has-text-weight-bold">
+              <a href={`/details/?id=${this.props.restaurant_id}`}>{this.props.restaurant_name}</a>
               </h1>
-              <div className="level-left mr-3">
-                <span style={{ color: "Tomato" }} className="mx-2">
-                  <span className="is-size-5" className="mx-2">
-                    {this.props.restaurant_rating}
-                  </span>
-                  <i className="fas fa-star fa-sm"></i>
-                  <i className="fas fa-star fa-sm"></i>
-                  <i className="fas fa-star fa-sm"></i>
-                  <i className="fas fa-star fa-sm"></i>
-                  <i className="fas fa-star-half-alt fa-sm"></i>
+              <div className="level">
+                <span
+                  style={{ color: "grey" }}
+                  className="is-size-5 level-left"
+                >
+                  {priceRangeRating}
                 </span>
-                <h3 className="is-clickable">(14)</h3>
+                <span className="mx-2 level-right">
+                  {starRating} ({this.props.restaurant_review_number})
+                </span>
               </div>
               <div className="level mt-4 mb-1">
                 <div className="level-left">

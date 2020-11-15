@@ -27,6 +27,8 @@ export default class Details extends React.Component {
       restaurant_price_range: 0,
       restaurant_menu: "",
       is_contact_clicked: false,
+      nearby_restaurants: [],
+      restaurant_iframe: ""
     };
     this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
   }
@@ -34,7 +36,6 @@ export default class Details extends React.Component {
     this.setRestaurantDetails();
   }
   setRestaurantDetails() {
-
     const search = window.location.search;
     const params = new URLSearchParams(search);
     const query = params.get("id");
@@ -43,6 +44,10 @@ export default class Details extends React.Component {
       (restaurant) => restaurant.id === parseInt(query)
     );
 
+    var nearbyRestaurant = restaurantData.restaurants.filter(
+      (restaurant) => restaurant.id !== parseInt(query)
+    );
+    
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
@@ -58,8 +63,9 @@ export default class Details extends React.Component {
       restaurant_tags: restaurant.tags,
       restaurant_price_range: restaurant.price_range,
       restaurant_menu: restaurant.menu,
+      nearby_restaurants: nearbyRestaurant.slice(0,3),
+      restaurant_iframe: restaurant["iframe-src"]
     });
-
   }
 
   render() {
@@ -67,13 +73,13 @@ export default class Details extends React.Component {
       restaurant_id,
       restaurant_name,
       restaruant_description,
-      restaruant_location,
       restaurant_rating,
       restaurant_reviews,
       restaurant_review_number,
       restaurant_tags,
       restaurant_price_range,
-      restaurant_menu,
+      nearby_restaurants,
+      restaurant_iframe
     } = this.state;
 
     var starRating = [];
@@ -122,9 +128,7 @@ export default class Details extends React.Component {
                         </span>
                         <span className="fa-2x">{starRating}</span>
                       </span>
-                      <button className="button is-text">
-                        {restaurant_review_number} Reviews
-                      </button>
+                      {restaurant_review_number} Reviews
                     </div>
                   </div>
                   <div className="level mt-6 mb-4">
@@ -143,8 +147,7 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <a href= {`/review/?id=${restaurant_id}`}
-                      >
+                      <a href={`/review/?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}
@@ -190,7 +193,7 @@ export default class Details extends React.Component {
                       W, Hamilton, ON L8S 4L8
                     </p>
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11622.632412631498!2d-79.9081179166667!3d43.25858683237125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b53424aa751%3A0x6726e50cd5bc4ea5!2sLa%20Piazza!5e0!3m2!1sen!2sca!4v1602210643853!5m2!1sen!2sca"
+                      src={restaurant_iframe}
                       width="600"
                       height="450"
                       frameBorder="0"
@@ -226,27 +229,20 @@ export default class Details extends React.Component {
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
                   Nearby Restaurants
                 </h2>
-                <button className="button is-text level-right">See More</button>
+                {/* <button className="button is-text level-right">See More</button> */}
               </div>
               <div className="columns">
-                <DetailsCard
-                  restaurant_name={"Restaurant"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
-                <DetailsCard
-                  restaurant_name={"Restaurant2"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
-                <DetailsCard
-                  restaurant_name={"Restaurant3"}
-                  restaurant_tags={["fast food", "burger"]}
-                  restaurant_rating={3}
-                  restaurant_description={"Test Restaurant"}
-                ></DetailsCard>
+                {nearby_restaurants.map((r) => (
+                  <DetailsCard
+                    restaurant_name={r.name}
+                    restaurant_tags={r.tags}
+                    restaurant_price_range={r.price_range}
+                    restaurant_rating={r.rating}
+                    restaurant_review_number={r.number_of_reviews}
+                    restaurant_description={r.description}
+                    restaurant_id={r.id}
+                  ></DetailsCard>
+                ))}
               </div>
             </div>
           </div>

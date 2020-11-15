@@ -7,7 +7,7 @@
       "restaurant_id": 1,
       "comment": "Great and fast service",
       "rating": 3,
-      "time": 30
+      "time": 10
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "restaurant_id": 1,
       "comment": "Annoying staff",
       "rating": 3,
-      "time": 40
+      "time": 20
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "restaurant_id": 2,
       "comment": "Friendly Service",
       "rating": 5,
-      "time": 50
+      "time": 30
     },
     {
       "id": 4,
@@ -34,7 +34,43 @@
       "restaurant_id": 3,
       "comment": "Great Value",
       "rating": 3,
+      "time": 45
+    },
+    {
+      "id": 5,
+      "username": "alien",
+      "name": "Alice Long",
+      "restaurant_id": 4,
+      "comment": "Great Value",
+      "rating": 3,
+      "time": 51
+    },
+    {
+      "id": 6,
+      "username": "johndoe",
+      "name": "Alice Long",
+      "restaurant_id": 5,
+      "comment": "Friendly staff and quick service",
+      "rating": 3,
       "time": 55
+    },
+    {
+      "id": 7,
+      "username": "caretteT",
+      "name": "Carette T",
+      "restaurant_id": 5,
+      "comment": "Nice environment",
+      "rating": 3,
+      "time": 55
+    },
+    {
+      "id": 8,
+      "username": "alien",
+      "name": "John Doe",
+      "restaurant_id": 3,
+      "comment": "Great Value",
+      "rating": 4,
+      "time": 56
     }
   ]
 }
