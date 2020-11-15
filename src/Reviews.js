@@ -4,6 +4,7 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -116,11 +117,11 @@ export default class Reviews extends React.Component {
                       </h1>
                     </div>
                     <div className="level-right">
-                      <a className="button is-ghost" href={"/details?id=" + restaurant_id}
+                      <Link className="button is-ghost" to={"/details?id=" + restaurant_id}
                         style={{ margin: "auto 20px" }}>
                         <i className="fas fa-info-circle"></i>
                         &ensp;Go to details page
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <hr />

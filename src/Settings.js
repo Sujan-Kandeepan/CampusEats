@@ -7,6 +7,7 @@ cards and Bulma footer look very similar to what is here.
 */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import UserSettings from './component/user-settings';
@@ -19,9 +20,9 @@ export default class Settings extends React.Component {
                 <Header></Header>
                 <div id="acc-setup-page">
                     <form action="submit">
-                        <a href="/" className="" id="go-to-main-page">
+                        <Link to="/" className="" id="go-to-main-page">
                             <i className="fas fa-arrow-left"></i>&ensp;Go to main page
-                        </a>
+                        </Link>
                         <h1 className="title" id="settings-history-header">
                             Account Settings and History
                         </h1>

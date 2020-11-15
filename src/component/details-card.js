@@ -17,13 +17,11 @@ export default class DetailsCard extends React.Component {
 
         <div className="column is-4">
           <div className="card">
-            <a href="">
-              <div className="card-image">
-                <figure className="image is-3by3">
-                  <img src={brickWall} />
-                </figure>
-              </div>
-            </a>
+            <div className="card-image">
+              <figure className="image is-3by3">
+                <img src={brickWall} />
+              </figure>
+            </div>
             <div className="card-content ">
               <h1 className="is-size-3 is-clickable is-family-sans-serifs has-text-weight-bold level-left">
                 {this.props.restaurant_name}

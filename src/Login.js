@@ -38,7 +38,7 @@ export default class Login extends React.Component {
     }
 
     handleSubmit() {
-        if (this.state.username == this.props.username && this.state.password == this.props.password) {
+        if (this.state.username === this.props.username && this.state.password === this.props.password) {
             this.props.changeLoginState(true);
             this.setState({
                 loginSuccessful: true

@@ -76,18 +76,18 @@ export default class Details extends React.Component {
       restaurant_menu,
     } = this.state;
 
-    var starRating = [];
-    for (var i = 0; i < restaurant_rating; i++) {
+    let starRating = [];
+    for (let i = 0; i < restaurant_rating; i++) {
       starRating.push(<i className="fas fa-star" key={i}></i>);
     }
-    for (var i = 5; i > restaurant_rating; i--) {
+    for (let i = 5; i > restaurant_rating; i--) {
       starRating.push(
         <i className="fas fa-star" style={{ color: "silver" }} key={i}></i>
       );
     }
 
-    var priceRangeRating = [];
-    for (var i = 0; i < restaurant_price_range; i++) {
+    let priceRangeRating = [];
+    for (let i = 0; i < restaurant_price_range; i++) {
       priceRangeRating.push(
         <i className="fas fa-dollar-sign is-size-3 mt-2" key={"price" + i}></i>
       );
@@ -143,15 +143,14 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <a href= {`/review/?id=${restaurant_id}`}
-                      >
+                      <Link to={`/review/?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}
                         >
                           Write a Review
                         </button>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -185,11 +184,11 @@ export default class Details extends React.Component {
                     <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
                       Location
                   </h2>
-                  &emsp;&emsp;&emsp;
-                  <a className="button is-ghost" href={`/map/?id=${restaurant_id}`}>
+                  &emsp;&emsp;&emsp;&nbsp;
+                  <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
                     <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
                     &ensp;Explore on expanded map
-                  </a>
+                  </Link>
                   </div>
                 </div>
                 <div className="level">
