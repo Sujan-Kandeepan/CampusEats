@@ -17,6 +17,8 @@ import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
+import ContactSupport from "./ContactSupport.js";
+
 
 export default class App extends React.Component {
 
@@ -85,6 +87,9 @@ export default class App extends React.Component {
             <Route path="/login">
               <Login username={this.state.user.username} password={this.state.user.password}
                 changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
+            </Route>
+            <Route path="/contactSupport">
+              <ContactSupport />
             </Route>
             {/* Route path of "/" must be last as it matches all routes */}
             <Route path="/">
