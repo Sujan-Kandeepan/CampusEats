@@ -4,6 +4,7 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -100,11 +101,10 @@ export default class Reviews extends React.Component {
 
   render() {
     const {
+      restaurant_id,
       restaurant_name,
       username,
       restaurant_reviews,
-      price_range,
-      rating,
       comment,
       nearby_restaurants,
     } = this.state;
@@ -117,10 +117,19 @@ export default class Reviews extends React.Component {
             <div className="columns">
               <div className="column">
                 <div className="box">
-                  <div className="level">
-                    <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
-                      {restaurant_name}
-                    </h1>
+                  <div className="level is-mobile">
+                    <div className="level-left">
+                      <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
+                        {restaurant_name}
+                      </h1>
+                    </div>
+                    <div className="level-right">
+                      <Link className="button is-ghost" to={"/details?id=" + restaurant_id}
+                        style={{ margin: "auto 20px" }}>
+                        <i className="fas fa-info-circle"></i>
+                        &ensp;Go to details page
+                      </Link>
+                    </div>
                   </div>
                   <hr />
                   <div className="columns is-centered is-vcentered ">

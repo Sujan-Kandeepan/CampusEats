@@ -85,18 +85,18 @@ export default class Details extends React.Component {
       restaurant_iframe,
     } = this.state;
 
-    var starRating = [];
-    for (var i = 0; i < restaurant_rating; i++) {
+    let starRating = [];
+    for (let i = 0; i < restaurant_rating; i++) {
       starRating.push(<i className="fas fa-star" key={i}></i>);
     }
-    for (var i = 5; i > restaurant_rating; i--) {
+    for (let i = 5; i > restaurant_rating; i--) {
       starRating.push(
         <i className="fas fa-star" style={{ color: "silver" }} key={i}></i>
       );
     }
 
-    var priceRangeRating = [];
-    for (var i = 0; i < restaurant_price_range; i++) {
+    let priceRangeRating = [];
+    for (let i = 0; i < restaurant_price_range; i++) {
       priceRangeRating.push(
         <i className="fas fa-dollar-sign is-size-3 mt-2" key={"price" + i}></i>
       );
@@ -126,7 +126,7 @@ export default class Details extends React.Component {
                     </h1>
                     <div className="level-right mr-2">
                       <span style={{ color: "Tomato" }} className="mx-2">
-                        <span className="is-size-1" className="mx-2">
+                        <span className="is-size-1 mx-2">
                           {restaurant_rating}
                         </span>
                         <span className="fa-2x">{starRating}</span>
@@ -150,14 +150,14 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <a href={`/review/?id=${restaurant_id}`}>
+                      <Link to={`/review/?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}
                         >
                           Write a Review
                         </button>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -186,9 +186,18 @@ export default class Details extends React.Component {
 
             <div className="columns">
               <div className="column">
-                <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
-                  Location
-                </h2>
+                <div className="level is-mobile" style={{ marginBottom: "0" }}>
+                  <div className="level-left">
+                    <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
+                      Location
+                  </h2>
+                  &emsp;&emsp;&emsp;&nbsp;
+                  <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
+                    <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
+                    &ensp;Explore on expanded map
+                  </Link>
+                  </div>
+                </div>
                 <div className="level">
                   <div>
                     <p className="mb-4">{restaurant_address}</p>
@@ -197,6 +206,7 @@ export default class Details extends React.Component {
                       width="600"
                       height="450"
                       frameBorder="0"
+                      title="map"
                       style={{ border: 0 }}
                       allowFullScreen
                     ></iframe>

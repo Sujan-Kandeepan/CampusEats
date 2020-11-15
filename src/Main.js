@@ -10,10 +10,6 @@ import Footer from "./component/footer.js";
 import Card from "./component/card.js"; 
 
 export default class Main extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <React.Fragment>
@@ -32,17 +28,16 @@ export default class Main extends React.Component {
                     <div className = "column is-4">
                         <p className="control has-icons-right">
                         <input className="input" type="text" placeholder="Near McMaster University"/> 
-                        <a href="">
                         <span className="icon is-right is-small">
                         <button className="button is-danger"><i className="fas fa-search"></i></button>
-                        </span></a>
+                        </span>
                     </p>
                     </div>
                     <div className = "column is-1"></div>
                     </div>
                     <div className="columns is-gapless">
                     <div className = "column is-1"></div><div className="column">
-                        <a href=""><span>Advanced search <i className="fas fa-caret-down"></i></span></a>
+                        <span>Advanced search <i className="fas fa-caret-down"></i></span>
                     </div>
                     </div>
                     <br/>

@@ -30,8 +30,6 @@ export default class NearbyCard extends React.Component {
                         <p className="card-header-title">
                             {this.props.name}
                         </p>
-                        <a href="#" className="card-header-icon" aria-label="more options">
-                        </a>
                     </header>
                     <div className="card-content">
                         <div className="content">

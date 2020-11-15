@@ -3,6 +3,7 @@ This is the default react class given by the react documentation
 */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import NearbyCard from "./component/nearby-card";
@@ -26,12 +27,12 @@ export default class Map extends React.Component {
             .filter(r => r.id !== parseInt(id))
             .sort((r1, r2) => distance(r1.location) - distance(r2.location))
             .map(r => 
-                <a href={"/map?id=" + r.id}>
+                <Link to={"/map?id=" + r.id} onClick={() => this.setState({})}>
                     <NearbyCard key={r.id} name={r.name} description={r.description}
                         visits={r.number_of_visits} reviews={r.number_of_reviews}
                         rating={r.rating} price={r.price_range}
                         keywords={r.tags.join(",")} />
-                </a>
+                </Link>
         );
 
         let mapSrc = restaurants.find(r => r.id === parseInt(id))["iframe-src"];
@@ -40,10 +41,10 @@ export default class Map extends React.Component {
             <React.Fragment>
                 <Header></Header>
                 <div id="map-page">
-                    <a href={"/details?id=" + id} id="go-to-details">
+                    <Link className="button is-ghost" to={"/details?id=" + id}>
                         <i className="fas fa-info-circle"></i>
-                        &nbsp;Go to details page
-                    </a>
+                        &ensp;Go to details page
+                    </Link>
                     <div className="columns">
                         <div className="column is-one-third">
                             <h1 className="title" id="other-restaurants-nearby">

@@ -6,10 +6,6 @@ import React from "react";
 import brickWall from "./../img/brick-wall.jpg";
 
 export default class DetailsCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     var starRating = [];
     for (var i = 0; i < this.props.restaurant_rating; i++) {
