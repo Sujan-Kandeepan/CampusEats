@@ -20,6 +20,7 @@ export default class Details extends React.Component {
       restaurant_name: "",
       restaruant_description: "",
       restaruant_location: [0, 0],
+      restaurant_address: "",
       restaurant_rating: 0,
       restaurant_review_number: 0,
       restaurant_reviews: [],
@@ -57,6 +58,7 @@ export default class Details extends React.Component {
       restaurant_name: restaurant.name,
       restaruant_description: restaurant.description,
       restaruant_location: restaurant.location,
+      restaurant_address: restaurant.address,
       restaurant_rating: restaurant.rating,
       restaurant_reviews: reviews,
       restaurant_review_number: restaurant.number_of_reviews,
@@ -73,6 +75,7 @@ export default class Details extends React.Component {
       restaurant_id,
       restaurant_name,
       restaruant_description,
+      restaurant_address,
       restaurant_rating,
       restaurant_reviews,
       restaurant_review_number,
@@ -189,8 +192,7 @@ export default class Details extends React.Component {
                 <div className="level">
                   <div>
                     <p className="mb-4">
-                      La Piazza McMaster University Student Center, 1280 Main St
-                      W, Hamilton, ON L8S 4L8
+                      {restaurant_address}
                     </p>
                     <iframe
                       src={restaurant_iframe}
