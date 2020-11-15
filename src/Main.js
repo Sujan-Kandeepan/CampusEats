@@ -7,11 +7,9 @@ cards and Bulma footer look very similar to what is here.
 import React from "react";
 import Header from "./component/header.js"; 
 import Footer from "./component/footer.js"; 
-import Card from "./component/card.js"; 
 import DetailsCard from "./component/details-card.js";
 import RestaurantJSON from "./data/restaurant_data.json";
 
-// let restaurants = require("./data/restaurant_data.json").restaurants;
 
 export default class Main extends React.Component {
 
@@ -21,7 +19,6 @@ export default class Main extends React.Component {
         this.restaurants = RestaurantJSON.restaurants;
         this.restaurantNames = this.restaurants.map(restaurant => restaurant.name.toLowerCase());
 
-        
         this.state = {
             searchItem: "",
             searchLocation: "",
@@ -47,11 +44,10 @@ export default class Main extends React.Component {
     }
 
     onButtonClick() {
-        console.log("onSearch")
         let temp = [];
         let alreadyInArray = 0;
         for (let i = 0; i < this.restaurantNames.length; i++ ) {
-            if (this.restaurantNames[i].includes(this.state.searchItem) && alreadyInArray < 3) {
+            if (this.restaurantNames[i].includes(this.state.searchItem.toLowerCase()) && alreadyInArray < 3) {
                 temp.push(i);
                 alreadyInArray++;
             }
@@ -64,9 +60,7 @@ export default class Main extends React.Component {
     }
 
     render() {
-        window.happy = this.state;
-        console.log("Restaurants", this.restaurants)
-        console.log("state", this.state)
+        
         return(
             <React.Fragment>
                 <Header></Header>
@@ -84,57 +78,41 @@ export default class Main extends React.Component {
                         <input className="input" type="text" placeholder="Search" 
                         value={this.state.searchItem} onChange={this.onChangeSearchItem}/></div>
                     <div className = "column is-4">
-                        
-                        {/* <input className="input" type="text" placeholder="Near McMaster University"
-                        value={this.state.searchLocation} onChange={this.onChangeSearchLocation} /> 
-                        <span className="icon is-right is-small">
-                        
-                        </span> */}
-                        {/* <p className="control has-icons-right"> */}
                         <button className="button is-danger" onClick={this.onButtonClick}>
-                            <i className="fas fa-search"></i> &nbsp;Search</button>
-                        {/* </p> */}
+                            <i className="fas fa-search"></i> &nbsp;Search
+                        </button>
                     </div>
-                    <div className = "column is-1"></div>
                     </div>
-                    <div className="columns is-gapless">
-                    <div className = "column is-1"></div>
-                    {/* <div className="column">
-                        <span>Advanced search <i className="fas fa-caret-down"></i></span>
-                    </div> */}
-                    </div>
+                   
                     <br/>
-                    {/* <div style={{marginTop :"22px"}}><b><h1 className="title is-4">My Recommendations</h1></b></div> */}
-
                 {
-                    this.state.numberOfCardsShown == 0 ? 
+                    this.state.numberOfCardsShown === 0 ? 
                     (<div className="columns">
-                    <div className="column is-offset-1">
-                        <h3 className="title is-3">No results. Please try again.</h3>
-                    </div>
-                </div>) :
-                    (
+                        <div className="column is-offset-1">
+                            <h3 className="title is-3">No results. Please try again.</h3>
+                        </div>
+                    </div>) 
+                   : (
                         <div className="columns">
                             {
-                                this.state.idOfCards.map((cardId) => (
-                                   
-                                    <DetailsCard
-                        restaurant_name={this.restaurants[cardId].name}
-                        restaurant_tags={[this.restaurants[cardId].tags[0], this.restaurants[cardId].tags[1]]}
-                        restaurant_rating={this.restaurants[cardId].ratings}
-                        restaurant_description={this.restaurants[cardId].description}
-                        ></DetailsCard>
+                                this.state.idOfCards.map((cardId, i) => (
+                                    <DetailsCard key={i}
+                                        restaurant_name={this.restaurants[cardId].name}
+                                        restaurant_tags={this.restaurants[cardId].tags}
+                                        restaurant_price_range={this.restaurants[cardId].price_range}
+                                        restaurant_rating={this.restaurants[cardId].rating}
+                                        restaurant_review_number={this.restaurants[cardId].number_of_reviews}
+                                        restaurant_description={this.restaurants[cardId].description}
+                                        restaurant_id={this.restaurants[cardId].id}
+                                    ></DetailsCard>
                                 ))
                             }
-                            
                         </div>
                     )
                 }
                 
-
-                
                 <br></br>
-     </div>
+            </div>
                 <Footer></Footer>
             </React.Fragment>
         )

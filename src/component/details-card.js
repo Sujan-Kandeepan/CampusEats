@@ -31,14 +31,17 @@ export default class DetailsCard extends React.Component {
         {/* Card template from Bulma: https://bulma.io/documentation/components/card/ */}
 
         <div className="column is-4">
+        <Link to={`/details?id=${this.props.restaurant_id}`} onClick={this.props.update}>
           <div className="card">
-            <a href="">
+            {/* <a href=""> */}
+            
               <div className="card-image">
                 <figure className="image is-3by3">
                   <img src={brickWall} />
                 </figure>
               </div>
-            </a>
+              
+            {/* </a> */}
             <div className="card-content">
               <h1 className="is-size-4 is-clickable is-family-sans-serifs has-text-weight-bold">
                 <Link to={`/details?id=${this.props.restaurant_id}`} onClick={this.props.update}>{this.props.restaurant_name}</Link>
@@ -71,6 +74,7 @@ export default class DetailsCard extends React.Component {
               </div>
             </div>
           </div>
+          </Link>
         </div>
       </React.Fragment>
     );
