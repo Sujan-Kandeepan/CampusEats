@@ -6,28 +6,16 @@ footer a {
   padding: 0 1em;
 }
 
-section {
-  margin: -1.5em 0;
-}
-
-.fa-asterisk {
-  color: firebrick;
-}
-
 .prev-next {
   padding-right: 3em;
 }
 
-#acc-setup-page {
-  margin: 10px 25px;
-}
-
-#required {
-  margin: -10px 5px 10px 5px;
-}
-
 .questions {
   margin: 25px auto;
+}
+
+#acc-setup-page {
+  margin: 10px 25px;
 }
 
 @media only screen and (min-width: 768px) {
