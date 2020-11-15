@@ -30,7 +30,7 @@ export default class Settings extends React.Component {
                         </p>
                         <div className="columns is-mobile">
                             <div className="column is-7" id="settings">
-                                <UserSettings />
+                                <UserSettings existingUserInfo={this.props.existingUserInfo} updateUserInfo={this.props.updateUserInfo} />
                             </div>
                         </div>
                     </form>

@@ -26,21 +26,41 @@ export default class App extends React.Component {
     this.state = {
       user: {
         username: "",
-        password: ""
+        password: "",
+        fullName: "",
+        age: 0,
+        gender: "",
+        ethnicity: "",
+        campusName: "",
+        preferences: "",
+        dietaryRestrictions: "",
+        weeklyBudget: 0,
+        spendingAmount: 0,
+        spendingPer: "week"
       },
       loginState: false,
     }
+
+    this.updateUserInfoFromApp = this.updateUserInfoFromApp.bind(this);
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
+  }
+
+  updateUserInfoFromApp(state) {
+    this.setState(state);
   }
 
   changeLoginStateFromApp(to) {
       this.setState({
         loginState: to
-      })
+      });
+  }
+
+  componentDidUpdate() {
+    window.state = this.state;
+    // console.log(window.state);
   }
 
   render() {
-    window.state = this.state;
     return (
       <Router>
           <Switch>
@@ -57,13 +77,14 @@ export default class App extends React.Component {
               <Search />
             </Route>
             <Route path="/accSetup">
-              <AccSetup />
+              <AccSetup updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             <Route path="/settings">
-              <Settings />
+              <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             <Route path="/login">
-              <Login username={this.state.user.username} password={this.state.user.password} changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
+              <Login username={this.state.user.username} password={this.state.user.password}
+                changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
             </Route>
             {/* Route path of "/" must be last as it matches all routes */}
             <Route path="/">
