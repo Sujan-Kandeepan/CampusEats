@@ -180,9 +180,17 @@ export default class Details extends React.Component {
 
             <div className="columns">
               <div className="column">
-                <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
-                  Location
-                </h2>
+                <div className="level is-mobile" style={{ marginBottom: "0" }}>
+                  <div className="level-left">
+                    <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
+                      Location
+                  </h2>
+                  &emsp;
+                  <a href={`/map/?id=${restaurant_id}`}>
+                      View Nearby Restaurants
+                  </a>
+                  </div>
+                </div>
                 <div className="level">
                   <div>
                     <p className="mb-4">

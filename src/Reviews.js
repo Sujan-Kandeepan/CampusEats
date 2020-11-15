@@ -92,6 +92,7 @@ export default class Reviews extends React.Component {
 
   render() {
     const {
+      restaurant_id,
       restaurant_name,
       username,
       restaurant_reviews,
@@ -108,10 +109,19 @@ export default class Reviews extends React.Component {
             <div className="columns">
               <div className="column">
                 <div className="box">
-                  <div className="level">
-                    <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
-                      {restaurant_name}
-                    </h1>
+                  <div className="level is-mobile">
+                    <div className="level-left">
+                      <h1 className="is-size-1 is-family-sans-serifs has-text-weight-bold level-left">
+                        {restaurant_name}
+                      </h1>
+                    </div>
+                    <div className="level-right">
+                      <a href={"/details?id=" + restaurant_id} id="go-to-details"
+                        style={{ margin: "auto 20px" }}>
+                        <i className="fas fa-info-circle"></i>
+                        &nbsp;Go to details page
+                      </a>
+                    </div>
                   </div>
                   <hr />
                   <div className="columns is-centered is-vcentered ">
