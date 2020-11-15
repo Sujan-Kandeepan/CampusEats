@@ -1,0 +1,25 @@
+footer {
+  padding: 1.5rem !important;
+}
+
+footer a {
+  padding: 0 1em;
+}
+
+.prev-next {
+  padding-right: 3em;
+}
+
+.questions {
+  margin: 25px auto;
+}
+
+#acc-setup-page {
+  margin: 10px 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  #bottom-page-nav {
+    display: none;
+  }
+}
