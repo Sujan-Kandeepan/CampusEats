@@ -1,15 +1,12 @@
 /*
 This is the default react class given by the react documentation
 */
-
 import React from "react";
 import brickWall from './../img/brick-wall.jpg';
-
 export default class Card extends React.Component {
     render() {
         return(
             <React.Fragment>
-
                 {/* Card template from Bulma: https://bulma.io/documentation/components/card/ */}
                 
                 <div className="column is-4">
