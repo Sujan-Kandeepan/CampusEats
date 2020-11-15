@@ -184,7 +184,7 @@ export default class Details extends React.Component {
                   </h2>
                   &emsp;&emsp;&emsp;&nbsp;
                   <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
-                    <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
+                    <i className="fa fa-expand-arrows-alt" aria-hidden="true"></i>
                     &ensp;Explore on expanded map
                   </Link>
                   </div>

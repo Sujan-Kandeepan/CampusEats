@@ -214,7 +214,7 @@ export default class Reviews extends React.Component {
                 </h2>
               </div>
               {restaurant_reviews.map((item, idx) => (
-                <div class="column">
+                <div className="column">
                   <Review
                     key={item.id}
                     name={item.name}

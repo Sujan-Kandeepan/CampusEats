@@ -22,7 +22,7 @@ export default class Card extends React.Component {
                     <div className="card-content">
                     <h1 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left">Restaurant
                         <span style={{color: "grey"}}>
-                        <i class="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i><i
+                        <i className="fas fa-dollar-sign ml-5 is-size-5 mt-2"></i><i
                             className="fas fa-dollar-sign is-size-5 mt-2"></i><i className="fas fa-dollar-sign is-size-5 mt-2"></i>
                         </span>
                     </h1>
