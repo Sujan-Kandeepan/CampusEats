@@ -9,7 +9,7 @@ import {
   Route
 } from "react-router-dom";
 
-import Review from "./Review.js";
+import Reviews from "./Reviews.js";
 import Search from "./Search.js";
 import Map from "./Map.js";
 import Main from "./Main.js";
@@ -73,7 +73,7 @@ export default class App extends React.Component {
               <Map/>
             </Route>
             <Route path="/review">
-              <Review />
+              <Reviews />
             </Route>
             <Route path="/search">
               <Search />
