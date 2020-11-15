@@ -37,7 +37,7 @@ export default class AccSetup extends React.Component {
                         </p>
                         <div className="columns is-mobile">
                             <div className="questions">
-                                <UserSettings updateUserInfo={this.props.updateUserInfo} />
+                                <UserSettings updateUserInfo={this.props.updateUserInfo} existingUserInfo={this.props.existingUserInfo} />
                             </div>
                         </div>
                         <div className="has-text-right" id="bottom-page-nav">

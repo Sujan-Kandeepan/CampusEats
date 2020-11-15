@@ -48,7 +48,9 @@ export default class App extends React.Component {
   }
 
   updateUserInfoFromApp(state) {
-    this.setState(state);
+    this.setState({ 
+      user: state 
+    });
   }
 
   changeLoginStateFromApp(to) {
