@@ -15,6 +15,7 @@ import Map from "./Map.js";
 import Main from "./Main.js";
 import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
+import AccSetupLogin from "./AccSetupLogin.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
 import ContactSupport from "./ContactSupport.js";
@@ -26,9 +27,9 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      username: "",
+      password: "",
       user: {
-        username: "",
-        password: "",
         fullName: "",
         age: 0,
         gender: "",
@@ -45,6 +46,9 @@ export default class App extends React.Component {
 
     this.updateUserInfoFromApp = this.updateUserInfoFromApp.bind(this);
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
+    this.updateUsernameAndPassword = this.updateUsernameAndPassword.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
   }
 
   updateUserInfoFromApp(state) {
@@ -52,6 +56,26 @@ export default class App extends React.Component {
       user: state 
     });
   }
+
+  updateUsernameAndPassword(username, password) {
+    this.setState({ 
+      username: username,
+      password: password
+    });
+  }
+
+  updateUsername(username) {
+    this.setState({ 
+      username: username
+    });
+  }
+
+  updatePassword(password) {
+    this.setState({ 
+      password: password
+    });
+  }
+
 
   changeLoginStateFromApp(to) {
       this.setState({
@@ -80,9 +104,14 @@ export default class App extends React.Component {
             <Route path="/search">
               <Search />
             </Route>
+            
+            <Route path="/accSetupLogin">
+              <AccSetupLogin username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+            </Route>
             <Route path="/accSetup">
               <AccSetup updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
+            
             <Route path="/settings">
               <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
             </Route>

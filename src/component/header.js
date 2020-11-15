@@ -28,7 +28,7 @@ export default class Header extends React.Component {
                     <div id="simpleNav" className="navbar-menu"/>
                     <div className="navbar-start">
                         
-                        <Link to="/" className="navbar-item" >Discover</Link>
+                        <Link to="/accSetupLogin" className="navbar-item" >Discover</Link>
                         
                         <Link to="/" className="navbar-item">Nearby</Link>
                     

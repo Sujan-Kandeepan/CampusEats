@@ -23,14 +23,6 @@ export default class AccSetup extends React.Component {
                             <div className="column is-8 level-left">
                                 <h1 className="title" id="title">New Account Questionnaire</h1>
                             </div>
-                            <div className="column is-4 level-right has-text-right">
-                                <a className="prev-next" href="">
-                                    <i className="fas fa-arrow-left"></i>&nbsp;&nbsp;Previous Page
-                                </a>
-                                <a className="prev-next" href="">
-                                    Next Page&nbsp;&nbsp;<i className="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
                         </div>
                         <p id="required">
                             <i className="fa fa-sm fa-asterisk" aria-hidden="true"></i> - Required option
