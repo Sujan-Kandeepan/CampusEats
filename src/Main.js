@@ -18,7 +18,6 @@ export default class Main extends React.Component {
         return(
             <React.Fragment>
                 <Header></Header>
-                
                 <section className="section"/>
                     <div className="container">
                     <div className="columns is-gapless">
