@@ -14,68 +14,8 @@ import './Settings.css';
 
 export default class Settings extends React.Component {
     render() {
-        let restaurants = [
-            {
-                "id": 1,
-                "name": "Creation X"
-            },
-            {
-                "id": 2,
-                "name": "Williams Cafe"
-            },
-            {
-                "id": 3,
-                "name": "Willy Dog McMaster"
-            },
-            {
-                "id": 4,
-                "name": "Pinks Burgers"
-            },
-            {
-                "id": 5,
-                "name": "Mr. Gao"
-            }
-        ];
-
-        let reviews = [
-            {
-                "id": 1,
-                "username": "johndoe",
-                "name": "John Doe",
-                "restaurant_id": 1,
-                "comment": "Great and fast service",
-                "rating": 3,
-                "time": 30
-            },
-            {
-                "id": 2,
-                "username": "tobyf1",
-                "name": "Tobby Fang",
-                "restaurant_id": 1,
-                "comment": "Annoying staff",
-                "rating": 3,
-                "time": 40
-            },
-            {
-                "id": 3,
-                "username": "caretteT",
-                "name": "Carette T",
-                "restaurant_id": 2,
-                "comment": "Friendly Service",
-                "rating": 5,
-                "time": 50
-            },
-            {
-                "id": 4,
-                "username": "alien",
-                "name": "Alice Long",
-                "restaurant_id": 3,
-                "comment": "Great Value",
-                "rating": 3,
-                "time": 55
-            }
-        ];
-
+        let restaurants = require("./data/restaurant_data.json").restaurants;
+        let reviews = require("./data/restaurant_review.json").reviews;
         let history = reviews
             .filter(r => r.username === this.props.existingUserInfo.username)
             .sort((r1, r2) => r1.time - r2.time)
