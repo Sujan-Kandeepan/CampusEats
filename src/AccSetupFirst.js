@@ -68,10 +68,7 @@ export default class AccSetupFirst extends React.Component {
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
                 { this.state.signupFirstPartSuccessful ? <Redirect to='/accSetup' /> : "" }
                 <div className ="container">
-                {/* <div className="columns level">
-                            
-                            
-                        </div> */}
+               
                     <div className="column is-6 is-offset-3">
                     
                         <br/><br/><br/>
