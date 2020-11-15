@@ -67,13 +67,11 @@ export default class Details extends React.Component {
       restaurant_id,
       restaurant_name,
       restaruant_description,
-      restaruant_location,
       restaurant_rating,
       restaurant_reviews,
       restaurant_review_number,
       restaurant_tags,
-      restaurant_price_range,
-      restaurant_menu,
+      restaurant_price_range
     } = this.state;
 
     let starRating = [];
@@ -117,7 +115,7 @@ export default class Details extends React.Component {
                     </h1>
                     <div className="level-right mr-2">
                       <span style={{ color: "Tomato" }} className="mx-2">
-                        <span className="is-size-1" className="mx-2">
+                        <span className="is-size-1 mx-2">
                           {restaurant_rating}
                         </span>
                         <span className="fa-2x">{starRating}</span>
@@ -202,6 +200,7 @@ export default class Details extends React.Component {
                       width="600"
                       height="450"
                       frameBorder="0"
+                      title="map"
                       style={{ border: 0 }}
                       allowFullScreen
                     ></iframe>

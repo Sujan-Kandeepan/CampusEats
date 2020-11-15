@@ -97,8 +97,6 @@ export default class Reviews extends React.Component {
       restaurant_name,
       username,
       restaurant_reviews,
-      price_range,
-      rating,
       comment,
     } = this.state;
 

@@ -19,7 +19,7 @@ export default class AccSetup extends React.Component {
             <React.Fragment>
                 <Header></Header>
                 <div id="acc-setup-page">
-                    <form action="submit">
+                    <form>
                         <div className="columns level">
                             <div className="column is-8 level-left">
                                 <h1 className="title" id="title">New Account Questionnaire</h1>

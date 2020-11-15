@@ -6,10 +6,6 @@ import React from "react";
 import brickWall from './../img/brick-wall.jpg';
 
 export default class Card extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return(
             <React.Fragment>
@@ -20,7 +16,7 @@ export default class Card extends React.Component {
                 <div className="card">
                     <div className="card-image">
                     <figure className="image is-3by3">
-                        <img src={brickWall} />
+                        <img src={brickWall} alt="brick-wall" />
                     </figure>
                     </div>
                     <div className="card-content">
@@ -32,7 +28,7 @@ export default class Card extends React.Component {
                     </h1>
                     <div className="level-left mr-3">
                         <span style={{color: "Tomato"}} className="mx-2">
-                        <span className="is-size-5" className="mx-2">4.5</span>
+                        <span className="is-size-5 mx-2">4.5</span>
                         <i className="fas fa-star fa-sm"></i><i className="fas fa-star fa-sm"></i><i
                             className="fas fa-star fa-sm"></i><i className="fas fa-star fa-sm"></i><i
                             className="fas fa-star-half-alt fa-sm"></i>
