@@ -126,7 +126,7 @@ export default class Details extends React.Component {
                     </h1>
                     <div className="level-right mr-2">
                       <span style={{ color: "Tomato" }} className="mx-2">
-                        <span className="is-size-1 mx-2">
+                        <span className="is-size-3 mx-2">
                           {restaurant_rating}
                         </span>
                         <span className="fa-2x">{starRating}</span>
