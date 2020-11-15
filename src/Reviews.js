@@ -116,10 +116,10 @@ export default class Reviews extends React.Component {
                       </h1>
                     </div>
                     <div className="level-right">
-                      <a href={"/details?id=" + restaurant_id} id="go-to-details"
+                      <a className="button is-ghost" href={"/details?id=" + restaurant_id}
                         style={{ margin: "auto 20px" }}>
                         <i className="fas fa-info-circle"></i>
-                        &nbsp;Go to details page
+                        &ensp;Go to details page
                       </a>
                     </div>
                   </div>

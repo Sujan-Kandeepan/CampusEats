@@ -99,7 +99,7 @@ export default class Details extends React.Component {
           path={"/review/:restaurant_id"}
           // component={Reviews}
         />
-        )<Header></Header>
+        <Header></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -186,7 +186,7 @@ export default class Details extends React.Component {
                       Location
                   </h2>
                   &emsp;
-                  <a href={`/map/?id=${restaurant_id}`}>
+                  <a className="button is-text" href={`/map/?id=${restaurant_id}`}>
                       View Nearby Restaurants
                   </a>
                   </div>

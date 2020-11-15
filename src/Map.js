@@ -40,9 +40,9 @@ export default class Map extends React.Component {
             <React.Fragment>
                 <Header></Header>
                 <div id="map-page">
-                    <a href={"/details?id=" + id} id="go-to-details">
+                    <a className="button is-ghost" href={"/details?id=" + id}>
                         <i className="fas fa-info-circle"></i>
-                        &nbsp;Go to details page
+                        &ensp;Go to details page
                     </a>
                     <div className="columns">
                         <div className="column is-one-third">
