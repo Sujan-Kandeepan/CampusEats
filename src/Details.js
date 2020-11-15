@@ -18,8 +18,8 @@ export default class Details extends React.Component {
     this.state = {
       restaurant_id: 0,
       restaurant_name: "",
-      restaruant_description: "",
-      restaruant_location: [0, 0],
+      restaurant_description: "",
+      restaurant_location: [0, 0],
       restaurant_address: "",
       restaurant_rating: 0,
       restaurant_review_number: 0,
@@ -56,8 +56,8 @@ export default class Details extends React.Component {
     this.setState({
       restaurant_id: restaurant.id,
       restaurant_name: restaurant.name,
-      restaruant_description: restaurant.description,
-      restaruant_location: restaurant.location,
+      restaurant_description: restaurant.description,
+      restaurant_location: restaurant.location,
       restaurant_address: restaurant.address,
       restaurant_rating: restaurant.rating,
       restaurant_reviews: reviews,
@@ -74,7 +74,7 @@ export default class Details extends React.Component {
     const {
       restaurant_id,
       restaurant_name,
-      restaruant_description,
+      restaurant_description,
       restaurant_address,
       restaurant_rating,
       restaurant_reviews,
@@ -165,7 +165,7 @@ export default class Details extends React.Component {
             </div>
             <hr />
             <div className="level">
-              <h2 className="subtitle">{restaruant_description}</h2>
+              <h2 className="subtitle">{restaurant_description}</h2>
               {/* <div className="buttons mr-2">
                 <button className="button is-primary">
                   <i className="fas fa-phone"></i>
@@ -249,6 +249,12 @@ export default class Details extends React.Component {
                     restaurant_review_number={r.number_of_reviews}
                     restaurant_description={r.description}
                     restaurant_id={r.id}
+                    update={() => {
+                      setTimeout(() => {
+                        this.setRestaurantDetails();
+                        window.scrollTo(0, 0);
+                      }, 0);
+                    }}
                   ></DetailsCard>
                 ))}
               </div>

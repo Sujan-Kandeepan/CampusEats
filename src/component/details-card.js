@@ -3,6 +3,7 @@ This is the default react class given by the react documentation
 */
 
 import React from "react";
+import { Link } from "react-router-dom";
 import brickWall from "./../img/brick-wall.jpg";
 
 export default class DetailsCard extends React.Component {
@@ -40,7 +41,7 @@ export default class DetailsCard extends React.Component {
             </a>
             <div className="card-content">
               <h1 className="is-size-4 is-clickable is-family-sans-serifs has-text-weight-bold">
-              <a href={`/details/?id=${this.props.restaurant_id}`}>{this.props.restaurant_name}</a>
+                <Link to={`/details?id=${this.props.restaurant_id}`} onClick={this.props.update}>{this.props.restaurant_name}</Link>
               </h1>
               <div className="level">
                 <span
