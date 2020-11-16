@@ -41,16 +41,11 @@ export default class AccSetupFirst extends React.Component {
 
 
     handleSubmit() {
-        if (this.props.username.length <= 5) {
-            this.setState({
-                showUsernameCreationError: true
-            })
-        }
-        if (this.props.password.length <= 5) {
-            this.setState({
-                showPasswordCreationError: true
-            })
-        }
+        this.setState({
+            showUsernameCreationError: (this.props.username.length <= 5),
+            showPasswordCreationError: (this.props.password.length <= 5)
+        });
+
         if (this.props.username.length > 5 && this.props.password.length > 5) { //create username and password successful
             
             this.setState({

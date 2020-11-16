@@ -44,20 +44,17 @@ export default class Settings extends React.Component {
     }
 
     handleSubmit() {
-        if (this.props.username.length <= 5) {
-            this.setState({
-                showUsernameCreationError: true
-            })
-        }
-        if (this.props.password.length <= 5) {
-            this.setState({
-                showPasswordCreationError: true
-            })
-        }
+        this.setState({
+            showUsernameCreationError: (this.props.username.length <= 5),
+            showPasswordCreationError: (this.props.password.length <= 5)
+        });
+
         if (this.props.username.length > 5 && this.props.password.length > 5) {
             this.props.updateUsername(this.props.username);
             this.props.updatePassword(this.props.password);
-            this.setState({ modalOpen: true });
+            this.setState({
+                modalOpen: true
+            });
         }
     }
 
