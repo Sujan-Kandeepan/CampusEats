@@ -43,6 +43,7 @@ export default class App extends React.Component {
         spendingAmount: 0,
         spendingPer: "week"
       },
+      reviews: [],
       loginState: false,
     }
 
@@ -50,6 +51,13 @@ export default class App extends React.Component {
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+    this.addReviewToGlobal = this.addReviewToGlobal.bind(this);
+  }
+
+  addReviewToGlobal(review) {
+    this.setState({
+      reviews: [...this.state.reviews, review]
+    })
   }
 
   updateUserInfoFromApp(state) {
@@ -82,49 +90,52 @@ export default class App extends React.Component {
     window.state = this.state;
     return (
       <Router>
-        <Switch>
-          <Route path="/details">
-            <Details />
-          </Route>
-          <Route path="/map">
-            <Map />
-          </Route>
-          <Route path="/review">
-            <Reviews />
-          </Route>
-          <Route path="/search">
-            <Search />
-          </Route>
-          <Route path="/logout">
+          <Switch>
+            <Route path="/details">
+              <Details />
+            </Route>
+            <Route path="/map">
+              <Map/>
+            </Route>
+            <Route path="/review">
+              <Reviews globalReviews={this.state.reviews} addReviewToGlobal={this.addReviewToGlobal} username={this.state.username} existingUserInfo={this.state.user}/>
+            </Route>
+            <Route path="/search">
+              <Search />
+            </Route>
+            <Route path="/logout">
             <Logout changeLoginState={this.changeLoginStateFromApp} />
-          </Route>
-          <Route path="/accSetupFirst">
-            <AccSetupFirst username={this.state.username} password={this.state.password}
-              updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
-          </Route>
-          <Route path="/accSetup">
-            <AccSetup changeLoginState={this.changeLoginStateFromApp}
-              updateUserInfo={this.updateUserInfoFromApp} />
-          </Route>
-          <Route path="/settings">
-            <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
+            </Route>
+            <Route path="/accSetupFirst">
+              <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+            </Route>
+            <Route path="/accSetup">
+              <AccSetup changeLoginState={this.changeLoginStateFromApp} 
+              updateUserInfo={this.updateUserInfoFromApp}  
+              existingUserInfo={this.state.user}/>
+            </Route>
+            
+            <Route path="/settings">
+            <Settings reviews={this.state.reviews} username={this.state.username} existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
               username={this.state.username} password={this.state.password}
               updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
           </Route>
-          <Route path="/login">
-            <Login username={this.state.username} password={this.state.password}
-              changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState} />
-          </Route>
-          <Route path="/contactSupport">
-            <ContactSupport />
-          </Route>
-          <Route exact path="/">
+            <Route path="/login">
+              <Login username={this.state.user.username} password={this.state.user.password}
+                changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
+            </Route>
+            <Route path="/contactSupport">
+              <ContactSupport />
+            </Route>
+            <Route exact path="/">
             <Main />
           </Route>
-          <Route path="/">
+            {/* Route path of "/" must be last as it matches all routes */}
+            <Route path="/">
             <Redirect to="/" />
           </Route>
-        </Switch>
+          </Switch>
+
       </Router>
     );
   }
