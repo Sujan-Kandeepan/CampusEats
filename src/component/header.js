@@ -24,9 +24,9 @@ export default class Header extends React.Component {
                     <div className="navbar-start">
                         {this.props.id &&
                             <React.Fragment>
-                                <Link to={"/map/?id=" + this.props.id} className="navbar-item">Map</Link>
-                                <Link to={"/details/?id=" + this.props.id} className="navbar-item">Details</Link>
-                                <Link to={"/review/?id=" + this.props.id} className="navbar-item">Review</Link>
+                                <Link to={"/map?id=" + this.props.id} className="navbar-item">Map</Link>
+                                <Link to={"/details?id=" + this.props.id} className="navbar-item">Details</Link>
+                                <Link to={"/review?id=" + this.props.id} className="navbar-item">Review</Link>
                             </React.Fragment>
                         }
                     </div>

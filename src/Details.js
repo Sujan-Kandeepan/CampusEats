@@ -150,7 +150,7 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <Link to={`/review/?id=${restaurant_id}`}>
+                      <Link to={`/review?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}
@@ -192,7 +192,7 @@ export default class Details extends React.Component {
                       Location
                   </h2>
                   &emsp;&emsp;&emsp;&nbsp;
-                  <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
+                  <Link className="button is-ghost" to={`/map?id=${restaurant_id}`}>
                     <i className="fa fa-expand-arrows-alt" aria-hidden="true"></i>
                     &ensp;Explore on expanded map
                   </Link>
