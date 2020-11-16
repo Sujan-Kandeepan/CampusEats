@@ -30,7 +30,7 @@ export default class App extends React.Component {
 
     this.state = {
       username: "johndoe",
-      password: "password",
+      password: "compsci4hc3",
       user: {
         fullName: "John Doe",
         age: 19,
