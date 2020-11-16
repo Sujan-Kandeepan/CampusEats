@@ -49,7 +49,7 @@ export default class Reviews extends React.Component {
     const query = params.get("id") || "error";
 
     if (query === "error") {
-      this.setState({ error: true })
+      this.setState({ error: true });
       return;
     }
 
@@ -59,6 +59,10 @@ export default class Reviews extends React.Component {
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
+
+    reviews.sort(function (a, b) {
+      return a.time - b.time;
+    });
 
     var nearbyRestaurant = restaurantData.restaurants.filter(
       (restaurant) => restaurant.id !== parseInt(query)
@@ -80,11 +84,10 @@ export default class Reviews extends React.Component {
       rating: this.state.rating,
       comment: this.state.comment,
       time: 0,
-      restaurant_id: parseInt(this.state.restaurant_id)
+      restaurant_id: parseInt(this.state.restaurant_id),
     };
 
     this.props.addReviewToGlobal(newReview);
-
   }
 
   updateRating(newRating, name) {
@@ -127,8 +130,11 @@ export default class Reviews extends React.Component {
                       </h1>
                     </div>
                     <div className="level-right">
-                      <Link className="button is-ghost" to={"/details?id=" + restaurant_id}
-                        style={{ margin: "auto 20px" }}>
+                      <Link
+                        className="button is-ghost"
+                        to={"/details?id=" + restaurant_id}
+                        style={{ margin: "auto 20px" }}
+                      >
                         <i className="fas fa-info-circle"></i>
                         &ensp;Go to details page
                       </Link>
@@ -172,7 +178,7 @@ export default class Reviews extends React.Component {
                           />
                         </span>
                       </div>
-                     
+
                       <div className="field m-2">
                         <label className="label is-size-4">Comment</label>
                         <div className="control">
@@ -206,19 +212,18 @@ export default class Reviews extends React.Component {
                   Reviews of {restaurant_name}
                 </h2>
               </div>
-              {
-                this.props.globalReviews.map((item, idx) => (
-                  <div className="column">
-                    <Review
-                      key={item.id}
-                      name={item.name}
-                      username={item.username}
-                      rating={item.rating}
-                      review={item.comment}
-                      time={item.time}
-                    ></Review>{" "}
-                  </div>
-                ))}
+              {this.props.globalReviews.map((item, idx) => (
+                <div className="column">
+                  <Review
+                    key={item.id}
+                    name={item.name}
+                    username={item.username}
+                    rating={item.rating}
+                    review={item.comment}
+                    time={item.time}
+                  ></Review>{" "}
+                </div>
+              ))}
               {restaurant_reviews.map((item, idx) => (
                 <div className="column">
                   <Review

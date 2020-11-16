@@ -44,7 +44,7 @@ export default class Details extends React.Component {
     const query = params.get("id") || "error";
 
     if (query === "error") {
-      this.setState({ error: true })
+      this.setState({ error: true });
       return;
     }
 
@@ -59,7 +59,9 @@ export default class Details extends React.Component {
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
-
+    reviews.sort(function (a, b) {
+      return a.time - b.time;
+    });
     this.setState({
       restaurant_id: restaurant.id,
       restaurant_name: restaurant.name,
