@@ -107,12 +107,11 @@ export default class App extends React.Component {
             <Logout changeLoginState={this.changeLoginStateFromApp} />
             </Route>
             <Route path="/accSetupFirst">
-              <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+              <AccSetupFirst updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
             </Route>
             <Route path="/accSetup">
               <AccSetup changeLoginState={this.changeLoginStateFromApp} 
-              updateUserInfo={this.updateUserInfoFromApp}  
-              existingUserInfo={this.state.user}/>
+                updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             <Route path="/settings">
             <Settings reviews={this.state.reviews} username={this.state.username} password={this.state.password}
