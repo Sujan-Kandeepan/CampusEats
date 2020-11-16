@@ -8,20 +8,20 @@ import brickWall from "./../img/brick-wall.jpg";
 
 export default class DetailsCard extends React.Component {
   render() {
-    var starRating = [];
-    for (var i = 0; i < this.props.restaurant_rating; i++) {
+    let starRating = [];
+    for (let i = 0; i < this.props.restaurant_rating; i++) {
       starRating.push(
         <i className="fas fa-star" style={{ color: "Tomato" }} key={i}></i>
       );
     }
-    for (var i = 5; i > this.props.restaurant_rating; i--) {
+    for (let i = 5; i > this.props.restaurant_rating; i--) {
       starRating.push(
         <i className="fas fa-star" style={{ color: "silver" }} key={i}></i>
       );
     }
 
-    var priceRangeRating = [];
-    for (var i = 0; i < this.props.restaurant_price_range; i++) {
+    let priceRangeRating = [];
+    for (let i = 0; i < this.props.restaurant_price_range; i++) {
       priceRangeRating.push(
         <i className="fas fa-dollar-sign mt-2" key={"price" + i}></i>
       );
@@ -37,7 +37,7 @@ export default class DetailsCard extends React.Component {
             
               <div className="card-image">
                 <figure className="image is-3by3">
-                  <img src={brickWall} />
+                  <img src={brickWall} alt="brick-wall" />
                 </figure>
               </div>
               
