@@ -89,7 +89,9 @@ export default class Main extends React.Component {
                     this.state.numberOfCardsShown === 0 ? 
                     (<div className="columns">
                         <div className="column is-offset-1">
-                            <h3 className="title is-3">No results. Please try again.</h3>
+                            <h3 className="title is-3" style={{ minHeight: "calc(100vh - 400px)" }}>
+                                No results. Please try again.
+                            </h3>
                         </div>
                     </div>) 
                    : (
