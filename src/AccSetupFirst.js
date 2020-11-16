@@ -42,16 +42,14 @@ export default class AccSetupFirst extends React.Component {
 
     handleSubmit() {
         this.setState({
-            showUsernameCreationError: (this.props.username.length <= 5),
-            showPasswordCreationError: (this.props.password.length <= 5)
+            showUsernameCreationError: (this.state.username.length <= 5),
+            showPasswordCreationError: (this.state.password.length <= 5)
         });
 
-        if (this.props.username.length > 5 && this.props.password.length > 5) { //create username and password successful
-            
-            this.setState({
-                signupFirstPartSuccessful: true
-            })
-            
+        if (this.state.username.length > 5 && this.state.password.length > 5) { //create username and password successful
+            this.setState({ signupFirstPartSuccessful: true });
+            this.props.updateUsername(this.state.username);
+            this.props.updatePassword(this.state.password);
         }
     }
 
@@ -71,7 +69,7 @@ export default class AccSetupFirst extends React.Component {
                         <br />
                         <div className="field">
                         <h5 className="title is-5">Username</h5>
-                        <input className="input" type="text" placeholder="Username" value={this.props.username} onChange={(evt) => this.props.updateUsername(evt.target.value)} />
+                        <input className="input" type="text" placeholder="Username" value={this.state.username} onChange={(evt) => this.setState({ username: evt.target.value})} />
                         {
                             this.state.showUsernameCreationError ? (
                                 <p className="help is-danger">Username must be at least 6 characters</p>
@@ -80,7 +78,7 @@ export default class AccSetupFirst extends React.Component {
                         </div>
                         <br />
                         <h5 className="title is-5">Password:</h5> 
-                        <input className="input" type="password" placeholder="Password" value={this.props.password} onChange={(evt) => this.props.updatePassword(evt.target.value)}  />
+                        <input className="input" type="password" placeholder="Password" value={this.state.password} onChange={(evt) => this.setState({ password: evt.target.value })}  />
                         
                         {
                             this.state.showPasswordCreationError ? (
