@@ -109,7 +109,7 @@ export default class App extends React.Component {
               <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             <Route path="/login">
-              <Login username={this.state.user.username} password={this.state.user.password}
+              <Login username={this.state.username} password={this.state.password}
                 changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
             </Route>
             <Route path="/contactSupport">

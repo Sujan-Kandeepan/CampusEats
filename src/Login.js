@@ -56,7 +56,7 @@ export default class Login extends React.Component {
             <React.Fragment>
                 <Header login></Header>
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
-                { this.state.loginSuccessful || this.props.loginState ? <Redirect to='/accSetup' /> : "" }
+                { this.state.loginSuccessful || this.props.loginState ? <Redirect to='/' /> : "" }
                 <div className ="container">
                     <div className="column is-6 is-offset-3">
                         <br/><br/><br/>
