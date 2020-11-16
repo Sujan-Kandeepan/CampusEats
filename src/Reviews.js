@@ -88,6 +88,8 @@ export default class Reviews extends React.Component {
     };
 
     this.props.addReviewToGlobal(newReview);
+    this.setRestaurantDetails();
+    window.scrollTo(0, 900);
   }
 
   updateRating(newRating, name) {
@@ -101,8 +103,6 @@ export default class Reviews extends React.Component {
       price_range: newRating,
     });
   }
-
-  submitReview() {}
 
   render() {
     const {
@@ -157,7 +157,7 @@ export default class Reviews extends React.Component {
                         <label className="label is-size-4">Price Range</label>
                         <span style={{ color: "silver" }}>
                           <ReactStars
-                            count={5}
+                            count={3}
                             onChange={this.updatePriceRating}
                             color="silver"
                             size={32}

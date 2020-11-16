@@ -56,7 +56,7 @@ export default class App extends React.Component {
 
   addReviewToGlobal(review) {
     this.setState({
-      reviews: [...this.state.reviews, review]
+      reviews: [...this.state.reviews.filter(r => r.username !== review.username), review]
     })
   }
 
