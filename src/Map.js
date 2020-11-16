@@ -39,12 +39,12 @@ export default class Map extends React.Component {
 
         return (
             <React.Fragment>
-                <Header></Header>
+                <Header id={id}></Header>
                 <div id="map-page">
-                    <Link className="button is-ghost" to={"/details?id=" + id}>
+                    {/* <Link className="button is-ghost" to={"/details?id=" + id}>
                         <i className="fas fa-info-circle"></i>
                         &ensp;Go to details page
-                    </Link>
+                    </Link> */}
                     <div className="columns">
                         <div className="column is-one-third">
                             <h1 className="title" id="other-restaurants-nearby">

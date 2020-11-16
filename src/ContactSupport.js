@@ -56,7 +56,7 @@ export default class ContactSupport extends React.Component {
                         
                         
                         <div className="column is-8 is-offset-2">
-                        <h2 className="title is-2">Support</h2>
+                        <h2 className="title is-2">Contact Support</h2>
                         <br/>
                         <h4 className="title is-4">Support message</h4>
                        
