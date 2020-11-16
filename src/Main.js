@@ -24,18 +24,54 @@ export default class Main extends React.Component {
             searchLocation: "",
             numberOfCardsShown: 3,
             idOfCards: [0,1,2],
-            showMyRecommendations: true
+            showMyRecommendations: true,
+            helpTextId: 0
         }
 
+        this.helpText = ["Want Vegetarian options? Search 'Vegetarian'", 
+                        "Don't want to spend much? Search 'Cheap'",
+                        "Want to go to a cafe? Search 'Cafe'",
+                        "Want to go to Pinks Burgers? Search 'Pinks Burgers'"]
+        this.helpTextSearch = [
+            "Vegetarian",
+            "Cheap",
+            "Cafe",
+            "Pinks Burgers"
+        ]
         this.onChangeSearchItem = this.onChangeSearchItem.bind(this);
         this.onChangeSearchLocation = this.onChangeSearchLocation.bind(this);
         this.onButtonClick = this.onButtonClick.bind(this);
+        this.changeHelpText = this.changeHelpText.bind(this);
+        this.helpTextAutomaticSearch = this.helpTextAutomaticSearch.bind(this);
+
+        
+    }
+
+    componentDidMount() {
+        this.changeHelpText()
+    }
+
+    helpTextAutomaticSearch() {
+        this.setState({
+            searchItem: this.helpTextSearch[this.state.helpTextId]
+        }, () => this.onButtonClick())
+        
+    }
+
+    changeHelpText() {
+        setInterval(() => {
+            this.setState({
+                helpTextId: this.state.helpTextId + 1
+            })
+        }, 4500)
+        
     }
 
     onChangeSearchItem(evt) {
         this.setState({
             searchItem: evt.target.value
         })
+        console.log("evt.key", evt.key)
     }
 
     onChangeSearchLocation(evt) {
@@ -121,12 +157,25 @@ export default class Main extends React.Component {
                         <div className = "column is-1"></div>
                     <div className = "column is-8">
                         <input className="input" type="text" placeholder="Search" 
-                        value={this.state.searchItem} onChange={this.onChangeSearchItem}/></div>
+                        value={this.state.searchItem} onChange={this.onChangeSearchItem}
+                        onKeyPress={evt => {
+                            if (evt.key === 'Enter') this.onButtonClick();
+                        }}
+                        /></div>
                     <div className = "column is-4">
                         <button className="button is-danger" onClick={this.onButtonClick}>
                             <i className="fas fa-search"></i> &nbsp;Search
                         </button>
                     </div>
+                
+                    </div>
+
+
+                    <div className="columns is-gapless">
+                        <div className = "column is-1"></div>
+                        <h6 className="subtitle is-6" style={{ cursor: "pointer" }}onClick={this.helpTextAutomaticSearch}>
+                            {this.helpText[this.state.helpTextId % this.helpText.length]}
+                        </h6>
                     </div>
                     {
                         this.state.showMyRecommendations ? (
