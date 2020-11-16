@@ -23,18 +23,55 @@ export default class Main extends React.Component {
             searchItem: "",
             searchLocation: "",
             numberOfCardsShown: 3,
-            idOfCards: [0,1,2]
+            idOfCards: [0,1,2],
+            showMyRecommendations: true,
+            helpTextId: 0
         }
 
+        this.helpText = ["Want Vegetarian options? Search 'Vegetarian'", 
+                        "Don't want to spend much? Search 'Cheap'",
+                        "Want to go to a cafe? Search 'Cafe'",
+                        "Want to go to Pinks Burgers? Search 'Pinks Burgers'"]
+        this.helpTextSearch = [
+            "Vegetarian",
+            "Cheap",
+            "Cafe",
+            "Pinks Burgers"
+        ]
         this.onChangeSearchItem = this.onChangeSearchItem.bind(this);
         this.onChangeSearchLocation = this.onChangeSearchLocation.bind(this);
         this.onButtonClick = this.onButtonClick.bind(this);
+        this.changeHelpText = this.changeHelpText.bind(this);
+        this.helpTextAutomaticSearch = this.helpTextAutomaticSearch.bind(this);
+
+        
+    }
+
+    componentDidMount() {
+        this.changeHelpText()
+    }
+
+    helpTextAutomaticSearch() {
+        this.setState({
+            searchItem: this.helpTextSearch[this.state.helpTextId]
+        }, () => this.onButtonClick())
+        
+    }
+
+    changeHelpText() {
+        setInterval(() => {
+            this.setState({
+                helpTextId: this.state.helpTextId + 1
+            })
+        }, 4500)
+        
     }
 
     onChangeSearchItem(evt) {
         this.setState({
             searchItem: evt.target.value
         })
+        console.log("evt.key", evt.key)
     }
 
     onChangeSearchLocation(evt) {
@@ -45,17 +82,61 @@ export default class Main extends React.Component {
 
     onButtonClick() {
         let temp = [];
-        let alreadyInArray = 0;
-        for (let i = 0; i < this.restaurantNames.length; i++ ) {
-            if (this.restaurantNames[i].includes(this.state.searchItem.toLowerCase()) && alreadyInArray < 3) {
+        let arrayCount = 0;
+        for (let i = 0; i < this.restaurants.length; i++ ) {
+            let alreadyAdded = false; //check to see if the restaurant has already been added.
+
+            //Checking the restaurant name
+            if (alreadyAdded === false && arrayCount < 3
+                && this.restaurants[i].name.toLowerCase().includes(this.state.searchItem.toLowerCase())) {
                 temp.push(i);
-                alreadyInArray++;
+                arrayCount++;
+                alreadyAdded = true;
             }
+            //Checking the description
+            if (alreadyAdded === false && arrayCount < 3
+                && this.restaurants[i].description.toLowerCase().includes(this.state.searchItem.toLowerCase())) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+
+            //Checking the tags
+            if (alreadyAdded === false  && arrayCount < 3) {
+                let foundTag = false;
+                this.restaurants[i].tags.forEach((tag) => {
+                    if (tag.toLowerCase().includes(this.state.searchItem.toLowerCase())) foundTag = true;
+                })
+                if (foundTag) {
+                    temp.push(i);
+                    arrayCount++;
+                    alreadyAdded = true;
+                } 
+            }
+
+            //Checking the price
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "cheap" && this.restaurants[i].price_range === 1) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "medium" && this.restaurants[i].price_range === 2) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "expensive" && this.restaurants[i].price_range === 3) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+
         }
         
         this.setState({
             idOfCards: temp,
-            numberOfCardsShown: temp.length
+            numberOfCardsShown: temp.length,
+            showMyRecommendations: this.state.searchItem ? false : true
         })
     }
 
@@ -76,14 +157,35 @@ export default class Main extends React.Component {
                         <div className = "column is-1"></div>
                     <div className = "column is-8">
                         <input className="input" type="text" placeholder="Search" 
-                        value={this.state.searchItem} onChange={this.onChangeSearchItem}/></div>
+                        value={this.state.searchItem} onChange={this.onChangeSearchItem}
+                        onKeyPress={evt => {
+                            if (evt.key === 'Enter') this.onButtonClick();
+                        }}
+                        /></div>
                     <div className = "column is-4">
                         <button className="button is-danger" onClick={this.onButtonClick}>
                             <i className="fas fa-search"></i> &nbsp;Search
                         </button>
                     </div>
+                
                     </div>
-                   
+
+
+                    <div className="columns is-gapless">
+                        <div className = "column is-1"></div>
+                        <h6 className="subtitle is-6" style={{ cursor: "pointer" }}onClick={this.helpTextAutomaticSearch}>
+                            {this.helpText[this.state.helpTextId % this.helpText.length]}
+                        </h6>
+                    </div>
+                    {
+                        this.state.showMyRecommendations ? (
+                            <React.Fragment>
+                            <br/>
+                            <div ><b><h4 className="title is-4">My Recommendations</h4></b></div>
+                            </React.Fragment>
+                        ) : ""
+                    }
+                    
                     <br/>
                 {
                     this.state.numberOfCardsShown === 0 ? 
