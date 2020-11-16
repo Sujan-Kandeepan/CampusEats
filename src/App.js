@@ -76,12 +76,8 @@ export default class App extends React.Component {
       });
   }
 
-  componentDidUpdate() {
-    window.state = this.state;
-    // console.log(window.state);
-  }
-
   render() {
+    window.state = this.state;
     return (
       <Router>
           <Switch>
