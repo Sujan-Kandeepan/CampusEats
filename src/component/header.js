@@ -12,7 +12,8 @@ export default class Header extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {window.state.loginState || this.props.accSetup || this.props.login || <Redirect to="/accSetupFirst" />}
+                {window.state.loginState || this.props.accSetup || this.props.login
+                    || this.props.contactSupport || <Redirect to="/accSetupFirst" />}
                 <nav className="navbar" role="navigation">
                     <div className="navbar-brand">
                         <Link className="navbar-item" to="/">

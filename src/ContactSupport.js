@@ -23,7 +23,7 @@ export default class ContactSupport extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Header></Header>
+                <Header contactSupport></Header>
                 { this.state.submissionSuccessful ? <Redirect to='/' /> : "" }
                 
                 {/* Bulma Header code template: https://bulma.io/documentation/components/modal/ */}
