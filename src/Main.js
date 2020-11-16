@@ -53,7 +53,7 @@ export default class Main extends React.Component {
 
     helpTextAutomaticSearch() {
         this.setState({
-            searchItem: this.helpTextSearch[this.state.helpTextId]
+            searchItem: this.helpTextSearch[this.state.helpTextId % this.helpText.length]
         }, () => this.onButtonClick())
         
     }
