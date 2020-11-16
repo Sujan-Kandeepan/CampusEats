@@ -29,10 +29,10 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      username: "johndoe",
+      username: "",
       password: "",
       user: {
-        fullName: "John Doe",
+        fullName: "",
         age: 0,
         gender: "",
         ethnicity: "",
@@ -116,7 +116,7 @@ export default class App extends React.Component {
             </Route>
             
             <Route path="/settings">
-            <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
+            <Settings reviews={this.state.reviews} username={this.state.username} existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
               username={this.state.username} password={this.state.password}
               updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
           </Route>
