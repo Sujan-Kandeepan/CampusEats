@@ -6,7 +6,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Reviews from "./Reviews.js";
@@ -104,7 +105,6 @@ export default class App extends React.Component {
               <AccSetup changeLoginState={this.changeLoginStateFromApp} 
               updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
-            
             <Route path="/settings">
               <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
@@ -115,9 +115,11 @@ export default class App extends React.Component {
             <Route path="/contactSupport">
               <ContactSupport />
             </Route>
-            {/* Route path of "/" must be last as it matches all routes */}
-            <Route path="/">
+            <Route exact path="/">
               <Main />
+            </Route>
+            <Route path="/">
+              <Redirect to="/" />
             </Route>
           </Switch>
       </Router>
