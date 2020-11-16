@@ -63,16 +63,16 @@ export default class Settings extends React.Component {
 
     render() {
         let restaurants = require("./data/restaurant_data.json").restaurants;
-        let reviews = require("./data/restaurant_review.json").reviews;
-        let history = reviews
-            .filter(r => r.username === this.props.existingUserInfo.username)
+  
+        let history = this.props.reviews
+            .filter(r => r.username === this.props.username)
             .sort((r1, r2) => r1.time - r2.time)
             .map(r =>
                 <div>
                     <p>
                         {r.time} minutes ago - left a review on&nbsp;
                         <strong>
-                            {restaurants.find(rs => r.id === rs.id).name}
+                            {restaurants.find(rs => r.restaurant_id === rs.id).name}
                         </strong>
                     </p>
                     <p>
