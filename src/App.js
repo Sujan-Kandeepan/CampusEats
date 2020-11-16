@@ -19,6 +19,7 @@ import AccSetupFirst from "./AccSetupFirst.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
 import ContactSupport from "./ContactSupport.js";
+import Logout from "./Logout.js";
 
 
 export default class App extends React.Component {
@@ -93,14 +94,15 @@ export default class App extends React.Component {
             <Route path="/search">
               <Search />
             </Route>
-            
+            <Route path="/logout">
+              <Logout changeLoginState={this.changeLoginStateFromApp} />
+            </Route>
             <Route path="/accSetupFirst">
               <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
             </Route>
             <Route path="/accSetup">
               <AccSetup changeLoginState={this.changeLoginStateFromApp} 
-              updateUserInfo={this.updateUserInfoFromApp}  
-              existingUserInfo={this.state.user}/>
+              updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             
             <Route path="/settings">

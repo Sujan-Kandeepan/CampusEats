@@ -111,7 +111,7 @@ export default class Reviews extends React.Component {
 
     return (
       <React.Fragment>
-        <Header></Header>
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">

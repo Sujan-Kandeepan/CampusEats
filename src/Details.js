@@ -108,7 +108,7 @@ export default class Details extends React.Component {
           path={"/review/:restaurant_id"}
           // component={Reviews}
         />
-        <Header></Header>
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">

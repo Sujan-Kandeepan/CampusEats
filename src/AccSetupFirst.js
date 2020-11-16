@@ -64,7 +64,7 @@ export default class AccSetupFirst extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Header showMinimal={true}></Header>
+                <Header accSetup></Header>
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
                 { this.state.signupFirstPartSuccessful ? <Redirect to='/accSetup' /> : "" }
                 <div className ="container">
