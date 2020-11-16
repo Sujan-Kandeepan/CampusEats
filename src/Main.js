@@ -23,7 +23,8 @@ export default class Main extends React.Component {
             searchItem: "",
             searchLocation: "",
             numberOfCardsShown: 3,
-            idOfCards: [0,1,2]
+            idOfCards: [0,1,2],
+            showMyRecommendations: true
         }
 
         this.onChangeSearchItem = this.onChangeSearchItem.bind(this);
@@ -45,17 +46,61 @@ export default class Main extends React.Component {
 
     onButtonClick() {
         let temp = [];
-        let alreadyInArray = 0;
-        for (let i = 0; i < this.restaurantNames.length; i++ ) {
-            if (this.restaurantNames[i].includes(this.state.searchItem.toLowerCase()) && alreadyInArray < 3) {
+        let arrayCount = 0;
+        for (let i = 0; i < this.restaurants.length; i++ ) {
+            let alreadyAdded = false; //check to see if the restaurant has already been added.
+
+            //Checking the restaurant name
+            if (alreadyAdded === false && arrayCount < 3
+                && this.restaurants[i].name.toLowerCase().includes(this.state.searchItem.toLowerCase())) {
                 temp.push(i);
-                alreadyInArray++;
+                arrayCount++;
+                alreadyAdded = true;
             }
+            //Checking the description
+            if (alreadyAdded === false && arrayCount < 3
+                && this.restaurants[i].description.toLowerCase().includes(this.state.searchItem.toLowerCase())) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+
+            //Checking the tags
+            if (alreadyAdded === false  && arrayCount < 3) {
+                let foundTag = false;
+                this.restaurants[i].tags.forEach((tag) => {
+                    if (tag.toLowerCase().includes(this.state.searchItem.toLowerCase())) foundTag = true;
+                })
+                if (foundTag) {
+                    temp.push(i);
+                    arrayCount++;
+                    alreadyAdded = true;
+                } 
+            }
+
+            //Checking the price
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "cheap" && this.restaurants[i].price_range === 1) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "medium" && this.restaurants[i].price_range === 2) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+            if (alreadyAdded === false  && arrayCount < 3 && this.state.searchItem.toLowerCase() === "expensive" && this.restaurants[i].price_range === 3) {
+                temp.push(i);
+                arrayCount++;
+                alreadyAdded = true;
+            }
+
         }
         
         this.setState({
             idOfCards: temp,
-            numberOfCardsShown: temp.length
+            numberOfCardsShown: temp.length,
+            showMyRecommendations: this.state.searchItem ? false : true
         })
     }
 
@@ -83,7 +128,15 @@ export default class Main extends React.Component {
                         </button>
                     </div>
                     </div>
-                   
+                    {
+                        this.state.showMyRecommendations ? (
+                            <React.Fragment>
+                            <br/>
+                            <div ><b><h4 className="title is-4">My Recommendations</h4></b></div>
+                            </React.Fragment>
+                        ) : ""
+                    }
+                    
                     <br/>
                 {
                     this.state.numberOfCardsShown === 0 ? 
