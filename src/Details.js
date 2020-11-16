@@ -3,7 +3,7 @@ This is the default react class given by the react documentation
 */
 
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Redirect, Route } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -33,13 +33,20 @@ export default class Details extends React.Component {
     };
     this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
   }
+
   componentDidMount() {
     this.setRestaurantDetails();
   }
+
   setRestaurantDetails() {
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const query = params.get("id");
+    const query = params.get("id") || "error";
+
+    if (query === "error") {
+      this.setState({ error: true })
+      return;
+    }
 
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.id === parseInt(query)
@@ -104,11 +111,12 @@ export default class Details extends React.Component {
 
     return (
       <React.Fragment>
+        {this.state.error && <Redirect to="/" />}
         <Route
           path={"/review/:restaurant_id"}
           // component={Reviews}
         />
-        <Header></Header>
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -150,7 +158,7 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <Link to={`/review/?id=${restaurant_id}`}>
+                      <Link to={`/review?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}

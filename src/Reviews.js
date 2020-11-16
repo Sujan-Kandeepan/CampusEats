@@ -4,7 +4,7 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import ReactStars from "react-rating-stars-component";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -20,8 +20,8 @@ export default class Reviews extends React.Component {
       restaurant_id: 0,
       restaurant_name: "",
       restaurant_reviews: [],
-      name: "Test User",
-      username: "test_username",
+      name: this.props.existingUserInfo.fullName,
+      username: this.props.username,
       price_range: 0,
       rating: 0,
       comment: "",
@@ -34,6 +34,7 @@ export default class Reviews extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.addReview = this.addReview.bind(this);
   }
+
   componentDidMount() {
     this.setRestaurantDetails();
   }
@@ -45,7 +46,12 @@ export default class Reviews extends React.Component {
   setRestaurantDetails() {
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const query = params.get("id");
+    const query = params.get("id") || "error";
+
+    if (query === "error") {
+      this.setState({ error: true })
+      return;
+    }
 
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.id === parseInt(query)
@@ -74,15 +80,11 @@ export default class Reviews extends React.Component {
       rating: this.state.rating,
       comment: this.state.comment,
       time: 0,
+      restaurant_id: parseInt(this.state.restaurant_id)
     };
 
-    this.setState({
-      restaurant_reviews: [newReview, ...this.state.restaurant_reviews],
-      price_range: 0,
-      rating: 0,
-      comment: "",
-    });
-    console.log(this.state.restaurant_reviews);
+    this.props.addReviewToGlobal(newReview);
+
   }
 
   updateRating(newRating, name) {
@@ -111,7 +113,8 @@ export default class Reviews extends React.Component {
 
     return (
       <React.Fragment>
-        <Header></Header>
+        {this.state.error && <Redirect to="/" />}
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -169,26 +172,7 @@ export default class Reviews extends React.Component {
                           />
                         </span>
                       </div>
-                      {/* <div className="field level m-2">
-                        <label className="label is-size-4">Upload Photo</label>
-                        <div className="file has-name is-right">
-                          <label className="file-label">
-                            <input
-                              className="file-input is-large"
-                              type="file"
-                              name="resume"
-                            />
-                            <span className="file-cta">
-                              <span className="file-icon">
-                                <i className="fas fa-upload"></i>
-                              </span>
-                              <span className="file-label ">
-                                Choose a file (Optional)
-                              </span>
-                            </span>
-                          </label>
-                        </div>
-                      </div> */}
+                     
                       <div className="field m-2">
                         <label className="label is-size-4">Comment</label>
                         <div className="control">
@@ -222,8 +206,21 @@ export default class Reviews extends React.Component {
                   Reviews of {restaurant_name}
                 </h2>
               </div>
+              {
+                this.props.globalReviews.map((item, idx) => (
+                  <div className="column">
+                    <Review
+                      key={item.id}
+                      name={item.name}
+                      username={item.username}
+                      rating={item.rating}
+                      review={item.comment}
+                      time={item.time}
+                    ></Review>{" "}
+                  </div>
+                ))}
               {restaurant_reviews.map((item, idx) => (
-                <div class="column">
+                <div className="column">
                   <Review
                     key={item.id}
                     name={item.name}
@@ -237,6 +234,7 @@ export default class Reviews extends React.Component {
             </div>
 
             <hr />
+
             <div>
               <div className="level">
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">

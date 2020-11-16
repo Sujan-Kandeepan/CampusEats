@@ -6,7 +6,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Reviews from "./Reviews.js";
@@ -15,9 +16,11 @@ import Map from "./Map.js";
 import Main from "./Main.js";
 import Details from "./Details.js";
 import AccSetup from "./AccSetup.js";
+import AccSetupFirst from "./AccSetupFirst.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
 import ContactSupport from "./ContactSupport.js";
+import Logout from "./Logout.js";
 
 
 export default class App extends React.Component {
@@ -26,9 +29,9 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
+      username: "",
+      password: "",
       user: {
-        username: "",
-        password: "",
         fullName: "",
         age: 0,
         gender: "",
@@ -40,31 +43,51 @@ export default class App extends React.Component {
         spendingAmount: 0,
         spendingPer: "week"
       },
+      reviews: [],
       loginState: false,
     }
 
     this.updateUserInfoFromApp = this.updateUserInfoFromApp.bind(this);
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+    this.addReviewToGlobal = this.addReviewToGlobal.bind(this);
+  }
+
+  addReviewToGlobal(review) {
+    this.setState({
+      reviews: [...this.state.reviews, review]
+    })
   }
 
   updateUserInfoFromApp(state) {
-    this.setState({ 
-      user: state 
+    this.setState({
+      user: state
     });
   }
 
-  changeLoginStateFromApp(to) {
-      this.setState({
-        loginState: to
-      });
+
+  updateUsername(username) {
+    this.setState({
+      username: username
+    });
   }
 
-  componentDidUpdate() {
-    window.state = this.state;
-    // console.log(window.state);
+  updatePassword(password) {
+    this.setState({
+      password: password
+    });
+  }
+
+
+  changeLoginStateFromApp(to) {
+    this.setState({
+      loginState: to
+    });
   }
 
   render() {
+    window.state = this.state;
     return (
       <Router>
           <Switch>
@@ -75,17 +98,28 @@ export default class App extends React.Component {
               <Map/>
             </Route>
             <Route path="/review">
-              <Reviews />
+              <Reviews globalReviews={this.state.reviews} addReviewToGlobal={this.addReviewToGlobal} username={this.state.username} existingUserInfo={this.state.user}/>
             </Route>
             <Route path="/search">
               <Search />
             </Route>
+            <Route path="/logout">
+            <Logout changeLoginState={this.changeLoginStateFromApp} />
+            </Route>
+            <Route path="/accSetupFirst">
+              <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+            </Route>
             <Route path="/accSetup">
-              <AccSetup updateUserInfo={this.updateUserInfoFromApp} />
+              <AccSetup changeLoginState={this.changeLoginStateFromApp} 
+              updateUserInfo={this.updateUserInfoFromApp}  
+              existingUserInfo={this.state.user}/>
             </Route>
+            
             <Route path="/settings">
-              <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
-            </Route>
+            <Settings reviews={this.state.reviews} username={this.state.username} existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
+              username={this.state.username} password={this.state.password}
+              updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+          </Route>
             <Route path="/login">
               <Login username={this.state.user.username} password={this.state.user.password}
                 changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
@@ -93,14 +127,18 @@ export default class App extends React.Component {
             <Route path="/contactSupport">
               <ContactSupport />
             </Route>
+            <Route exact path="/">
+            <Main />
+          </Route>
             {/* Route path of "/" must be last as it matches all routes */}
             <Route path="/">
-              <Main />
-            </Route>
+            <Redirect to="/" />
+          </Route>
           </Switch>
+
       </Router>
     );
   }
-  
+
 }
 
