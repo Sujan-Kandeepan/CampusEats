@@ -27,10 +27,10 @@ export default class App extends React.Component {
     super(props);
 
     this.state = {
-      username: "",
+      username: "johndoe",
       password: "",
       user: {
-        fullName: "",
+        fullName: "John Doe",
         age: 0,
         gender: "",
         ethnicity: "",
@@ -41,6 +41,7 @@ export default class App extends React.Component {
         spendingAmount: 0,
         spendingPer: "week"
       },
+      reviews: [],
       loginState: false,
     }
 
@@ -48,6 +49,13 @@ export default class App extends React.Component {
     this.changeLoginStateFromApp = this.changeLoginStateFromApp.bind(this);
     this.updateUsername = this.updateUsername.bind(this);
     this.updatePassword = this.updatePassword.bind(this);
+    this.addReviewToGlobal = this.addReviewToGlobal.bind(this);
+  }
+
+  addReviewToGlobal(review) {
+    this.setState({
+      reviews: [...this.state.reviews, review]
+    })
   }
 
   updateUserInfoFromApp(state) {
@@ -88,7 +96,7 @@ export default class App extends React.Component {
               <Map/>
             </Route>
             <Route path="/review">
-              <Reviews />
+              <Reviews globalReviews={this.state.reviews} addReviewToGlobal={this.addReviewToGlobal} username={this.state.username} existingUserInfo={this.state.user}/>
             </Route>
             <Route path="/search">
               <Search />
@@ -104,7 +112,7 @@ export default class App extends React.Component {
             </Route>
             
             <Route path="/settings">
-              <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
+              <Settings username={this.state.username} reviews={this.state.reviews} existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
             </Route>
             <Route path="/login">
               <Login username={this.state.user.username} password={this.state.user.password}

@@ -20,8 +20,8 @@ export default class Reviews extends React.Component {
       restaurant_id: 0,
       restaurant_name: "",
       restaurant_reviews: [],
-      name: "Test User",
-      username: "test_username",
+      name: this.props.existingUserInfo.fullName,
+      username: this.props.username,
       price_range: 0,
       rating: 0,
       comment: "",
@@ -74,15 +74,11 @@ export default class Reviews extends React.Component {
       rating: this.state.rating,
       comment: this.state.comment,
       time: 0,
+      restaurant_id: parseInt(this.state.restaurant_id)
     };
 
-    this.setState({
-      restaurant_reviews: [newReview, ...this.state.restaurant_reviews],
-      price_range: 0,
-      rating: 0,
-      comment: "",
-    });
-    console.log(this.state.restaurant_reviews);
+    this.props.addReviewToGlobal(newReview);
+
   }
 
   updateRating(newRating, name) {
@@ -169,26 +165,7 @@ export default class Reviews extends React.Component {
                           />
                         </span>
                       </div>
-                      {/* <div className="field level m-2">
-                        <label className="label is-size-4">Upload Photo</label>
-                        <div className="file has-name is-right">
-                          <label className="file-label">
-                            <input
-                              className="file-input is-large"
-                              type="file"
-                              name="resume"
-                            />
-                            <span className="file-cta">
-                              <span className="file-icon">
-                                <i className="fas fa-upload"></i>
-                              </span>
-                              <span className="file-label ">
-                                Choose a file (Optional)
-                              </span>
-                            </span>
-                          </label>
-                        </div>
-                      </div> */}
+                     
                       <div className="field m-2">
                         <label className="label is-size-4">Comment</label>
                         <div className="control">
@@ -222,6 +199,19 @@ export default class Reviews extends React.Component {
                   Reviews of {restaurant_name}
                 </h2>
               </div>
+              {
+                this.props.globalReviews.map((item, idx) => (
+                  <div className="column">
+                    <Review
+                      key={item.id}
+                      name={item.name}
+                      username={item.username}
+                      rating={item.rating}
+                      review={item.comment}
+                      time={item.time}
+                    ></Review>{" "}
+                  </div>
+                ))}
               {restaurant_reviews.map((item, idx) => (
                 <div className="column">
                   <Review
@@ -237,6 +227,7 @@ export default class Reviews extends React.Component {
             </div>
 
             <hr />
+
             <div>
               <div className="level">
                 <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold level-left mb-2">
