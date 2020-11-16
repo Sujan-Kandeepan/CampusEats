@@ -6,7 +6,8 @@ import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 
 import Reviews from "./Reviews.js";
@@ -19,6 +20,7 @@ import AccSetupFirst from "./AccSetupFirst.js";
 import Login from "./Login.js";
 import Settings from "./Settings.js";
 import ContactSupport from "./ContactSupport.js";
+import Logout from "./Logout.js";
 
 
 export default class App extends React.Component {
@@ -51,76 +53,81 @@ export default class App extends React.Component {
   }
 
   updateUserInfoFromApp(state) {
-    this.setState({ 
-      user: state 
+    this.setState({
+      user: state
     });
   }
 
 
   updateUsername(username) {
-    this.setState({ 
+    this.setState({
       username: username
     });
   }
 
   updatePassword(password) {
-    this.setState({ 
+    this.setState({
       password: password
     });
   }
 
 
   changeLoginStateFromApp(to) {
-      this.setState({
-        loginState: to
-      });
+    this.setState({
+      loginState: to
+    });
   }
 
   render() {
     window.state = this.state;
     return (
       <Router>
-          <Switch>
-            <Route path="/details">
-              <Details />
-            </Route>
-            <Route path="/map">
-              <Map/>
-            </Route>
-            <Route path="/review">
-              <Reviews />
-            </Route>
-            <Route path="/search">
-              <Search />
-            </Route>
-            
-            <Route path="/accSetupFirst">
-              <AccSetupFirst username={this.state.username} password={this.state.password} updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
-            </Route>
-            <Route path="/accSetup">
-              <AccSetup changeLoginState={this.changeLoginStateFromApp} 
-              updateUserInfo={this.updateUserInfoFromApp}  
-              existingUserInfo={this.state.user}/>
-            </Route>
-            
-            <Route path="/settings">
-              <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp} />
-            </Route>
-            <Route path="/login">
-              <Login username={this.state.user.username} password={this.state.user.password}
-                changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState}/>
-            </Route>
-            <Route path="/contactSupport">
-              <ContactSupport />
-            </Route>
-            {/* Route path of "/" must be last as it matches all routes */}
-            <Route path="/">
-              <Main />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/details">
+            <Details />
+          </Route>
+          <Route path="/map">
+            <Map />
+          </Route>
+          <Route path="/review">
+            <Reviews />
+          </Route>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/logout">
+            <Logout changeLoginState={this.changeLoginStateFromApp} />
+          </Route>
+          <Route path="/accSetupFirst">
+            <AccSetupFirst username={this.state.username} password={this.state.password}
+              updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+          </Route>
+          <Route path="/accSetup">
+            <AccSetup changeLoginState={this.changeLoginStateFromApp}
+              updateUserInfo={this.updateUserInfoFromApp} />
+          </Route>
+          <Route path="/settings">
+            <Settings existingUserInfo={this.state.user} updateUserInfo={this.updateUserInfoFromApp}
+              username={this.state.username} password={this.state.password}
+              updateUsername={this.updateUsername} updatePassword={this.updatePassword} />
+          </Route>
+          <Route path="/login">
+            <Login username={this.state.username} password={this.state.password}
+              changeLoginState={this.changeLoginStateFromApp} loginState={this.state.loginState} />
+          </Route>
+          <Route path="/contactSupport">
+            <ContactSupport />
+          </Route>
+          <Route exact path="/">
+            <Main />
+          </Route>
+          <Route path="/">
+            <Redirect to="/" />
+          </Route>
+        </Switch>
       </Router>
     );
   }
-  
+
 }
 

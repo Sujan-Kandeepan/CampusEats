@@ -6,57 +6,41 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import logo from './../img/logo.png';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 export default class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        
-    }
-
     render() {
-        return(
+        return (
             <React.Fragment>
+                {window.state.loginState || this.props.accSetup || this.props.login || <Redirect to="/accSetupFirst" />}
                 <nav className="navbar" role="navigation">
                     <div className="navbar-brand">
                         <Link className="navbar-item" to="/">
                             <img src={logo} alt="logo" width="90" height="70" />
                         </Link>
-                        <Link to="/" role="button" className="navbar-burger burger" data-target="simpleNav">
-                        </Link>
+                        {/* <Link to="/" role="button" className="navbar-burger burger" data-target="simpleNav">
+                        </Link> */}
                     </div>
-               
-                    {
-                        this.props.showMinimal ? "" : (
+                    <div className="navbar-start">
+                        {this.props.id &&
                             <React.Fragment>
-                        <div id="simpleNav" className="navbar-menu"/>
-                        <div className="navbar-start">
-                            
-                            <Link to="/" className="navbar-item" >Discover</Link>
-                            
-                            <Link to="/" className="navbar-item">Nearby</Link>
-                        
-                            <Link to="/review" className="navbar-item">Review</Link>
-    
-                            <Link to="/review" className="navbar-item">Share</Link>
-                         
-                        </div>
-                        <div>
-                            <div className="navbar-end">
-                            <div className="navbar-item">
-                                <div className="buttons">
-                                <Link className="button is-primary" to="/login">
-                                    Sign in/Log in
-                                </Link>
-                                </div>
-                            </div>
-                            </div>
-                        </div> 
-                        </React.Fragment>)
-                    }
-                    
-
+                                <Link to={"/map?id=" + this.props.id} className="navbar-item">Map</Link>
+                                <Link to={"/details?id=" + this.props.id} className="navbar-item">Details</Link>
+                                <Link to={"/review?id=" + this.props.id} className="navbar-item">Review</Link>
+                            </React.Fragment>
+                        }
+                    </div>
+                    <div className="navbar-end">
+                        {window.state.loginState ? 
+                            <React.Fragment>
+                                <Link to="/settings" className="navbar-item">Account Settings</Link>
+                                <Link to="/logout" className="navbar-item" >Log Out</Link>
+                            </React.Fragment>
+                            : this.props.accSetup
+                                ? <Link to="/login" className="navbar-item">Login (Existing User)</Link>
+                                : <Link to="/accSetupFirst" className="navbar-item">Sign Up (New User)</Link>
+                        }
+                    </div>
                 </nav>
             </React.Fragment>
         )

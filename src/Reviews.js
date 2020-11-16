@@ -4,7 +4,7 @@ This is the default react class given by the react documentation
 
 import React from "react";
 import ReactStars from "react-rating-stars-component";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -34,6 +34,7 @@ export default class Reviews extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.addReview = this.addReview.bind(this);
   }
+
   componentDidMount() {
     this.setRestaurantDetails();
   }
@@ -45,7 +46,12 @@ export default class Reviews extends React.Component {
   setRestaurantDetails() {
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const query = params.get("id");
+    const query = params.get("id") || "error";
+
+    if (query === "error") {
+      this.setState({ error: true })
+      return;
+    }
 
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.id === parseInt(query)
@@ -111,7 +117,8 @@ export default class Reviews extends React.Component {
 
     return (
       <React.Fragment>
-        <Header></Header>
+        {this.state.error && <Redirect to="/" />}
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
