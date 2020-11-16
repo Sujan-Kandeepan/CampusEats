@@ -44,7 +44,7 @@ export default class DetailsCard extends React.Component {
             {/* </a> */}
             <div className="card-content">
               <h1 className="is-size-4 is-clickable is-family-sans-serifs has-text-weight-bold">
-                <Link to={`/details?id=${this.props.restaurant_id}`} onClick={this.props.update}>{this.props.restaurant_name}</Link>
+                {this.props.restaurant_name}
               </h1>
               <div className="level">
                 <span

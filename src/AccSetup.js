@@ -16,7 +16,7 @@ export default class AccSetup extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Header showMinimal={true} ></Header>
+                <Header accSetup></Header>
                 <div id="acc-setup-page">
                     {/* <form action="submit"> */}
                         <div className="columns level">

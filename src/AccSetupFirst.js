@@ -41,16 +41,11 @@ export default class AccSetupFirst extends React.Component {
 
 
     handleSubmit() {
-        if (this.props.username.length <= 5) {
-            this.setState({
-                showUsernameCreationError: true
-            })
-        }
-        if (this.props.password.length <= 5) {
-            this.setState({
-                showPasswordCreationError: true
-            })
-        }
+        this.setState({
+            showUsernameCreationError: (this.props.username.length <= 5),
+            showPasswordCreationError: (this.props.password.length <= 5)
+        });
+
         if (this.props.username.length > 5 && this.props.password.length > 5) { //create username and password successful
             
             this.setState({
@@ -64,16 +59,16 @@ export default class AccSetupFirst extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Header showMinimal={true}></Header>
+                <Header accSetup></Header>
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
                 { this.state.signupFirstPartSuccessful ? <Redirect to='/accSetup' /> : "" }
                 <div className ="container">
                
                     <div className="column is-6 is-offset-3">
                     
-                        <br/><br/><br/>
+                        <br /><br /><br />
                         <h2 className="title is-2">Sign Up</h2>
-                        <br/>
+                        <br />
                         <div className="field">
                         <h5 className="title is-5">Username</h5>
                         <input className="input" type="text" placeholder="Username" value={this.props.username} onChange={(evt) => this.props.updateUsername(evt.target.value)} />
@@ -83,7 +78,7 @@ export default class AccSetupFirst extends React.Component {
                             ) : ""
                         }
                         </div>
-                        <br/><br/>
+                        <br />
                         <h5 className="title is-5">Password:</h5> 
                         <input className="input" type="password" placeholder="Password" value={this.props.password} onChange={(evt) => this.props.updatePassword(evt.target.value)}  />
                         
@@ -93,9 +88,9 @@ export default class AccSetupFirst extends React.Component {
                             ) : ""
                         }
                         
-                        <br/><br/>
+                        <br /><br /><br />
                         <button className="button is-primary is-fullwidth" onClick={this.handleSubmit}>Sign up</button>
-                        <br/><br/><br/>
+                        <br /><br /><br />
                     </div>
                 </div>
                 

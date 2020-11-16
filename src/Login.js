@@ -54,19 +54,19 @@ export default class Login extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <Header></Header>
+                <Header login></Header>
                 {/* React router redirect: https://medium.com/@anneeb/redirecting-in-react-4de5e517354a */}
-                { this.state.loginSuccessful || this.props.loginState ? <Redirect to='/accSetup' /> : "" }
+                { this.state.loginSuccessful || this.props.loginState ? <Redirect to='/' /> : "" }
                 <div className ="container">
                     <div className="column is-6 is-offset-3">
-                        <br/><br/><br/>
+                        <br /><br /><br />
                         <h2 className="title is-2">Login</h2>
-                        <br/>
+                        <br />
                         <div className="field">
                         <h5 className="title is-5">Username</h5>
                         <input className="input" type="text" placeholder="Username" value={this.state.username} onChange={this.onChangeUsername} />
                         </div>
-                        <br/><br/>
+                        <br />
                         <h5 className="title is-5">Password:</h5> 
                         <input className="input" type="password" placeholder="Password" value={this.state.password} onChange={this.onChangePassword} />
                         {
@@ -75,9 +75,9 @@ export default class Login extends React.Component {
                             ) : ""
                         }
                         
-                        <br/><br/>
+                        <br /><br /><br />
                         <button className="button is-primary is-fullwidth" onClick={this.handleSubmit}>Login</button>
-                        <br/><br/><br/>
+                        <br /><br /><br />
                     </div>
                 </div>
                 

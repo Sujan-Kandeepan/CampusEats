@@ -3,7 +3,7 @@ This is the default react class given by the react documentation
 */
 
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link, Redirect, Route } from "react-router-dom";
 import Header from "./component/header.js";
 import Footer from "./component/footer.js";
 import Review from "./component/review.js";
@@ -33,13 +33,20 @@ export default class Details extends React.Component {
     };
     this.setRestaurantDetails = this.setRestaurantDetails.bind(this);
   }
+
   componentDidMount() {
     this.setRestaurantDetails();
   }
+
   setRestaurantDetails() {
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const query = params.get("id");
+    const query = params.get("id") || "error";
+
+    if (query === "error") {
+      this.setState({ error: true });
+      return;
+    }
 
     var restaurant = restaurantData.restaurants.find(
       (restaurant) => restaurant.id === parseInt(query)
@@ -52,7 +59,9 @@ export default class Details extends React.Component {
     var reviews = reviewData.reviews.filter(
       (review) => review.restaurant_id === parseInt(query)
     );
-
+    reviews.sort(function (a, b) {
+      return a.time - b.time;
+    });
     this.setState({
       restaurant_id: restaurant.id,
       restaurant_name: restaurant.name,
@@ -104,11 +113,12 @@ export default class Details extends React.Component {
 
     return (
       <React.Fragment>
+        {this.state.error && <Redirect to="/" />}
         <Route
           path={"/review/:restaurant_id"}
           // component={Reviews}
         />
-        <Header></Header>
+        <Header id={restaurant_id}></Header>
         <section className="section">
           <div className="container">
             <div className="columns">
@@ -150,7 +160,7 @@ export default class Details extends React.Component {
                       </span>
                     </div>
                     <div className="level-right">
-                      <Link to={`/review/?id=${restaurant_id}`}>
+                      <Link to={`/review?id=${restaurant_id}`}>
                         <button
                           className="button is-danger is-large box-shadow"
                           onClick={this.handleClick}
@@ -190,27 +200,27 @@ export default class Details extends React.Component {
                   <div className="level-left">
                     <h2 className="is-size-3 is-family-sans-serifs has-text-weight-bold mb-2">
                       Location
-                  </h2>
-                  &emsp;&emsp;&emsp;&nbsp;
-                  <Link className="button is-ghost" to={`/map/?id=${restaurant_id}`}>
-                    <i className="fa fa-expand-arrows-alt" aria-hidden="true"></i>
-                    &ensp;Explore on expanded map
-                  </Link>
+                    </h2>
+                    &emsp;&emsp;&emsp;
+                    <Link
+                      className="button is-ghost"
+                      to={`/map/?id=${restaurant_id}`}
+                    >
+                      <i class="fa fa-expand-arrows-alt" aria-hidden="true"></i>
+                      &ensp;Explore on expanded map
+                    </Link>
                   </div>
                 </div>
-                <div className="level">
-                  <div>
-                    <p className="mb-4">{restaurant_address}</p>
-                    <iframe
-                      src={restaurant_iframe}
-                      width="600"
-                      height="450"
-                      frameBorder="0"
-                      title="map"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                    ></iframe>
-                  </div>
+                <p className="mb-4">{restaurant_address}</p>
+                <div style={{ width: "50%" }}>
+                  <iframe
+                    src={restaurant_iframe}
+                    frameBorder="0"
+                    title="map"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                  ></iframe>
                 </div>
                 <hr />
               </div>
