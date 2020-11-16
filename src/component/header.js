@@ -31,8 +31,11 @@ export default class Header extends React.Component {
                         }
                     </div>
                     <div className="navbar-end">
-                        {window.state.loginState
-                            ? <Link to="/logout" className="navbar-item" >Log Out</Link>
+                        {window.state.loginState ? 
+                            <React.Fragment>
+                                <Link to="/settings" className="navbar-item">Account Settings</Link>
+                                <Link to="/logout" className="navbar-item" >Log Out</Link>
+                            </React.Fragment>
                             : this.props.accSetup
                                 ? <Link to="/login" className="navbar-item">Login (Existing User)</Link>
                                 : <Link to="/accSetupFirst" className="navbar-item">Sign Up (New User)</Link>

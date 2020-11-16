@@ -17,8 +17,7 @@ export default class Footer extends React.Component {
                         <div className="columns" style={{ height: "30px", padding: "10px 0" }}>
                             {/* <Link to="/">About</Link> */}
                             {/* <Link to="/">Privacy Policy</Link>  */}
-                            <Link to="/settings" style={{ marginLeft: "auto" }}>Settings</Link>
-                            <Link to="/contactSupport">Support</Link>
+                            <Link to="/contactSupport" style={{ marginLeft: "auto" }}>Contact Support</Link>
                             {/* <Link to="/">Report a problem</Link> */}
                         </div>
                     <p>
