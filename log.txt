@@ -1,0 +1,1231 @@
+commit 6f95ad3011f817f6332033aa9001825fd8dcf3ea
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 15:28:02 2020 -0500
+
+    Fixed bug in reviews page from previous commit
+
+commit b6d7cfcc387c5034873f8164864c520334c21845
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 15:00:54 2020 -0500
+
+    Improvements to review page
+
+commit 0374da022d7a89d5c48c1ecc18f9efaddc49e54f
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 14:02:11 2020 -0500
+
+    Addressed issues raised by Darren
+
+commit 68ee5627c15909f1317edb71a9d36983cb8263ea
+Merge: e9dddce 89234ac
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 13:19:45 2020 -0500
+
+    Merge branch 'add-to-search' into fixes
+
+commit 89234acf89e1a0bc71870c47f87a947df45601ed
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 13:15:23 2020 -0500
+
+    add additional functionality to search
+
+commit e9dddced6a7060f0be5734481a3722f1d50764a3
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 13:09:33 2020 -0500
+
+    Keep existing user profile but empty signup form
+
+commit 78a12c0c8d4bbe254891a396981dd79f2540da1b
+Merge: 4bbe325 2247228
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 12:28:33 2020 -0500
+
+    Merge branch 'master' into add-to-search
+
+commit 224722890258b7c06c5df43e75799cd7058580a4
+Merge: d228880 8a5dff1
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Mon Nov 16 12:26:56 2020 -0500
+
+    Merge branch 'sort-review' into 'master'
+    
+    Sort reviews by minutes created
+    
+    See merge request tut/4hc3-project!34
+
+commit d228880ecc8bdaa0b9ce02dec61b5216c07cecc3
+Merge: 1ee6bb1 6877b23
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Mon Nov 16 12:26:13 2020 -0500
+
+    Merge branch 'fixes' into 'master'
+    
+    More QA fixes
+    
+    See merge request tut/4hc3-project!32
+
+commit 6877b23250ebb5a6f770512ad15f12bfd3b30def
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 12:12:44 2020 -0500
+
+    Clear errors individually for username/password change
+
+commit 8a5dff1f22dbc6e001c193078eb54895a762f5e6
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Mon Nov 16 12:02:22 2020 -0500
+
+    sort the review by time
+
+commit 1ee6bb14e157f90b1e0bd36b76b9aab63d99c941
+Merge: 5f9d133 aa2c499
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:51:59 2020 -0500
+
+    Merge branch 'remove-tabs' into 'master'
+    
+    Fix the narrow map view on details page
+    
+    See merge request tut/4hc3-project!33
+
+commit aa2c499c05f3b9d22d1a20626c6572dd523bfcb1
+Merge: 2bf63e6 5f9d133
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Mon Nov 16 11:47:30 2020 -0500
+
+    fix narrow map view
+
+commit f1b2f02f4fe3855b53c8ee9f74c4018d5c8414dd
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:44:07 2020 -0500
+
+    Set a default username and password to start and fixed login (again)
+
+commit 12a8e4df2c7d1065a9e8f0e0aa917b193eecc435
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:26:16 2020 -0500
+
+    Remove duplicate prop for Settings
+
+commit dbfa3b3210fa36adb3ed45440b67605379d2e20e
+Merge: 06e2c54 5f9d133
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:23:57 2020 -0500
+
+    Merge branch 'master' into fixes
+
+commit 06e2c54494e7fbfcf7cc94b304c7512d23df7538
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:17:33 2020 -0500
+
+    Clear errors if username/password change successful
+
+commit 5f9d1334d71aedd3a9ce1f3949213d9eaa070820
+Merge: a547186 1ac5491
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Mon Nov 16 11:11:37 2020 -0500
+
+    Merge branch 'fixes' into 'master'
+    
+    QA fixes for bugs/issues as I notice them
+    
+    See merge request tut/4hc3-project!31
+
+commit a5471868e8891ab9ff5e12b3a36aa2a51a5225e4
+Merge: baacd92 6ebd5cd
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Mon Nov 16 11:11:10 2020 -0500
+
+    Merge branch 'add-state-to-reviews' into 'master'
+    
+    add reviews into global state
+    
+    See merge request tut/4hc3-project!30
+
+commit 1ac5491dfa15f75a5ee53a6333ac33b0ca905731
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 11:02:52 2020 -0500
+
+    Bug fix: no redirect /contactSupport -> /accSetupFirst if logged out
+
+commit 6ebd5cdd5c9f44ac04042cb3af95074d0b19796b
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 10:47:47 2020 -0500
+
+    removed john doe
+
+commit 7902b446a3ff98706bd2680e6e2739ec36757d42
+Merge: cdd7c81 baacd92
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 10:44:25 2020 -0500
+
+    fix merge conflicts
+
+commit baacd92c06c0fc49dae650d02b1701681c6d9c6e
+Merge: 3f3cb72 b19ae67
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Mon Nov 16 10:40:18 2020 -0500
+
+    Merge branch 'fixes' into 'master'
+    
+    Rewrote header, implemented redirects, update username/password in settings, other small fixes
+    
+    See merge request tut/4hc3-project!29
+
+commit b19ae67d49617ca0265a99c63092952081c48d54
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 10:22:49 2020 -0500
+
+    Tweaked footer
+
+commit 27386555e7d597369fca77d8ebfd931be9fee968
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 10:10:48 2020 -0500
+
+    Spacing in signup/login pages
+
+commit 9e958371f5360f50eb3f49648b2f084d7e3b5e6c
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 09:54:36 2020 -0500
+
+    Update username and password in settings
+
+commit 148a432a18cd292ca7edd0a5fedd7f960ad0d246
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 08:26:25 2020 -0500
+
+    Redirect to / if somehow on invalid path
+
+commit 8fdfc994a7db686f490efe502b434b91d2898d28
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 01:46:19 2020 -0500
+
+    More cosmetic changes
+
+commit df59db166b2abd0be3046803fb68c9826acc84da
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 01:34:04 2020 -0500
+
+    Fixed login
+
+commit cdd7c81c9dc4a8d7df26d1c905e15c610c0c29fc
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 01:27:25 2020 -0500
+
+    add reviews into global state
+
+commit 3f0b31025fa144688f5a144db89f8e313cade29e
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 01:12:57 2020 -0500
+
+    Redirect away from /details and /review if no id param given
+
+commit 6a753739abc13b106f610a5445235f12abb79907
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 16 00:58:49 2020 -0500
+
+    Removed trailing slashes in route paths
+
+commit 4bbe325a73d2ca8a5c6b26c42028a75b51c57ab9
+Author: darrentu <darrentu6@gmail.com>
+Date:   Mon Nov 16 00:23:30 2020 -0500
+
+    adding additional search to the main component
+
+commit 5ae05ec0b952a493c9a9261b42ae192668554d80
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 23:52:06 2020 -0500
+
+    Rewrite header with map/details/review links and redirect if not logged in
+
+commit 3f3cb7282c24143ed3070e2b4352df0aa7b0a269
+Merge: 64a8466 44e798d
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 23:32:07 2020 -0500
+
+    Merge branch 'fixes' into 'master'
+    
+    Fixes and formatting
+    
+    See merge request tut/4hc3-project!27
+
+commit 0c2e596316f410458e9204778f2740aaf2ce1ef1
+Merge: 44e798d 42a134a
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 22:19:08 2020 -0500
+
+    Merge branch 'navigation' into fixes
+
+commit 44e798d631a3ca54fb27cb0fdbafe23d5d6bdd01
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 21:37:19 2020 -0500
+
+    Fixes and formatting
+
+commit 42a134a55a932a3e76ecfe98618af826ac9b814a
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 20:17:58 2020 -0500
+
+    Formatted header.js
+
+commit 64a8466cc502f79b5e1b562464e447eeaeb09c8e
+Merge: f1a6369 03cd0b0
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 19:33:34 2020 -0500
+
+    Merge branch 'navigation' into 'master'
+    
+    Footer on bottom if no search results
+    
+    See merge request tut/4hc3-project!26
+
+commit 03cd0b0b4786813410a963ed19499d2b775449ec
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 19:16:59 2020 -0500
+
+    Footer on bottom if no search results
+
+commit f1a6369c78eab4f8beb909016ec93c5c2e3136b2
+Merge: 446b792 7352b1e
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 18:32:03 2020 -0500
+
+    Merge branch 'searching' into 'master'
+    
+    Search functionality
+    
+    See merge request tut/4hc3-project!24
+
+commit 7352b1e04d309fd3efd658feebf4241989373592
+Merge: 8d3449e 446b792
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 18:13:01 2020 -0500
+
+    Merge branch 'master' into searching
+
+commit 446b7922845df601df92a0eb162c4c67bd92a373
+Merge: 4fbf809 6edd0c2
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 18:12:38 2020 -0500
+
+    Merge branch 'navigation' into 'master'
+    
+    Updated footer
+    
+    See merge request tut/4hc3-project!25
+
+commit 6edd0c2d75f48266db1fb26ce90aa8816871cbe3
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 18:08:16 2020 -0500
+
+    Updated footer
+
+commit 8d3449ea268e171a75cf3a18146325d13909c4fa
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 18:05:04 2020 -0500
+
+    made some changes
+
+commit 2bf63e613f440a99852c7a3db3d67a074812b3ac
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 17:45:59 2020 -0500
+
+    refresh page when card is clicked
+
+commit b244829c1ce4294dd7b957b733febcc2b9c7d77a
+Merge: f83b575 4fbf809
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 17:30:39 2020 -0500
+
+    Merge branch 'master' into searching
+
+commit 4fbf8094cc0cd48d487121ff5d7a1dedbdb379d8
+Merge: 03ae47a ca93395
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 17:29:49 2020 -0500
+
+    Merge branch 'fixes' into 'master'
+    
+    Few small fixes
+    
+    See merge request tut/4hc3-project!23
+
+commit 03ae47a9f6a9959b38362849b97ba14fcc09b844
+Merge: 2cd4e95 045a2e5
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 17:29:15 2020 -0500
+
+    Merge branch 'remove-tabs' into 'master'
+    
+    show nearby restaurants and use each iframe and remove tabs
+    
+    See merge request tut/4hc3-project!21
+
+commit 045a2e5519faed8096faf2dddec20f5fc3379a91
+Merge: 1b3e7ac 2cd4e95
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 17:28:33 2020 -0500
+
+    fix merge conflicts
+
+commit f83b5759ebc95558e57c932946b6d3e28ba256d7
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 17:26:52 2020 -0500
+
+    changes
+
+commit 1b3e7acedd4ee24e04e60b3fb4202d2636b308f3
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 17:07:50 2020 -0500
+
+    Use Link for details page cards
+
+commit ca9339544caed0f446b133375d9eaed6e442b52e
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 15:36:09 2020 -0500
+
+    Few small fixes
+
+commit 2cd4e957f3aebe2a1d26fbe8bdb203ea28de62bd
+Merge: b9f2a13 29337f3
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 15:18:16 2020 -0500
+
+    Merge branch 'acc-setup-finalized' into 'master'
+    
+    Acc setup finalized
+    
+    See merge request tut/4hc3-project!22
+
+commit 29337f3aebebbb298fcf8a0bd2253558d080ff92
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 14:50:18 2020 -0500
+
+    changes
+
+commit 288948a92b8762c4fd4fd10af02ff108a71cb064
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 14:46:21 2020 -0500
+
+    finalized
+
+commit 1cacd60d70ba18590f292415df40449a1aed7a38
+Merge: d13a3a4 b9f2a13
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 14:41:56 2020 -0500
+
+    fix merge conflicts
+
+commit d13a3a436cde0d3c18af43273bfbd32ceaec64e2
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 14:29:23 2020 -0500
+
+    changes
+
+commit 3b495ccf8206ca174af5a6b791c96c5ee0ab918a
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 14:08:42 2020 -0500
+
+    fix the size of the rating
+
+commit f4dd6c96315d42f86f94eb60e846e719bf937742
+Merge: fa7a6b0 b9f2a13
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 14:05:48 2020 -0500
+
+    Fix merge conflicts
+
+commit b9f2a138d64d1a2330193582eccb97c3d27a5923
+Merge: fba8b37 16e0c92
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Nov 15 13:56:00 2020 -0500
+
+    Merge branch 'navigation' into 'master'
+    
+    Navigate review -> details -> map
+    
+    See merge request tut/4hc3-project!20
+
+commit 16e0c92069a08d70fc805add6af09cf3f497ab64
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 13:21:42 2020 -0500
+
+    More fixes and addressed warnings
+
+commit 5d9ed363ad73c7b6b9012354b5c95613b516e7d2
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 12:20:40 2020 -0500
+
+    Fixed links throughout app, more small fixes
+
+commit fa7a6b063aa2d045e66da7121bff9a8079677940
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 11:47:37 2020 -0500
+
+    remove see more buttons
+
+commit 931aef92a873d76944774b3024a9526f01abd033
+Merge: 7334f6f fba8b37
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 11:37:46 2020 -0500
+
+    Merge branch 'master' into acc-setup-finalized
+
+commit 7334f6f9369bb3e6f8d5f617c25209f097fa2e4e
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sun Nov 15 11:32:42 2020 -0500
+
+    temp changes
+
+commit 91a8329490ea017b0c426d07eb9ce02b59ed1680
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 11:09:30 2020 -0500
+
+    Less redundant name/appearance for details -> map link
+
+commit 5ee60865c6665aa2e206da954d10d50905352501
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 10:39:23 2020 -0500
+
+    Changed appearance of navigation links
+
+commit c81026427f9690d9f444333454404f3923d36999
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 01:58:24 2020 -0500
+
+    Added and displayed address of restaurants on details page
+
+commit b5823f0c88f8a9cf6a2f639b4ff296a36acc5750
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Nov 15 01:38:44 2020 -0500
+
+    show nearby restaurants and use each iframe and remove tabs
+
+commit c4fa92158a7faf549e685e1d7c254e11df9f5dc7
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Nov 15 00:04:47 2020 -0500
+
+    Navigate review -> details -> map
+
+commit fba8b3795a47eef57efd38649805edf65a02924a
+Merge: 102dfcd 0b3a91e
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 23:02:53 2020 -0500
+
+    Merge branch 'acc-setup-finalized' into 'master'
+    
+    fix up previous bug
+    
+    See merge request tut/4hc3-project!19
+
+commit 0b3a91ef87b5c028ad0b416d6650fb59eeb26ec9
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 22:59:32 2020 -0500
+
+    fix up previous bug
+
+commit 102dfcd367c43e81815fe965579498f6c95563e7
+Merge: 318bb78 75be8fb
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 22:39:51 2020 -0500
+
+    Merge branch 'map' into 'master'
+    
+    Refactored map page to use local JSON from latest master
+    
+    See merge request tut/4hc3-project!18
+
+commit 318bb78c05730d35beb5b70939bf0a6b7a8d25d4
+Merge: 2af49e2 b3379b1
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 22:39:26 2020 -0500
+
+    Merge branch 'account-setup' into 'master'
+    
+    Added account history
+    
+    See merge request tut/4hc3-project!17
+
+commit 75be8fbcd158963b2ff2a74b49ac08225964e693
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 22:27:34 2020 -0500
+
+    Use JSON instead of hardcoding in map page
+
+commit aa800a5511c03b7e7dbac896316230927c83f065
+Merge: fdbf104 2af49e2
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 22:25:09 2020 -0500
+
+    Merge branch 'master' into map
+
+commit b3379b17fe3a1beb18aad0c080b905b80a0ad02d
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 22:24:50 2020 -0500
+
+    Use JSON instead of hardcoding in settings
+
+commit ba7d47a2aa2c1274c88a02d7488f12f9f575398b
+Merge: 8a14aba 2af49e2
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 22:19:20 2020 -0500
+
+    Merge branch 'master' into account-setup
+
+commit 8a14aba6cb70228ca4db2381ffbc46c7511e8c74
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 22:18:25 2020 -0500
+
+    Added account history
+
+commit 2af49e25d74bc8a0e390430e704717a2322a4ab3
+Merge: 5651f21 f9afe66
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 21:50:45 2020 -0500
+
+    Merge branch 'submit-review' into 'master'
+    
+    Submit a new review using the review form
+    
+    See merge request tut/4hc3-project!14
+
+commit f9afe66f9962fa9ae0371c1c2267eb3f3a9fbe19
+Merge: daa171d 5651f21
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 21:28:57 2020 -0500
+
+    Merge branch 'master' into submit-review
+
+commit 5651f213697eb34f9374ea615825f0f4c53a632d
+Merge: 256a4ef 96fcb72
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 21:24:32 2020 -0500
+
+    Merge branch 'account-setup' into 'master'
+    
+    Modify app level state in user settings pages
+    
+    See merge request tut/4hc3-project!16
+
+commit 96fcb72acedbd208fbc784af4341505aa1797dee
+Merge: b372d34 256a4ef
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 21:22:47 2020 -0500
+
+    Resolve merge conflicts
+
+commit daa171d1cb3e64e66aadb43c956edbb6fc4749af
+Merge: ea8385c a9be20e
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 21:16:40 2020 -0500
+
+    Merge branch 'submit-review' of https://gitlab.cas.mcmaster.ca/tut/4hc3-project into submit-review
+
+commit ea8385c87d7ae905921036554b5290c8f602517b
+Merge: fa89dc6 256a4ef
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 21:16:30 2020 -0500
+
+    fix merge conflicts
+
+commit a9be20e05526fac389382fa90a1c6603cf75e184
+Merge: fa89dc6 256a4ef
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 21:14:10 2020 -0500
+
+    fix merge conflicts
+
+commit 256a4ef6869ace6f5cc3521aec0840c4b1531d80
+Merge: b9eaee0 ba0e0a9
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 21:08:04 2020 -0500
+
+    Merge branch 'contactSupport' into 'master'
+    
+    Contact support page
+    
+    See merge request tut/4hc3-project!11
+
+commit b372d3452889f6d900192d0448080216c12487c2
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 19:21:28 2020 -0500
+
+    Modify app level state in user settings pages
+
+commit ba0e0a9df2463ecc0492a986af635057b9b647f9
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 18:43:04 2020 -0500
+
+    fix design
+
+commit a88da4d407bf4193d2c6c13e7c46e332993a122e
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 18:24:25 2020 -0500
+
+    finalized contact support
+
+commit e8333c00658b235c7277e7c4812089f735e92581
+Merge: f23ac1e b9eaee0
+Author: darrentu <darrentu6@gmail.com>
+Date:   Sat Nov 14 18:23:30 2020 -0500
+
+    fix merge conflict
+
+commit 62e8296fd4b4ab22732b45fc8e1f59b339018e86
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 18:20:48 2020 -0500
+
+    Add settings page to App.js as pulled from master
+
+commit 888fe3fd0ec4dcf988a30c55c8cb4d25274f16be
+Merge: cbdeec7 b9eaee0
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 18:15:37 2020 -0500
+
+    Merge branch 'master' into account-setup
+
+commit cbdeec775e16d5ea350ce2bdee0f61bc26633ae9
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 18:14:09 2020 -0500
+
+    Get latest App.js from master
+
+commit b9eaee091d5c1447a24c2631113ad8df408bb134
+Merge: 3784b7c 9fe20e4
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 17:24:00 2020 -0500
+
+    Merge branch 'login' into 'master'
+    
+    Login
+    
+    See merge request tut/4hc3-project!15
+
+commit 9fe20e44b7e39dc8d24d5367ac69e13fcf7cab96
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 17:24:00 2020 -0500
+
+    Login
+
+commit f0d33294a0907ecbc536e9143fedd15ad77d576f
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 16:53:15 2020 -0500
+
+    Added two-way data binding for user settings (local state for now)
+
+commit 3784b7c49339ebf69d971020387ee9cbed1d84c6
+Merge: 497d4b9 8ee7b23
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sat Nov 14 16:28:36 2020 -0500
+
+    Merge branch 'map' into 'master'
+    
+    Mostly functional map page (aside from external routing and state)
+    
+    See merge request tut/4hc3-project!13
+
+commit 8ee7b23f04aa5173d7f5ac8c80bbc584f8600c46
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 16:28:36 2020 -0500
+
+    Mostly functional map page (aside from external routing and state)
+
+commit 69ac4cc8dafbd7cb5ed31685a201daef5679d9a0
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 16:17:24 2020 -0500
+
+    Changed class -> className in account setup pages
+
+commit fa89dc64bbe33590dd76207fb44cb0180636a7d0
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 15:57:34 2020 -0500
+
+    update restaurant review data
+
+commit 3489c24e482472373bf3a4eab99f477e318cac8d
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 15:51:40 2020 -0500
+
+    Add review functionality
+
+commit fdbf104a5d208071e73ff73106431b55d6bf8aaa
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 14:43:00 2020 -0500
+
+    Link for map -> details now works
+
+commit a1abe26a286ffc9a53fae54c8c095d856f72f594
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 13:53:33 2020 -0500
+
+    Introduce star rating
+
+commit 5f343c1de16e582cbc488475e062312c9f6683d6
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 13:38:30 2020 -0500
+
+    Rename card refactor component
+
+commit e6ce39f0e9737f941f12cf9171471c644d2bf0a8
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 13:32:51 2020 -0500
+
+    Update the restaurant data and pass the retaurant name to the review page
+
+commit c7b2bf0dc6ddae6551513e646936c151f81aea0e
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 12:04:59 2020 -0500
+
+    Map page now mostly functional
+
+commit 716e827b7dc383d1817e8348ac826bbaf3105c03
+Merge: 3ba8bb8 497d4b9
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 11:14:40 2020 -0500
+
+    Merge branch 'master' into react-restaurant-detail-page
+
+commit 3ba8bb83bf144e3034cab4dcd0c4f864631dad04
+Merge: dbabea9 e1688a6
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 02:48:33 2020 -0500
+
+    Fix merge issues
+
+commit dbabea9c54a09a390652a94bfe669bf49bd104a4
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Nov 14 02:47:10 2020 -0500
+
+    Filter reviews by restaurant name
+
+commit 089e3c9b1541e795e71e39fc290d2c0de7ee9721
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 00:19:02 2020 -0500
+
+    More robust query param for map page
+
+commit c89fd24b2399347837c9eaba9898f627ef891bc8
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Nov 14 00:10:11 2020 -0500
+
+    Enabled query param ?id=1-5 for map page
+
+commit e1688a61459be5d398e67bec428890ad4bcb3cb6
+Merge: 48f879f 57c6656
+Author: darrentu <darrentu6@gmail.com>
+Date:   Fri Nov 13 23:34:38 2020 -0500
+
+    Merge branch 'react-restaurant-detail-page' of gitlab.cas.mcmaster.ca:tut/4hc3-project into react-restaurant-detail-page
+
+commit 48f879f79cd34adb6c16b3f8591f8c4b3659745b
+Author: darrentu <darrentu6@gmail.com>
+Date:   Fri Nov 13 23:32:37 2020 -0500
+
+    temp change
+
+commit 57c66563ec3a39415e50f3e269491ea358c3836a
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Nov 13 22:48:42 2020 -0500
+
+    fix report button
+
+commit ad82badd4301308c830381e275e325ae9c463291
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Fri Nov 13 22:44:02 2020 -0500
+
+    Added account settings and history page, now having logic shared with account setup, but no history yet
+
+commit 98664cfaa3f94f3b59e1694090b6bf55a2df245f
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Nov 13 21:58:13 2020 -0500
+
+    add changes
+
+commit 497d4b94bfe444c73a60a2abe009ec83953d6ba4
+Merge: 7523218 50767e2
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Fri Nov 13 15:39:07 2020 -0500
+
+    Merge branch 'map' into 'master'
+    
+    Refactored map page to use React
+    
+    See merge request tut/4hc3-project!9
+
+commit f23ac1e9ab2bcb1db474530bb180ac9a80d93143
+Author: darrentu <darrentu6@gmail.com>
+Date:   Fri Nov 13 11:44:52 2020 -0500
+
+    added license comment
+
+commit e7cec02b2fee311e17c0b7c14a32b4fdcae81680
+Author: darrentu <darrentu6@gmail.com>
+Date:   Fri Nov 13 11:42:45 2020 -0500
+
+    add contact support and moved css folder
+
+commit 50767e20f42289e5ef374333028189ef2676f23b
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Fri Nov 13 10:35:07 2020 -0500
+
+    Small code convention fix to nearby card
+
+commit 752321878d19f496462d6e6cc1e97bc6aa72d76b
+Merge: a8de51b bb5f7a2
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Fri Nov 13 10:13:59 2020 -0500
+
+    Merge branch 'account-setup' into 'master'
+    
+    Integrate latest changes into account setup page using React
+    
+    See merge request tut/4hc3-project!10
+
+commit bb5f7a228af3f6d23f273d70908e2b99c8bae0da
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Fri Nov 13 00:23:27 2020 -0500
+
+    Integrate latest changes into account setup page using React
+
+commit 86532eea3ed6da7e686188bf96d881812b02d91c
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Thu Nov 12 23:35:34 2020 -0500
+
+    Refactored map page to use React
+
+commit a8de51bfe40158205914ecc7e41625a6db4140b9
+Merge: 8f35efb cecf7b4
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Thu Nov 12 21:35:14 2020 -0500
+
+    Merge branch 'add-react' into 'master'
+    
+    Add react
+    
+    See merge request tut/4hc3-project!8
+
+commit cecf7b42fde7add4f995f2aa538c2de833d42a35
+Merge: c2084f9 8f35efb
+Author: darrentu <darrentu6@gmail.com>
+Date:   Thu Nov 12 21:33:28 2020 -0500
+
+    add new css file
+
+commit e5fa0b0bc049356ed4f70dfeb537ca081ff17697
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Thu Nov 12 20:10:02 2020 -0500
+
+    share review and report
+
+commit c2084f9bad9ff1fab4be76b9d843c05f7211a45a
+Author: darrentu <darrentu6@gmail.com>
+Date:   Thu Nov 12 11:04:24 2020 -0500
+
+    add templated code comment
+
+commit 7aef6e4752319d939e41145b72717af787909fbb
+Author: darrentu <darrentu6@gmail.com>
+Date:   Thu Nov 12 10:57:26 2020 -0500
+
+    made additional improvements to AccSetup.js
+
+commit 6113bf390f9e37ac9c270f9da9a6581e6dbd671d
+Author: darrentu <darrentu6@gmail.com>
+Date:   Thu Nov 12 10:49:22 2020 -0500
+
+    add account setup page
+
+commit 8f35efb6bd869752cfea7d12c5c5387e250d6ef6
+Merge: cd74f52 53be509
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Thu Nov 12 10:45:17 2020 -0500
+
+    Merge branch 'account-setup' into 'master'
+    
+    Simplified account setup page
+    
+    See merge request tut/4hc3-project!7
+
+commit 08a3b953a36eb345a967c45ae9d0451e0557ea87
+Author: darrentu <darrentu6@gmail.com>
+Date:   Tue Nov 10 12:16:05 2020 -0500
+
+    remove the <a> tags within the header
+
+commit 1bd948f897fb4ddb8feedddfae01752bc000f87b
+Author: darrentu <darrentu6@gmail.com>
+Date:   Tue Nov 10 01:18:23 2020 -0500
+
+    add initial react layout
+
+commit 7518a4f39134097b700688f2473617dff7ca6cc0
+Author: darrentu <darrentu6@gmail.com>
+Date:   Tue Nov 10 00:02:11 2020 -0500
+
+    added the react-create-app
+
+commit 53be5098cf0761441a9cb9fd5061df2676da70c3
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 9 23:38:22 2020 -0500
+
+    Addressed suggestions for account setup page
+
+commit 047b2406f0fe5b499c3cdc10d6bb712b52c56c5d
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Mon Nov 9 22:47:52 2020 -0500
+
+    Simplified account setup page
+
+commit cd74f52362398d21f52b7f1e2420103d5fe59c35
+Author: Sophia Ji Who Choi <choij12@mcmaster.ca>
+Date:   Tue Oct 13 11:29:17 2020 -0400
+
+    Added the second milestone doc
+
+commit 76817b874322af35bc05667ef276f0fe4be2a6e4
+Merge: e129ede 87ca422
+Author: Sophia Ji Who Choi <choij12@mcmaster.ca>
+Date:   Sun Oct 11 21:52:09 2020 -0400
+
+    Merge branch 'main-search' into 'master'
+    
+    Removed search from header in main page
+    
+    See merge request tut/4hc3-project!5
+
+commit 87ca422bab02980d70b9282c06cc2cf87adac087
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 21:45:54 2020 -0400
+
+    Removed search from header in main page
+
+commit e129ede76614c534ee27af30215a636597f5676e
+Merge: 1ac0251 a49ac91
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 21:30:51 2020 -0400
+
+    Merge branch 'map-newuser' into 'master'
+    
+    Added map and account setup pages
+    
+    See merge request tut/4hc3-project!2
+
+commit a49ac91f182be31caa7abf3bb4e1422658c92c41
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 21:26:43 2020 -0400
+
+    Updated header and applied auto formatting in maps and account setup pages
+
+commit 333a0d93a20b73d2859d67098ec20c0b5f6a7a71
+Merge: e85f516 1ac0251
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 21:06:51 2020 -0400
+
+    Merge branch 'master' into map-newuser
+
+commit 1ac02517b3dc8a61ba41c91cf5f3cee2cf4007d9
+Merge: 43ea681 6e474d9
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Sun Oct 11 21:01:13 2020 -0400
+
+    Merge branch 'details' into 'master'
+    
+    Add rating and review pages and organize the file structures
+    
+    See merge request tut/4hc3-project!1
+
+commit 6e474d9c42ab7862d4f5abb121d017e863030940
+Merge: 513f028 43ea681
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Oct 11 20:57:50 2020 -0400
+
+    Merge branch 'master' into details
+
+commit 43ea6815be92b0905e5c8dbe77cc6aa23d88cfcc
+Merge: 037cf4a a3833be
+Author: Sophia Ji Who Choi <choij12@mcmaster.ca>
+Date:   Sun Oct 11 20:55:22 2020 -0400
+
+    Merge branch 'darren-code' into 'master'
+    
+    Darren code
+    
+    See merge request tut/4hc3-project!3
+
+commit 513f0281822f27f6b14a28e5687f10d8413465d8
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Oct 11 20:53:44 2020 -0400
+
+    Added search icon next to the search bar
+
+commit 037cf4a8fb8a88c0353df2223f3caada297fd835
+Merge: d43ee4b b2c6e85
+Author: Sophia Ji Who Choi <choij12@mcmaster.ca>
+Date:   Sun Oct 11 20:40:43 2020 -0400
+
+    Merge branch 'docs' into 'master'
+    
+    Added the first milestone and feedback docs
+    
+    See merge request tut/4hc3-project!4
+
+commit a3833beea86c6286bf71569386e749007f0d8a71
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sun Oct 11 20:28:19 2020 -0400
+
+    add search button in the header
+
+commit 99eda244360a3e8402fe616fee07be48700e0f26
+Merge: a66dad3 6859aa9
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sun Oct 11 20:19:25 2020 -0400
+
+    Merge branch 'details' of gitlab.cas.mcmaster.ca:tut/4hc3-project into details
+
+commit b2c6e85ad40372d6782aecef5f8b2371e463e4d5
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 19:30:56 2020 -0400
+
+    Added point missed in A1 feedback
+
+commit fce1bf52d3bc21613ea57e4106b3a8e4db3adb24
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 19:28:17 2020 -0400
+
+    Added milestone 1 feedback and notes from milestone 2 doc
+
+commit e85f51685cd47b08774b7278891da118e70bda74
+Merge: ceca457 6859aa9
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sun Oct 11 18:17:56 2020 -0400
+
+    Merge branch 'details' into map-newuser
+
+commit 6859aa9ad4a4dc83efe4f264613f7152e2292a19
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Oct 11 18:07:12 2020 -0400
+
+    Add minor css changes
+
+commit f315ece420796573d62459752f2b9e7b1d432883
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sun Oct 11 17:22:53 2020 -0400
+
+    Add the address
+
+commit a66dad30b9aed97d8c98f372788719f6d6409bfe
+Merge: e4ee9c2 7410538
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sun Oct 11 16:37:53 2020 -0400
+
+    Merge branch 'details' of gitlab.cas.mcmaster.ca:tut/4hc3-project into details
+
+commit e4ee9c26a758ca52de1f186561a65551c90bcc9d
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sun Oct 11 16:37:45 2020 -0400
+
+    changes
+
+commit ceca45712a720842ff0d013c199b0748ba9d9381
+Merge: 7b42a67 7410538
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Oct 10 18:46:39 2020 -0400
+
+    Merge branch 'details' into map-newuser
+
+commit 7b42a67a82795c704cc28026903a2c42435cbe86
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Oct 10 18:46:35 2020 -0400
+
+    Move images back before merging details
+
+commit 765d7044b15b2039a3693bff0fbbaa0a5b82e55c
+Author: Sujan Kandeepan <kandeeps@mcmaster.ca>
+Date:   Sat Oct 10 15:53:39 2020 -0400
+
+    Added map and account setup pages
+
+commit 7410538e0ea2c7e838546a3ae21749f0bfd2b01e
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Oct 10 13:09:06 2020 -0400
+
+    Adjust input size in the rating page
+
+commit 6d97347e97abc6f3e0099474f319425c909e5b51
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Sat Oct 10 12:17:32 2020 -0400
+
+    Fix the nav bar
+
+commit e772cf4be56539fe822908a4864d789fb47ec212
+Merge: eaf9214 7b47326
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sat Oct 10 11:31:59 2020 -0400
+
+    Merge branch 'details' of gitlab.cas.mcmaster.ca:tut/4hc3-project into details
+
+commit eaf9214b3aa5038ba43c15d25bd32223cccd4b50
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Sat Oct 10 11:31:51 2020 -0400
+
+    change logo
+
+commit 7b47326b7673eb722bcf9b13bb679243a8397eae
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 18:52:52 2020 -0400
+
+    Use columns for responsivity
+
+commit 0b6938deb1ac7cbd211402d8135190bd7175285a
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 13:30:11 2020 -0400
+
+    remove os-specific file
+
+commit 58954c1063bcf784ea33e007d00446c28e021ea9
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 13:29:18 2020 -0400
+
+    Edit styling
+
+commit 39e9698010f550a5ee8e36b7eecc2862f3d6213a
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 13:22:02 2020 -0400
+
+    Add review/rating page
+
+commit 96e0fc1c8109a930a6556c03d2021624e2d4a3d9
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 11:49:46 2020 -0400
+
+    Organize images
+
+commit aadbf0e24f9cfbddde1f9ef2a9523c2cc7d8eb18
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Fri Oct 9 11:45:20 2020 -0400
+
+    Add restaurant details page
+
+commit 8254f6af3f4449fb6fa43b552605dc68723c3ab3
+Merge: 31cbcc9 d43ee4b
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Thu Oct 8 21:48:56 2020 -0400
+
+    Merge branch 'master' of https://gitlab.cas.mcmaster.ca/tut/4hc3-project
+
+commit d43ee4b70ccf24c2f59b5e7143146e56d47ebeb8
+Author: Darren Tu <darrentu6@gmail.com>
+Date:   Thu Oct 8 18:41:38 2020 -0400
+
+    add main and search page
+
+commit 31cbcc95cc719ab50285058f19d71325469d4dcd
+Author: choij12 <choij12@mcmaster.ca>
+Date:   Thu Oct 8 14:54:31 2020 -0400
+
+    Add the first milestone doc
+
+commit 212c2660b444d63965eb43e70b86a96bbc44585a
+Author: Darren Tu <tut@mcmaster.ca>
+Date:   Thu Oct 8 13:40:36 2020 -0400
+
+    Initial commit
