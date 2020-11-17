@@ -9,6 +9,7 @@ Darren Tu (tut):
 Sophia Choi (choij12):
  - Main contributions to details page (very large)
  - Main contributions to review page (very large)
+ - Prepared data for restaurants and reviews (small)
 
 Sujan Kandeepan (kandeeps):
  - Main contributions to map page (large)
