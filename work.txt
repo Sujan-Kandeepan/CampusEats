@@ -1,0 +1,24 @@
+Darren Tu (tut):
+ - Main contributions to main/search page (large)
+ - Main contributions to global app state (medium)
+ - Early contributions to authentication (medium)
+ - Later contributions to user history (small)
+ - Early contributions to app routing (small)
+ - Main contributions to contact support (small)
+
+Sophia Choi (choij12):
+ - Main contributions to details page (very large)
+ - Main contributions to review page (very large)
+
+Sujan Kandeepan (kandeeps):
+ - Main contributions to map page (large)
+ - Main contributions to account settings (large)
+ - Main contributions to navigation (medium)
+ - Later contributions to authentication (medium)
+ - Some contributions to global app state (medium)
+ - Early contributions to user history (small)
+ - Later contributions to app routing (small)
+
+ Everyone:
+ - Contributed ideas, performed QA and reviewed PRs (medium)
+ - Miscellaneous work to fix bugs elsewhere (medium)
